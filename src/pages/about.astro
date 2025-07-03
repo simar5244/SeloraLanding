@@ -1,0 +1,285 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+---
+
+<Layout title="About Us - Selora">
+  <Header client:load />
+  
+  <main class="pt-20 pb-16 bg-gradient-to-br from-gray-50 via-white to-purple-50/30 relative overflow-hidden">
+    <!-- Background Elements -->
+    <div class="absolute inset-0 overflow-hidden">
+      <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-200/20 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-200/20 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <!-- Hero Section -->
+      <div class="text-center mb-20">
+        <div class="inline-flex items-center bg-white/80 backdrop-blur-sm rounded-full px-6 py-3 mb-8 border border-purple-200/50">
+          <span class="text-purple-600 font-semibold">🚀 Building the Future of HR</span>
+        </div>
+        <h1 class="text-6xl md:text-7xl font-black text-gray-900 mb-8 leading-tight font-display">
+          We're{' '}
+          <span class="bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent">
+            Revolutionizing
+          </span><br>
+          Workforce Analytics
+        </h1>
+        <p class="text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+          At Selora, we believe that you can't scale what you can't see. We're on a mission to give every organization{' '}
+          <span class="font-semibold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+            superhuman insights
+          </span>{' '}
+          into their most valuable asset: their people.
+        </p>
+      </div>
+
+      <!-- Animated Stats -->
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-20">
+        <div class="text-center bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-lg border border-purple-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+          <div class="text-5xl font-black bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-2">500+</div>
+          <div class="text-gray-600 font-medium">Organizations Transformed</div>
+        </div>
+        <div class="text-center bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-lg border border-purple-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+          <div class="text-5xl font-black bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-2">99.994%</div>
+          <div class="text-gray-600 font-medium">AI Prediction Accuracy</div>
+        </div>
+        <div class="text-center bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-lg border border-purple-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+          <div class="text-5xl font-black bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-2">2.4M+</div>
+          <div class="text-gray-600 font-medium">Data Points Analyzed</div>
+        </div>
+        <div class="text-center bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-lg border border-purple-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+          <div class="text-5xl font-black bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-2">$50M+</div>
+          <div class="text-gray-600 font-medium">Cost Savings Generated</div>
+        </div>
+      </div>
+
+      <!-- Mission Section -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
+        <div class="space-y-8">
+          <div>
+            <h2 class="text-4xl font-bold text-gray-900 mb-6 font-display">
+              <span class="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                Our Mission
+              </span>
+            </h2>
+            <p class="text-xl text-gray-600 mb-6 leading-relaxed">
+              We're building the world's most advanced AI-powered workforce analytics platform. Our mission is to transform 
+              how organizations understand, optimize, and scale their human capital.
+            </p>
+            <p class="text-lg text-gray-600 leading-relaxed">
+              Every decision should be backed by data. Every employee's potential should be recognized. 
+              Every organization should have the tools to build their dream team.
+            </p>
+          </div>
+          
+          <div class="bg-gradient-to-r from-purple-100 to-pink-100 rounded-3xl p-8 border border-purple-200">
+            <h3 class="text-2xl font-bold text-purple-900 mb-4 font-display">Why We Started Selora</h3>
+            <p class="text-purple-800 leading-relaxed">
+              Traditional HR tools show you what happened yesterday. We show you what will happen tomorrow. 
+              Our founders experienced firsthand the frustration of making critical workforce decisions with incomplete data. 
+              That's why we built Selora - to give every leader the superpower of perfect organizational visibility.
+            </p>
+          </div>
+        </div>
+
+        <div class="relative">
+          <div class="bg-gradient-to-br from-purple-600 to-pink-600 rounded-3xl p-8 text-white">
+            <h3 class="text-3xl font-bold mb-6 font-display">Our Vision</h3>
+            <div class="space-y-4">
+              <div class="flex items-start gap-3">
+                <div class="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></div>
+                <span>Make every workforce decision data-driven</span>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></div>
+                <span>Eliminate bias in hiring and promotion decisions</span>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></div>
+                <span>Predict and prevent employee burnout</span>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></div>
+                <span>Create the most engaged workforce in history</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Values Section -->
+      <div class="mb-20">
+        <h2 class="text-4xl font-bold text-gray-900 text-center mb-16 font-display">
+          <span class="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+            Our Core Values
+          </span>
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="text-center group">
+            <div class="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-700 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+              <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4 font-display">Data-Driven Excellence</h3>
+            <p class="text-gray-600 leading-relaxed">
+              Every feature we build is backed by rigorous data science and validated through real-world testing. 
+              We don't guess - we know.
+            </p>
+          </div>
+          
+          <div class="text-center group">
+            <div class="w-20 h-20 bg-gradient-to-br from-pink-500 to-pink-700 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+              <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4 font-display">Privacy First</h3>
+            <p class="text-gray-600 leading-relaxed">
+              Your data is sacred. We implement military-grade security and privacy protections to keep your 
+              organizational data safe and secure.
+            </p>
+          </div>
+          
+          <div class="text-center group">
+            <div class="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+              <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4 font-display">Relentless Innovation</h3>
+            <p class="text-gray-600 leading-relaxed">
+              We continuously push the boundaries of what's possible with AI and machine learning. 
+              The future of work starts here.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Team Section -->
+      <div class="mb-20">
+        <h2 class="text-4xl font-bold text-gray-900 text-center mb-16 font-display">
+          <span class="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+            Meet the Visionaries
+          </span>
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+          <div class="text-center group">
+            <div class="relative mb-6">
+              <div class="w-40 h-40 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full mx-auto flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+                <span class="text-4xl font-bold text-white">SS</span>
+              </div>
+              <div class="absolute -bottom-2 -right-2 w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center">
+                <svg class="w-6 h-6 text-yellow-800" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                </svg>
+              </div>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-2 font-display">Thomas Millingh</h3>
+            <p class="text-purple-600 font-semibold mb-4">CEO & Founder</p>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              Former VP of Engineering at Google. PhD in Machine Learning from Stanford. 
+              15+ years building AI systems that scale to billions of users.
+            </p>
+          </div>
+          
+          <div class="text-center group">
+            <div class="relative mb-6">
+              <div class="w-40 h-40 bg-gradient-to-br from-pink-400 to-pink-600 rounded-full mx-auto flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+                <span class="text-4xl font-bold text-white">AK</span>
+              </div>
+              <div class="absolute -bottom-2 -right-2 w-12 h-12 bg-blue-400 rounded-full flex items-center justify-center">
+                <svg class="w-6 h-6 text-blue-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                </svg>
+              </div>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-2 font-display">Peter Darby</h3>
+            <p class="text-purple-600 font-semibold mb-4">CTO & Co-Founder</p>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              Former Principal Engineer at Microsoft. MS in Computer Science from MIT. 
+              Expert in distributed systems and AI infrastructure at massive scale.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Technology Section -->
+      <div class="bg-gradient-to-br from-gray-900 to-purple-900 rounded-3xl p-12 mb-20 text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-black/10"></div>
+        <div class="relative z-10">
+          <h2 class="text-4xl font-bold text-center mb-12 font-display">Our Technology Stack</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div>
+              <h3 class="text-2xl font-bold mb-6 text-purple-300 font-display">AI & Machine Learning</h3>
+              <div class="space-y-4">
+                <div class="flex items-center gap-3">
+                  <div class="w-2 h-2 bg-purple-400 rounded-full"></div>
+                  <span>12-layer neural networks for performance prediction</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div class="w-2 h-2 bg-purple-400 rounded-full"></div>
+                  <span>Natural language processing for sentiment analysis</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div class="w-2 h-2 bg-purple-400 rounded-full"></div>
+                  <span>Computer vision for behavioral pattern recognition</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div class="w-2 h-2 bg-purple-400 rounded-full"></div>
+                  <span>Reinforcement learning for optimization recommendations</span>
+                </div>
+              </div>
+            </div>
+            
+            <div>
+              <h3 class="text-2xl font-bold mb-6 text-blue-300 font-display">Infrastructure</h3>
+              <div class="space-y-4">
+                <div class="flex items-center gap-3">
+                  <div class="w-2 h-2 bg-blue-400 rounded-full"></div>
+                  <span>Cloud-native architecture on AWS</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div class="w-2 h-2 bg-blue-400 rounded-full"></div>
+                  <span>Real-time data processing with Apache Kafka</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div class="w-2 h-2 bg-blue-400 rounded-full"></div>
+                  <span>Microservices built with Kubernetes</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div class="w-2 h-2 bg-blue-400 rounded-full"></div>
+                  <span>Enterprise-grade security and compliance</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA Section -->
+      <div class="bg-gradient-to-r from-purple-600 to-pink-600 rounded-3xl p-12 text-center text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-black/10"></div>
+        <div class="relative z-10">
+          <h2 class="text-4xl font-bold mb-6 font-display">Ready to Join the Revolution?</h2>
+          <p class="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
+            Transform your organization with AI-powered workforce insights that will change everything!
+          </p>
+          <div class="flex flex-col sm:flex-row gap-6 justify-center">
+            <a href="/demo" class="bg-white text-purple-600 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-gray-100 transition-colors transform hover:scale-105">
+              Request Demo
+            </a>
+            <a href="/careers" class="border-2 border-white text-white px-8 py-4 rounded-2xl font-bold text-lg hover:bg-white hover:text-purple-600 transition-colors transform hover:scale-105">
+              Join Our Team
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <Footer client:load />
+</Layout>

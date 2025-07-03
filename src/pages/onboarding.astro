@@ -1,0 +1,585 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header';
+---
+
+<Layout title="Get Started - Selora">
+  <Header client:load />
+  
+  <main class="pt-20 pb-16 bg-gradient-to-br from-gray-50 via-white to-purple-50/30 relative overflow-hidden min-h-screen">
+    <!-- Background Elements -->
+    <div class="absolute inset-0 overflow-hidden">
+      <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-200/20 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-200/20 rounded-full blur-3xl"></div>
+      <div class="absolute top-1/6 right-1/6 w-48 h-48 bg-pink-200/15 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-1/6 left-1/6 w-56 h-56 bg-purple-300/10 rounded-full blur-3xl"></div>
+      <div class="absolute top-2/3 right-1/3 w-40 h-40 bg-blue-300/15 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <!-- Onboarding Container -->
+      <div id="onboarding-container" class="min-h-[600px] flex items-center justify-center">
+        
+        <!-- Step 1: Company Name -->
+        <div id="step-1" class="onboarding-step text-center max-w-2xl mx-auto">
+          <div class="bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl border border-gray-200/50 p-12">
+            <div class="mb-8">
+              <div class="w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-500 rounded-3xl flex items-center justify-center mx-auto mb-6">
+                <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-4m-5 0H9m0 0H5m0 0h2M7 7h10M7 11h10M7 15h10"></path>
+                </svg>
+              </div>
+              <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 font-display">
+                Welcome to{' '}
+                <span class="bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent">
+                  Selora
+                </span>
+              </h1>
+              <p class="text-xl text-gray-600 mb-8">
+                Let's get your organization set up with AI-powered workforce analytics
+              </p>
+            </div>
+            
+            <div class="mb-8">
+              <label class="block text-lg font-semibold text-gray-900 mb-4">
+                What's your company name?
+              </label>
+              <input 
+                type="text" 
+                id="company-name"
+                class="w-full px-6 py-4 text-lg border-2 border-gray-300 rounded-2xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all bg-white/80 text-center font-medium"
+                placeholder="Enter your company name"
+                autocomplete="off"
+              />
+            </div>
+            
+            <button 
+              id="step-1-next"
+              class="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-4 px-8 rounded-2xl font-bold text-lg transition-all hover:scale-105 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+              disabled
+            >
+              Next Step
+              <svg class="w-5 h-5 inline ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 2: Team Size -->
+        <div id="step-2" class="onboarding-step hidden text-center max-w-2xl mx-auto">
+          <div class="bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl border border-gray-200/50 p-12">
+            <div class="mb-8">
+              <div class="w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-500 rounded-3xl flex items-center justify-center mx-auto mb-6">
+                <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                </svg>
+              </div>
+              <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 font-display">
+                Perfect, <span id="company-display" class="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent"></span>!
+              </h2>
+              <p class="text-xl text-gray-600 mb-8">
+                How many employees are you planning to onboard?
+              </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+              <button class="team-size-option p-6 border-2 border-gray-300 rounded-2xl hover:border-purple-500 hover:bg-purple-50 transition-all text-left group" data-size="small" data-range="1-50">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-lg font-semibold text-gray-900">Small Team</span>
+                  <div class="w-4 h-4 border-2 border-gray-400 rounded-full group-hover:border-purple-500 transition-colors"></div>
+                </div>
+                <p class="text-gray-600">1-50 employees</p>
+                <p class="text-sm text-purple-600 mt-2">Perfect for startups and small businesses</p>
+              </button>
+              
+              <button class="team-size-option p-6 border-2 border-gray-300 rounded-2xl hover:border-purple-500 hover:bg-purple-50 transition-all text-left group" data-size="medium" data-range="51-200">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-lg font-semibold text-gray-900">Growing Company</span>
+                  <div class="w-4 h-4 border-2 border-gray-400 rounded-full group-hover:border-purple-500 transition-colors"></div>
+                </div>
+                <p class="text-gray-600">51-200 employees</p>
+                <p class="text-sm text-purple-600 mt-2">Ideal for scaling organizations</p>
+              </button>
+              
+              <button class="team-size-option p-6 border-2 border-gray-300 rounded-2xl hover:border-purple-500 hover:bg-purple-50 transition-all text-left group" data-size="large" data-range="201-1000">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-lg font-semibold text-gray-900">Large Organization</span>
+                  <div class="w-4 h-4 border-2 border-gray-400 rounded-full group-hover:border-purple-500 transition-colors"></div>
+                </div>
+                <p class="text-gray-600">201-1000 employees</p>
+                <p class="text-sm text-purple-600 mt-2">For established enterprises</p>
+              </button>
+              
+              <button class="team-size-option p-6 border-2 border-gray-300 rounded-2xl hover:border-purple-500 hover:bg-purple-50 transition-all text-left group" data-size="enterprise" data-range="1000+">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-lg font-semibold text-gray-900">Enterprise</span>
+                  <div class="w-4 h-4 border-2 border-gray-400 rounded-full group-hover:border-purple-500 transition-colors"></div>
+                </div>
+                <p class="text-gray-600">1000+ employees</p>
+                <p class="text-sm text-purple-600 mt-2">Custom enterprise solutions</p>
+              </button>
+            </div>
+            
+            <button 
+              id="step-2-next"
+              class="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-4 px-8 rounded-2xl font-bold text-lg transition-all hover:scale-105 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+              disabled
+            >
+              Show My Pricing
+              <svg class="w-5 h-5 inline ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 3: Pricing Plans -->
+        <div id="step-3" class="onboarding-step hidden w-full max-w-7xl mx-auto">
+          <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 font-display">
+              Perfect Plan for{' '}
+              <span id="company-display-2" class="bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent"></span>
+            </h2>
+            <p class="text-xl text-gray-600">
+              Based on your team size, here's our recommendation
+            </p>
+          </div>
+
+          <!-- Pricing Cards Container with Better Spacing -->
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 relative px-4">
+            
+            <!-- Starter Plan -->
+            <div id="starter-plan" class="pricing-card bg-white/80 backdrop-blur-sm rounded-3xl border-2 border-gray-200 p-8 relative transition-all duration-500 hover:shadow-xl">
+              <div class="text-center mb-8">
+                <h3 class="text-2xl font-bold text-gray-900 mb-2 font-display">Starter</h3>
+                <p class="text-gray-600 mb-6">Perfect for small teams</p>
+                <div class="mb-6">
+                  <span class="text-5xl font-black bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">$99</span>
+                  <span class="text-gray-600 text-lg">/month</span>
+                </div>
+              </div>
+              
+              <ul class="space-y-4 mb-8">
+                <li class="flex items-center gap-3">
+                  <div class="w-5 h-5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
+                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                  <span class="text-gray-700">Up to 50 employees</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <div class="w-5 h-5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
+                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                  <span class="text-gray-700">Basic analytics dashboard</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <div class="w-5 h-5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
+                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                  <span class="text-gray-700">Monthly reports</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <div class="w-5 h-5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
+                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                  <span class="text-gray-700">Email support</span>
+                </li>
+              </ul>
+              
+              <button class="plan-select-btn w-full border-2 border-purple-600 text-purple-600 py-4 rounded-2xl font-bold text-lg transition-all duration-300 hover:bg-purple-600 hover:text-white hover:scale-105" data-plan="starter">
+                Choose Starter
+              </button>
+            </div>
+            
+            <!-- Professional Plan -->
+            <div id="professional-plan" class="pricing-card bg-white/90 backdrop-blur-sm rounded-3xl border-2 border-purple-600 p-8 relative shadow-2xl transform">
+              <div class="absolute -top-6 left-1/2 transform -translate-x-1/2">
+                <div class="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-3 rounded-full text-sm font-bold flex items-center gap-1 shadow-lg">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                  </svg>
+                  Recommended
+                </div>
+              </div>
+              
+              <div class="text-center mb-8 mt-4">
+                <h3 class="text-2xl font-bold text-gray-900 mb-2 font-display">Professional</h3>
+                <p class="text-gray-600 mb-6">Ideal for growing companies</p>
+                <div class="mb-6">
+                  <span class="text-5xl font-black bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">$299</span>
+                  <span class="text-gray-600 text-lg">/month</span>
+                </div>
+              </div>
+              
+              <ul class="space-y-4 mb-8">
+                <li class="flex items-center gap-3">
+                  <div class="w-5 h-5 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center">
+                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                  <span class="text-gray-700">Up to 200 employees</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <div class="w-5 h-5 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center">
+                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                  <span class="text-gray-700">Advanced AI analytics</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <div class="w-5 h-5 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center">
+                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                  <span class="text-gray-700">Real-time insights</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <div class="w-5 h-5 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center">
+                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                  <span class="text-gray-700">3D visualization</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <div class="w-5 h-5 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center">
+                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                  <span class="text-gray-700">Simulation canvas</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <div class="w-5 h-5 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center">
+                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                  <span class="text-gray-700">Priority support</span>
+                </li>
+              </ul>
+              
+              <button class="plan-select-btn w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-4 rounded-2xl font-bold text-lg transition-all hover:scale-105 shadow-lg" data-plan="professional">
+                Start Free Trial
+              </button>
+            </div>
+            
+            <!-- Enterprise Plan -->
+            <div id="enterprise-plan" class="pricing-card bg-white/80 backdrop-blur-sm rounded-3xl border-2 border-gray-200 p-8 relative transition-all duration-500 hover:shadow-xl">
+              <div class="text-center mb-8">
+                <h3 class="text-2xl font-bold text-gray-900 mb-2 font-display">Enterprise</h3>
+                <p class="text-gray-600 mb-6">For large organizations</p>
+                <div class="mb-6">
+                  <span class="text-5xl font-black bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Custom</span>
+                </div>
+              </div>
+              
+              <ul class="space-y-4 mb-8">
+                <li class="flex items-center gap-3">
+                  <div class="w-5 h-5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
+                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                  <span class="text-gray-700">Unlimited employees</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <div class="w-5 h-5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
+                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                  <span class="text-gray-700">White-label solution</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <div class="w-5 h-5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
+                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                  <span class="text-gray-700">Custom AI models</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <div class="w-5 h-5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
+                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                  <span class="text-gray-700">Dedicated support</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <div class="w-5 h-5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
+                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                  <span class="text-gray-700">On-premise deployment</span>
+                </li>
+              </ul>
+              
+              <button class="plan-select-btn w-full border-2 border-purple-600 text-purple-600 py-4 rounded-2xl font-bold text-lg transition-all duration-300 hover:bg-purple-600 hover:text-white hover:scale-105" data-plan="enterprise">
+                Contact Sales
+              </button>
+            </div>
+          </div>
+
+          <!-- Back Button -->
+          <div class="text-center mt-16">
+            <button id="back-to-step-2" class="text-purple-600 hover:text-purple-800 font-medium flex items-center gap-2 mx-auto transition-colors">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+              </svg>
+              Back to team size
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .onboarding-step {
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 0.5s ease-in-out;
+  }
+  
+  .onboarding-step.hidden {
+    opacity: 0;
+    transform: translateX(100px);
+    pointer-events: none;
+  }
+  
+  .onboarding-step.slide-out {
+    opacity: 0;
+    transform: translateX(-100px);
+    pointer-events: none;
+  }
+  
+  .team-size-option.selected {
+    border-color: #8b5cf6;
+    background-color: #f3f4f6;
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+  }
+  
+  .team-size-option.selected .w-4 {
+    background-color: #8b5cf6;
+    border-color: #8b5cf6;
+    position: relative;
+  }
+  
+  .team-size-option.selected .w-4::after {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .pricing-card.dimmed {
+    opacity: 0.5;
+    transform: scale(0.95);
+    filter: blur(1px);
+  }
+  
+  .pricing-card.highlighted {
+    opacity: 1;
+    transform: scale(1.05);
+    box-shadow: 0 25px 50px -12px rgba(139, 92, 246, 0.3);
+    border-color: #8b5cf6;
+  }
+  
+  .pricing-card {
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    let currentStep = 1;
+    let companyName = '';
+    let teamSize = '';
+    let selectedPlan = '';
+    
+    // Step 1: Company Name
+    const companyNameInput = document.getElementById('company-name');
+    const step1NextBtn = document.getElementById('step-1-next');
+    
+    companyNameInput.addEventListener('input', function() {
+      companyName = this.value.trim();
+      step1NextBtn.disabled = companyName.length < 2;
+    });
+    
+    companyNameInput.addEventListener('keypress', function(e) {
+      if (e.key === 'Enter' && !step1NextBtn.disabled) {
+        step1NextBtn.click();
+      }
+    });
+    
+    step1NextBtn.addEventListener('click', function() {
+      if (companyName.length >= 2) {
+        goToStep(2);
+      }
+    });
+    
+    // Step 2: Team Size
+    const teamSizeOptions = document.querySelectorAll('.team-size-option');
+    const step2NextBtn = document.getElementById('step-2-next');
+    
+    teamSizeOptions.forEach(option => {
+      option.addEventListener('click', function() {
+        // Remove selected class from all options
+        teamSizeOptions.forEach(opt => opt.classList.remove('selected'));
+        
+        // Add selected class to clicked option
+        this.classList.add('selected');
+        
+        teamSize = this.dataset.size;
+        step2NextBtn.disabled = false;
+      });
+    });
+    
+    step2NextBtn.addEventListener('click', function() {
+      if (teamSize) {
+        goToStep(3);
+      }
+    });
+    
+    // Step 3: Pricing
+    const planSelectBtns = document.querySelectorAll('.plan-select-btn');
+    const backToStep2Btn = document.getElementById('back-to-step-2');
+    
+    planSelectBtns.forEach(btn => {
+      btn.addEventListener('click', async function() {
+        selectedPlan = this.dataset.plan;
+        
+        // Send data to Google Sheets
+        await sendToGoogleSheets(companyName, teamSize, selectedPlan);
+        
+        // Redirect based on plan
+        if (selectedPlan === 'enterprise') {
+          window.location.href = '/contact';
+        } else {
+          // Redirect to app signup with data
+          const params = new URLSearchParams({
+            company: companyName,
+            plan: selectedPlan,
+            teamSize: teamSize
+          });
+          window.location.href = `https://app.selora.com/company-signup?${params.toString()}`;
+        }
+      });
+    });
+    
+    backToStep2Btn.addEventListener('click', function() {
+      goToStep(2);
+    });
+    
+    function goToStep(stepNumber) {
+      // Hide current step
+      const currentStepEl = document.getElementById(`step-${currentStep}`);
+      currentStepEl.classList.add('slide-out');
+      
+      setTimeout(() => {
+        currentStepEl.classList.add('hidden');
+        currentStepEl.classList.remove('slide-out');
+        
+        // Show new step
+        const newStepEl = document.getElementById(`step-${stepNumber}`);
+        newStepEl.classList.remove('hidden');
+        
+        // Update step-specific content
+        if (stepNumber === 2) {
+          document.getElementById('company-display').textContent = companyName;
+        } else if (stepNumber === 3) {
+          document.getElementById('company-display-2').textContent = companyName;
+          updatePricingRecommendation();
+        }
+        
+        currentStep = stepNumber;
+      }, 250);
+    }
+    
+    function updatePricingRecommendation() {
+      const starterPlan = document.getElementById('starter-plan');
+      const professionalPlan = document.getElementById('professional-plan');
+      const enterprisePlan = document.getElementById('enterprise-plan');
+      
+      // Reset all plans
+      [starterPlan, professionalPlan, enterprisePlan].forEach(plan => {
+        plan.classList.remove('dimmed', 'highlighted');
+      });
+      
+      // Highlight recommended plan based on team size
+      switch (teamSize) {
+        case 'small':
+          starterPlan.classList.add('highlighted');
+          professionalPlan.classList.add('dimmed');
+          enterprisePlan.classList.add('dimmed');
+          break;
+        case 'medium':
+          starterPlan.classList.add('dimmed');
+          professionalPlan.classList.add('highlighted');
+          enterprisePlan.classList.add('dimmed');
+          break;
+        case 'large':
+          starterPlan.classList.add('dimmed');
+          professionalPlan.classList.add('highlighted');
+          enterprisePlan.classList.add('dimmed');
+          break;
+        case 'enterprise':
+          starterPlan.classList.add('dimmed');
+          professionalPlan.classList.add('dimmed');
+          enterprisePlan.classList.add('highlighted');
+          break;
+      }
+    }
+    
+    async function sendToGoogleSheets(company, teamSize, plan) {
+      try {
+        // You'll need to replace this with your actual Google Sheets API endpoint
+        // This is a placeholder for the Google Sheets integration
+        const response = await fetch('https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec', {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            timestamp: new Date().toISOString(),
+            companyName: company,
+            teamSize: teamSize,
+            selectedPlan: plan,
+            source: 'onboarding'
+          })
+        });
+        
+        console.log('Data sent to Google Sheets successfully');
+      } catch (error) {
+        console.error('Error sending data to Google Sheets:', error);
+        // Continue with the flow even if logging fails
+      }
+    }
+  });
+</script>

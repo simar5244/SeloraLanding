@@ -1,0 +1,311 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+---
+
+<Layout title="Pricing - Selora">
+  <Header client:load />
+  
+  <main class="pt-20 pb-16 bg-gradient-to-br from-gray-50 via-white to-purple-50/30 relative overflow-hidden">
+    <!-- Background Elements -->
+    <div class="absolute inset-0 overflow-hidden">
+      <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-200/20 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-200/20 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <!-- Hero Section -->
+      <div class="text-center mb-20">
+        <div class="inline-flex items-center bg-white/80 backdrop-blur-sm rounded-full px-6 py-3 mb-8 border border-purple-200/50">
+          <span class="text-purple-600 font-semibold">💰 Simple & Transparent</span>
+        </div>
+        <h1 class="text-6xl md:text-7xl font-black text-gray-900 mb-8 leading-tight font-display">
+          <span class="bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent">
+            Simple Pricing
+          </span>
+        </h1>
+        <p class="text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+          Choose the plan that fits your organization's needs. All plans include our{' '}
+          <span class="font-semibold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+            99.994% accurate AI analytics
+          </span>.
+        </p>
+        <div class="mt-8 inline-flex items-center bg-white/80 backdrop-blur-sm rounded-full p-1 border border-gray-200">
+          <button class="px-6 py-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full font-medium shadow-sm">Monthly</button>
+          <button class="px-6 py-2 text-purple-600 rounded-full font-medium">Annual (Save 20%)</button>
+        </div>
+      </div>
+      
+      <!-- Pricing Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-20">
+        <!-- Starter Plan -->
+        <div class="bg-white/80 backdrop-blur-sm rounded-3xl border-2 border-gray-200 p-8 relative hover:border-purple-300 transition-all duration-300 hover:shadow-xl hover:scale-105">
+          <div class="text-center mb-8">
+            <h3 class="text-2xl font-bold text-gray-900 mb-2 font-display">Starter</h3>
+            <p class="text-gray-600 mb-6">Perfect for small teams</p>
+            <div class="mb-6">
+              <span class="text-6xl font-black bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">$99</span>
+              <span class="text-gray-600 text-lg">/month</span>
+            </div>
+          </div>
+          
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-center gap-3">
+              <div class="w-5 h-5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
+                <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <span class="text-gray-700">Up to 50 employees</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <div class="w-5 h-5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
+                <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <span class="text-gray-700">Basic analytics dashboard</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <div class="w-5 h-5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
+                <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <span class="text-gray-700">Monthly reports</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <div class="w-5 h-5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
+                <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <span class="text-gray-700">Email support</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <div class="w-5 h-5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
+                <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <span class="text-gray-700">Core AI insights</span>
+            </li>
+          </ul>
+          
+          <button class="w-full border-2 border-purple-600 text-purple-600 py-4 rounded-2xl font-bold text-lg transition-all duration-300 hover:bg-purple-600 hover:text-white hover:scale-105">
+            Get Started
+          </button>
+        </div>
+        
+        <!-- Professional Plan -->
+        <div class="bg-white/90 backdrop-blur-sm rounded-3xl border-2 border-purple-600 p-8 relative shadow-2xl scale-105 transform">
+          <div class="absolute -top-6 left-1/2 transform -translate-x-1/2">
+            <div class="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-3 rounded-full text-sm font-bold flex items-center gap-1 shadow-lg">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              </svg>
+              Most Popular
+            </div>
+          </div>
+          
+          <div class="text-center mb-8 mt-4">
+            <h3 class="text-2xl font-bold text-gray-900 mb-2 font-display">Professional</h3>
+            <p class="text-gray-600 mb-6">Ideal for growing companies</p>
+            <div class="mb-6">
+              <span class="text-6xl font-black bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">$299</span>
+              <span class="text-gray-600 text-lg">/month</span>
+            </div>
+          </div>
+          
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-center gap-3">
+              <div class="w-5 h-5 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center">
+                <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <span class="text-gray-700">Up to 200 employees</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <div class="w-5 h-5 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center">
+                <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <span class="text-gray-700">Advanced AI analytics</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <div class="w-5 h-5 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center">
+                <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <span class="text-gray-700">Real-time insights</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <div class="w-5 h-5 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center">
+                <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <span class="text-gray-700">3D visualization</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <div class="w-5 h-5 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center">
+                <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <span class="text-gray-700">Simulation canvas</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <div class="w-5 h-5 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center">
+                <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <span class="text-gray-700">Priority support</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <div class="w-5 h-5 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center">
+                <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <span class="text-gray-700">Custom integrations</span>
+            </li>
+          </ul>
+          
+          <button class="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-4 rounded-2xl font-bold text-lg transition-all hover:scale-105 shadow-lg">
+            Start Free Trial
+          </button>
+        </div>
+        
+        <!-- Enterprise Plan -->
+        <div class="bg-white/80 backdrop-blur-sm rounded-3xl border-2 border-gray-200 p-8 relative hover:border-purple-300 transition-all duration-300 hover:shadow-xl hover:scale-105">
+          <div class="text-center mb-8">
+            <h3 class="text-2xl font-bold text-gray-900 mb-2 font-display">Enterprise</h3>
+            <p class="text-gray-600 mb-6">For large organizations</p>
+            <div class="mb-6">
+              <span class="text-6xl font-black bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Custom</span>
+            </div>
+          </div>
+          
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-center gap-3">
+              <div class="w-5 h-5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
+                <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <span class="text-gray-700">Unlimited employees</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <div class="w-5 h-5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
+                <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <span class="text-gray-700">White-label solution</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <div class="w-5 h-5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
+                <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <span class="text-gray-700">Custom AI models</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <div class="w-5 h-5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
+                <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <span class="text-gray-700">Dedicated support</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <div class="w-5 h-5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
+                <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <span class="text-gray-700">On-premise deployment</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <div class="w-5 h-5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
+                <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <span class="text-gray-700">Advanced security</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <div class="w-5 h-5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
+                <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <span class="text-gray-700">Custom reporting</span>
+            </li>
+          </ul>
+          
+          <button class="w-full border-2 border-purple-600 text-purple-600 py-4 rounded-2xl font-bold text-lg transition-all duration-300 hover:bg-purple-600 hover:text-white hover:scale-105">
+            Contact Sales
+          </button>
+        </div>
+      </div>
+
+      <!-- FAQ Section -->
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold text-center text-gray-900 mb-12 font-display">
+          <span class="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+            Frequently Asked Questions
+          </span>
+        </h2>
+        <div class="space-y-6">
+          <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-gray-200 hover:shadow-lg transition-all">
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">How accurate is the AI prediction?</h3>
+            <p class="text-gray-600">Our AI algorithms achieve 99.994% accuracy in workforce predictions, trained on millions of data points from diverse organizations.</p>
+          </div>
+          <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-gray-200 hover:shadow-lg transition-all">
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Can I upgrade or downgrade my plan?</h3>
+            <p class="text-gray-600">Yes, you can change your plan at any time. Upgrades take effect immediately, while downgrades take effect at your next billing cycle.</p>
+          </div>
+          <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-gray-200 hover:shadow-lg transition-all">
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Is my data secure?</h3>
+            <p class="text-gray-600">Absolutely. We use enterprise-grade security with AES-256 encryption, SOC 2 Type II certification, and GDPR compliance.</p>
+          </div>
+          <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-gray-200 hover:shadow-lg transition-all">
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Do you offer a free trial?</h3>
+            <p class="text-gray-600">Yes, we offer a 30-day free trial for the Professional plan with full access to all features and no credit card required.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA Section -->
+      <div class="mt-20 text-center">
+        <div class="bg-gradient-to-r from-purple-600 to-pink-600 rounded-3xl p-12 text-white relative overflow-hidden">
+          <div class="absolute inset-0 bg-black/10"></div>
+          <div class="relative z-10">
+            <h2 class="text-4xl font-bold mb-6 font-display">Ready to Transform Your Workforce?</h2>
+            <p class="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
+              Join hundreds of organizations already using Selora to make smarter workforce decisions!
+            </p>
+            <div class="flex flex-col sm:flex-row gap-6 justify-center">
+              <a href="/demo" class="bg-white text-purple-600 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-gray-100 transition-colors transform hover:scale-105">
+                Start Free Trial
+              </a>
+              <a href="/contact" class="border-2 border-white text-white px-8 py-4 rounded-2xl font-bold text-lg hover:bg-white hover:text-purple-600 transition-colors transform hover:scale-105">
+                Contact Sales
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <Footer client:load />
+</Layout>

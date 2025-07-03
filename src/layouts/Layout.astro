@@ -1,0 +1,488 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Selora - You can't scale what you can't see" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
+  </head>
+  <body class="bg-gradient-to-br from-[#f9f5ff] via-[#f0f7ff] to-[#f5f3ff] text-gray-900 font-sans antialiased relative overflow-x-hidden">
+    <!-- Background elements -->
+    <div class="fixed inset-0 -z-10 overflow-hidden">
+      <!-- Subtle grid pattern -->
+      <div class="absolute inset-0 opacity-[0.03]" style="background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%239C92AC' fill-opacity='0.2' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E");"></div>
+      
+      <!-- Floating blobs -->
+      <div class="absolute w-[800px] h-[800px] -top-1/3 -left-1/4 rounded-full bg-gradient-to-r from-purple-100 to-pink-100 opacity-40 mix-blend-soft-light blur-[100px] animate-blob1"></div>
+      <div class="absolute w-[600px] h-[600px] -bottom-1/4 -right-1/4 rounded-full bg-gradient-to-r from-blue-50 to-cyan-100 opacity-40 mix-blend-soft-light blur-[100px] animate-blob2"></div>
+      <div class="absolute w-[400px] h-[400px] top-1/3 right-1/4 rounded-full bg-gradient-to-r from-indigo-50 to-violet-100 opacity-40 mix-blend-soft-light blur-[80px] animate-blob3"></div>
+      
+      <!-- Decorative dots -->
+      <div class="absolute top-1/4 left-1/4 w-3 h-3 rounded-full bg-purple-300 opacity-20 animate-pulse"></div>
+      <div class="absolute top-2/3 right-1/3 w-4 h-4 rounded-full bg-blue-300 opacity-20 animate-pulse animation-delay-1000"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-2 h-2 rounded-full bg-pink-300 opacity-20 animate-pulse animation-delay-1500"></div>
+    </div>
+    
+    <!-- Smooth scroll container -->
+    <div id="smooth-wrapper">
+      <div id="smooth-content">
+        <!-- Custom cursor -->
+        <div id="cursor" class="fixed w-6 h-6 bg-white/80 border-2 border-purple-300 rounded-full pointer-events-none transform -translate-x-1/2 -translate-y-1/2 z-50 mix-blend-difference transition-all duration-100 ease-out backdrop-blur-sm"></div>
+        <div id="cursor-follower" class="fixed w-10 h-10 bg-purple-100/30 rounded-full pointer-events-none transform -translate-x-1/2 -translate-y-1/2 z-40 transition-all duration-300 ease-out backdrop-blur-sm"></div>
+        
+        <!-- Scroll progress indicator -->
+        <div class="fixed top-0 left-0 h-1 bg-gradient-to-r from-purple-400 to-pink-400 z-50 transition-all duration-300 ease-out rounded-r-full" id="scroll-progress"></div>
+
+        <!-- Custom cursor -->
+        <div id="cursor" class="fixed w-8 h-8 bg-white/10 border-2 border-purple-400 rounded-full pointer-events-none transform -translate-x-1/2 -translate-y-1/2 z-50 mix-blend-difference transition-transform duration-100 ease-out"></div>
+        <div id="cursor-follower" class="fixed w-6 h-6 bg-white/30 rounded-full pointer-events-none transform -translate-x-1/2 -translate-y-1/2 z-40 mix-blend-difference transition-all duration-300 ease-out"></div>
+        
+        <!-- Scroll progress indicator -->
+        <div class="fixed top-0 left-0 h-0.5 bg-gradient-to-r from-purple-500 to-indigo-500 z-50 transition-all duration-300 ease-out" id="scroll-progress"></div>
+        
+        <!-- Main content -->
+        <main>
+          <slot />
+        </main>
+        
+        <!-- Scroll indicator -->
+        <div class="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-40 flex flex-col items-center opacity-0 animate-fadeInUp" style="animation-delay: 1.5s;">
+          <span class="text-sm text-gray-500 mb-2">Scroll</span>
+          <div class="w-px h-10 bg-gradient-to-b from-purple-400 to-transparent"></div>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        // Dynamically import Locomotive Scroll
+        import('locomotive-scroll').then((LocomotiveScroll) => {
+          // Initialize Locomotive Scroll
+          const scroll = new LocomotiveScroll.default({
+            el: document.querySelector('#smooth-wrapper'),
+            smooth: true,
+            lerp: 0.08,
+            smartphone: { smooth: true },
+            tablet: { smooth: true },
+            getDirection: true,
+            getSpeed: true
+          });
+          
+          // Update scroll position on resize
+          window.addEventListener('resize', () => {
+            scroll.update();
+          });
+          
+          // Scroll progress indicator
+          const scrollProgress = document.getElementById('scroll-progress');
+          
+          scroll.on('scroll', (args) => {
+            // Update scroll progress bar
+            if (args.scroll && args.limit) {
+              const progress = (args.scroll.y / (args.limit.y - window.innerHeight)) * 100;
+              if (scrollProgress) {
+                scrollProgress.style.width = `${progress}%`;
+              }
+            }
+            
+            // Trigger animations based on scroll position
+            document.querySelectorAll('[data-scroll]').forEach(el => {
+              const rect = el.getBoundingClientRect();
+              const isInView = (
+                rect.top <= window.innerHeight * 0.8 &&
+                rect.bottom >= window.innerHeight * 0.2
+              );
+              
+              if (isInView) {
+                el.classList.add('is-visible');
+              }
+            });
+          });
+          
+          // Custom cursor
+          const cursor = document.getElementById('cursor');
+          const cursorFollower = document.getElementById('cursor-follower');
+          let mouseX = 0;
+          let mouseY = 0;
+          let posX = 0;
+          let posY = 0;
+          let posX2 = 0;
+          let posY2 = 0;
+          
+          // Mouse move event
+          document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+          });
+          
+          // Animate cursor
+          function updateCursor() {
+            // Leading cursor (small dot)
+            posX2 += (mouseX - posX2) * 0.2;
+            posY2 += (mouseY - posY2) * 0.2;
+            
+            // Follower cursor (large circle)
+            posX += (mouseX - posX) * 0.1;
+            posY += (mouseY - posY) * 0.1;
+            
+            // Apply transforms
+            if (cursor && cursorFollower) {
+              cursor.style.transform = `translate(${posX2}px, ${posY2}px)`;
+              cursorFollower.style.transform = `translate(${posX}px, ${posY}px)`;
+            }
+            
+            requestAnimationFrame(updateCursor);
+          }
+          
+          // Hover effects
+          document.querySelectorAll('a, button, .interactive').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+              if (cursor && cursorFollower) {
+                cursor.style.transform = `translate(${posX2}px, ${posY2}px) scale(1.5)`;
+                cursorFollower.style.transform = `translate(${posX}px, ${posY}px) scale(0.5)`;
+              }
+            });
+            
+            el.addEventListener('mouseleave', () => {
+              if (cursor && cursorFollower) {
+                cursor.style.transform = `translate(${posX2}px, ${posY2}px) scale(1)`;
+                cursorFollower.style.transform = `translate(${posX}px, ${posY}px) scale(1)`;
+              }
+            });
+          });
+          
+          // Start cursor animation
+          updateCursor();
+          
+          // Initialize animations
+          const animateOnScroll = () => {
+            document.querySelectorAll('[data-scroll]').forEach((el, i) => {
+              setTimeout(() => {
+                el.style.opacity = '1';
+                el.style.transform = 'translateY(0)';
+              }, i * 150);
+            });
+          };
+          
+          // Run animations once content is loaded
+          window.addEventListener('load', animateOnScroll);
+          
+          // Smooth scroll for anchor links
+          document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+              e.preventDefault();
+              const target = document.querySelector(this.getAttribute('href'));
+              if (target) {
+                scroll.scrollTo(target, {
+                  offset: -80,
+                  duration: 1.2,
+                  easing: [0.25, 0.1, 0.25, 1]
+                });
+              }
+            });
+          });
+        }).catch(error => {
+          console.error('Error loading Locomotive Scroll:', error);
+        });
+      });
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  /* Base styles */
+  :root {
+    --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+    --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
+  }
+  
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+  
+  @keyframes blob1 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(20px, -20px) scale(1.05); }
+    50% { transform: translate(0, 20px) scale(0.95); }
+    75% { transform: translate(-20px, -10px) scale(1.02); }
+  }
+  
+  @keyframes blob2 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(-20px, 20px) scale(1.03); }
+    50% { transform: translate(10px, -10px) scale(0.98); }
+    75% { transform: translate(20px, 10px) scale(1.01); }
+  }
+  
+  @keyframes blob3 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(15px, 15px) scale(1.02); }
+    50% { transform: translate(-10px, 10px) scale(0.97); }
+    75% { transform: translate(-15px, -5px) scale(1.04); }
+  }
+  
+  .animate-blob1 { 
+    animation: blob1 25s ease-in-out infinite; 
+    animation-delay: 0s;
+  }
+  .animate-blob2 { 
+    animation: blob2 30s ease-in-out infinite; 
+    animation-delay: 5s;
+  }
+  .animate-blob3 { 
+    animation: blob3 35s ease-in-out infinite; 
+    animation-delay: 10s;
+  }
+  
+  @keyframes pulse {
+    0%, 100% { opacity: 0.2; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(1.2); }
+  }
+  
+  .animate-pulse {
+    animation: pulse 4s ease-in-out infinite;
+  }
+  
+  .animation-delay-1000 {
+    animation-delay: 1s;
+  }
+  
+  .animation-delay-1500 {
+    animation-delay: 1.5s;
+  }
+  
+  /* Body styles */
+  body {
+    overflow-x: hidden;
+    font-family: 'Inter', 'Space Grotesk', system-ui, sans-serif;
+    position: relative;
+    color: #1a1a1a;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+  }
+  
+  /* Smooth scroll container */
+  #smooth-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  #smooth-content {
+    will-change: transform;
+  }
+  
+  /* Typography */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+  
+  /* Animations */
+  .animate-blob1 {
+    animation: blob1 20s infinite var(--ease-in-out-quart);
+  }
+  
+  .animate-blob2 {
+    animation: blob2 25s infinite var(--ease-in-out-quart);
+    animation-delay: -5s;
+  }
+  
+  .animate-blob3 {
+    animation: blob3 30s infinite var(--ease-in-out-quart);
+    animation-delay: -10s;
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-fadeInUp {
+    animation: fadeInUp 0.8s var(--ease-out-quart) forwards;
+    opacity: 0;
+  }
+  
+  /* Grid background */
+  .bg-grid {
+    background-size: 40px 40px;
+    background-image: linear-gradient(to right, currentColor 1px, transparent 1px),
+                      linear-gradient(to bottom, currentColor 1px, transparent 1px);
+  }
+  
+  /* Interactive elements */
+  a, button, .interactive {
+    transition: all 0.3s var(--ease-out-quart);
+  }
+  
+  a:hover, button:hover, .interactive:hover {
+    transition-duration: 0.2s;
+  }
+  
+  /* Section spacing */
+  section {
+    position: relative;
+    padding: 8rem 0;
+  }
+  
+  /* Container */
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  
+  /* Smooth scroll behavior for anchor links */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #8b5cf6, #ec4899);
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, #7c3aed, #db2777);
+  }
+
+  /* Animated background elements */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: 
+      radial-gradient(circle at 20% 30%, rgba(168, 85, 247, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 70%, rgba(168, 85, 247, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 40% 80%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  /* Connecting lines */
+  body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: 
+      linear-gradient(90deg, rgba(168, 85, 247, 0.1) 1px, transparent 1px),
+      linear-gradient(0deg, rgba(168, 85, 247, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    mask-image: radial-gradient(ellipse at center, rgba(0,0,0,1) 0%,rgba(0,0,0,0.8) 20%,rgba(0,0,0,0) 70%);
+    -webkit-mask-image: radial-gradient(ellipse at center, rgba(0,0,0,1) 0%,rgba(0,0,0,0.8) 20%,rgba(0,0,0,0) 70%);
+    pointer-events: none;
+  }
+
+  /* Animated floating elements */
+  @keyframes float1 {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    50% { transform: translate(20px, 20px) rotate(5deg); }
+  }
+
+  @keyframes float2 {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    50% { transform: translate(-15px, 15px) rotate(-3deg); }
+  }
+
+  .floating-element {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(40px);
+    opacity: 0.4;
+    z-index: -1;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+
+  .floating-element-1 {
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(135deg, #8b5cf6, #c4b5fd);
+    top: 10%;
+    left: 10%;
+    animation-name: float1;
+  }
+
+  .floating-element-2 {
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(135deg, #a78bfa, #7c3aed);
+    bottom: 10%;
+    right: 10%;
+    animation-name: float2;
+    animation-delay: -5s;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  /* Modern gradient text utilities */
+  .gradient-text {
+    background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 50%, #3b82f6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-text-purple {
+    background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Enhanced typography */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+  }
+
+  .text-display {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.05em;
+  }
+</style>
+</html>

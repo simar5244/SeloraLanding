@@ -1,0 +1,154 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+---
+
+<Layout title="Privacy Policy - Selora">
+  <Header client:load />
+  
+  <main class="pt-20 pb-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h1 class="text-4xl font-bold text-gray-900 mb-4">Privacy Policy</h1>
+        <p class="text-lg text-gray-600">Last updated: December 29, 2024</p>
+      </div>
+
+      <div class="prose prose-lg max-w-none">
+        <h2>1. Information We Collect</h2>
+        <p>Selora ("we," "our," or "us") collects information you provide directly to us, such as when you create an account, use our services, or contact us for support.</p>
+        
+        <h3>1.1 Personal Information</h3>
+        <ul>
+          <li>Contact information (name, email address, phone number)</li>
+          <li>Account credentials (username, password)</li>
+          <li>Company information (organization name, size, industry)</li>
+          <li>Professional information (job title, department, role)</li>
+        </ul>
+
+        <h3>1.2 Organizational Data</h3>
+        <ul>
+          <li>Employee performance metrics and evaluations</li>
+          <li>Organizational structure and reporting relationships</li>
+          <li>Project assignments and collaboration patterns</li>
+          <li>Utilization rates and productivity measurements</li>
+          <li>Compensation and benefits information</li>
+        </ul>
+
+        <h3>1.3 Usage Information</h3>
+        <ul>
+          <li>Log data (IP addresses, browser type, pages visited)</li>
+          <li>Device information (operating system, device identifiers)</li>
+          <li>Usage patterns and feature interactions</li>
+          <li>Performance data and error reports</li>
+        </ul>
+
+        <h2>2. How We Use Your Information</h2>
+        <p>We use the information we collect to:</p>
+        <ul>
+          <li>Provide, maintain, and improve our AI-powered workforce analytics services</li>
+          <li>Process transactions and send related information</li>
+          <li>Send technical notices, updates, security alerts, and support messages</li>
+          <li>Respond to comments, questions, and customer service requests</li>
+          <li>Develop new products, services, features, and functionality</li>
+          <li>Analyze usage patterns to improve user experience</li>
+          <li>Comply with legal obligations and protect our rights</li>
+        </ul>
+
+        <h2>3. Information Sharing and Disclosure</h2>
+        <p>We do not sell, trade, or otherwise transfer your personal information to third parties except as described in this policy:</p>
+
+        <h3>3.1 Service Providers</h3>
+        <p>We may share information with third-party service providers who perform services on our behalf, such as:</p>
+        <ul>
+          <li>Cloud hosting and data storage providers</li>
+          <li>Analytics and monitoring services</li>
+          <li>Customer support platforms</li>
+          <li>Payment processing services</li>
+        </ul>
+
+        <h3>3.2 Legal Requirements</h3>
+        <p>We may disclose information if required by law or in response to valid requests by public authorities.</p>
+
+        <h3>3.3 Business Transfers</h3>
+        <p>Information may be transferred in connection with a merger, acquisition, or sale of assets.</p>
+
+        <h2>4. Data Security</h2>
+        <p>We implement appropriate technical and organizational measures to protect your information:</p>
+        <ul>
+          <li><strong>Encryption:</strong> AES-256 encryption at rest and TLS 1.3 in transit</li>
+          <li><strong>Access Controls:</strong> Role-based access with multi-factor authentication</li>
+          <li><strong>Monitoring:</strong> Continuous security monitoring and threat detection</li>
+          <li><strong>Audits:</strong> Regular security assessments and penetration testing</li>
+          <li><strong>Compliance:</strong> SOC 2 Type II certified infrastructure</li>
+        </ul>
+
+        <h2>5. Data Retention</h2>
+        <p>We retain personal information for as long as necessary to provide our services and fulfill the purposes outlined in this policy. Organizational data is retained according to your subscription terms and applicable legal requirements.</p>
+
+        <h2>6. Your Rights and Choices</h2>
+        <p>Depending on your location, you may have certain rights regarding your personal information:</p>
+        <ul>
+          <li><strong>Access:</strong> Request access to your personal information</li>
+          <li><strong>Correction:</strong> Request correction of inaccurate information</li>
+          <li><strong>Deletion:</strong> Request deletion of your personal information</li>
+          <li><strong>Portability:</strong> Request transfer of your data to another service</li>
+          <li><strong>Restriction:</strong> Request restriction of processing</li>
+          <li><strong>Objection:</strong> Object to processing based on legitimate interests</li>
+        </ul>
+
+        <h2>7. International Data Transfers</h2>
+        <p>Your information may be transferred to and processed in countries other than your country of residence. We ensure appropriate safeguards are in place for such transfers in accordance with applicable data protection laws.</p>
+
+        <h2>8. Children's Privacy</h2>
+        <p>Our services are not intended for individuals under the age of 16. We do not knowingly collect personal information from children under 16.</p>
+
+        <h2>9. Changes to This Policy</h2>
+        <p>We may update this privacy policy from time to time. We will notify you of any material changes by posting the new policy on this page and updating the "Last updated" date.</p>
+
+        <h2>10. Contact Us</h2>
+        <p>If you have any questions about this privacy policy or our privacy practices, please contact us at:</p>
+        <ul>
+          <li>Email: privacy@selora.com</li>
+          <li>Address: Selora Inc., 123 AI Street, San Francisco, CA 94105</li>
+        </ul>
+
+        <h2>11. GDPR Compliance</h2>
+        <p>For users in the European Union, we comply with the General Data Protection Regulation (GDPR). Our lawful basis for processing includes:</p>
+        <ul>
+          <li>Consent for marketing communications</li>
+          <li>Contract performance for service delivery</li>
+          <li>Legitimate interests for product improvement</li>
+          <li>Legal obligation for compliance requirements</li>
+        </ul>
+
+        <h2>12. California Privacy Rights</h2>
+        <p>California residents have additional rights under the California Consumer Privacy Act (CCPA), including the right to know what personal information is collected, sold, or disclosed.</p>
+      </div>
+    </div>
+  </main>
+
+  <Footer client:load />
+</Layout>
+
+<style>
+  .prose h2 {
+    @apply text-2xl font-bold text-gray-900 mt-8 mb-4;
+  }
+  
+  .prose h3 {
+    @apply text-xl font-semibold text-gray-900 mt-6 mb-3;
+  }
+  
+  .prose p {
+    @apply text-gray-700 mb-4 leading-relaxed;
+  }
+  
+  .prose ul {
+    @apply list-disc list-inside mb-4 text-gray-700;
+  }
+  
+  .prose li {
+    @apply mb-2;
+  }
+</style>
