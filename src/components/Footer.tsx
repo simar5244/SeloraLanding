@@ -36,36 +36,31 @@ const Footer = () => {
               ))}
             </div>
           </div>
-          
-          {/* Product Links */}
-          <div>
-            <h4 className="text-lg font-semibold mb-6">Product</h4>
-            <ul className="space-y-3">
-              <li><a href="/#features" className="text-gray-300 hover:text-white transition-colors">Features</a></li>
-              <li><a href="/how-it-works" className="text-gray-300 hover:text-white transition-colors">How it Works</a></li>
-              <li><a href="/pricing" className="text-gray-300 hover:text-white transition-colors">Pricing</a></li>
-              <li><a href="/faq" className="text-gray-300 hover:text-white transition-colors">FAQ</a></li>
-              <li><a href="/demo" className="text-gray-300 hover:text-white transition-colors">Request Demo</a></li>
-            </ul>
-          </div>
-          
           {/* Company Links */}
           <div>
             <h4 className="text-lg font-semibold mb-6">Company</h4>
             <ul className="space-y-3">
               <li><a href="/about" className="text-gray-300 hover:text-white transition-colors">About Us</a></li>
               <li><a href="/careers" className="text-gray-300 hover:text-white transition-colors">Careers</a></li>
-              <li><a href="/contact" className="text-gray-300 hover:text-white transition-colors">Contact</a></li>
-              <li><a href="/privacy" className="text-gray-300 hover:text-white transition-colors">Privacy Policy</a></li>
-              <li><a href="/terms" className="text-gray-300 hover:text-white transition-colors">Terms of Service</a></li>
-              <li><a href="/cookies" className="text-gray-300 hover:text-white transition-colors">Cookie Policy</a></li>
             </ul>
           </div>
+          {/* Product Links */}
+          <div>
+            <h4 className="text-lg font-semibold mb-6">Product</h4>
+            <ul className="space-y-3">
+              <li><a href="/#features" className="text-gray-300 hover:text-white transition-colors">Features</a></li>
+              <li><a href="/how-it-works" className="text-gray-300 hover:text-white transition-colors">How it Works</a></li>
+              <li><a href="/faq" className="text-gray-300 hover:text-white transition-colors">FAQ</a></li>
+              <li><a href="/demo" className="text-gray-300 hover:text-white transition-colors">Request Demo</a></li>
+            </ul>
+          </div>
+          
+
         </div>
         
         <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
-            © 2024 Selora. All rights reserved.
+            © 2025 Selora. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <a href="/privacy" className="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a>

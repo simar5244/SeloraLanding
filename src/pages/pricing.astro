@@ -22,18 +22,18 @@ import Footer from '../components/Footer';
         </div>
         <h1 class="text-6xl md:text-7xl font-black text-gray-900 mb-8 leading-tight font-display">
           <span class="bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent">
-            Simple Pricing
+            Simple, Transparent Pricing
           </span>
         </h1>
         <p class="text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-          Choose the plan that fits your organization's needs. All plans include our{' '}
+          Choose the plan that fits your needs. All plans include our{' '}
           <span class="font-semibold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-            99.994% accurate AI analytics
+            core AI analytics and features
           </span>.
         </p>
-        <div class="mt-8 inline-flex items-center bg-white/80 backdrop-blur-sm rounded-full p-1 border border-gray-200">
-          <button class="px-6 py-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full font-medium shadow-sm">Monthly</button>
-          <button class="px-6 py-2 text-purple-600 rounded-full font-medium">Annual (Save 20%)</button>
+        <div class="mt-8 inline-flex items-center bg-white/80 backdrop-blur-sm rounded-full p-1 border border-gray-200" id="billing-toggle">
+          <button class="px-6 py-2 rounded-full font-medium text-sm monthly-toggle bg-gradient-to-r from-purple-600 to-pink-600 text-white">Monthly</button>
+          <button class="px-6 py-2 rounded-full font-medium text-sm annual-toggle text-gray-600">Annual (Save 20%)</button>
         </div>
       </div>
       
@@ -43,10 +43,18 @@ import Footer from '../components/Footer';
         <div class="bg-white/80 backdrop-blur-sm rounded-3xl border-2 border-gray-200 p-8 relative hover:border-purple-300 transition-all duration-300 hover:shadow-xl hover:scale-105">
           <div class="text-center mb-8">
             <h3 class="text-2xl font-bold text-gray-900 mb-2 font-display">Starter</h3>
-            <p class="text-gray-600 mb-6">Perfect for small teams</p>
+            <p class="text-gray-600 mb-6">Perfect for individuals and small teams</p>
             <div class="mb-6">
-              <span class="text-6xl font-black bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">$99</span>
-              <span class="text-gray-600 text-lg">/month</span>
+              <div class="monthly-price">
+                <span class="text-6xl font-black bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">$29</span>
+                <span class="text-gray-600 text-lg">/month</span>
+                <p class="text-sm text-gray-500 mt-1">Billed monthly</p>
+              </div>
+              <div class="annual-price hidden">
+                <span class="text-6xl font-black bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">$290</span>
+                <span class="text-gray-600 text-lg">/year</span>
+                <p class="text-sm text-gray-500 mt-1">Billed annually (Save 20%)</p>
+              </div>
             </div>
           </div>
           
@@ -57,7 +65,7 @@ import Footer from '../components/Footer';
                   <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                 </svg>
               </div>
-              <span class="text-gray-700">Up to 50 employees</span>
+              <span class="text-gray-700">1 user</span>
             </li>
             <li class="flex items-center gap-3">
               <div class="w-5 h-5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">

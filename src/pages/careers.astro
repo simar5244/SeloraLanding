@@ -7,308 +7,264 @@ import Footer from '../components/Footer';
 <Layout title="Careers - Selora">
   <Header client:load />
   
-  <main class="pt-20 pb-16 bg-gradient-to-br from-gray-50 via-white to-purple-50/30 relative overflow-hidden">
-    <!-- Background Elements -->
-    <div class="absolute inset-0 overflow-hidden">
-      <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-200/20 rounded-full blur-3xl"></div>
-      <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-200/20 rounded-full blur-3xl"></div>
-    </div>
-
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <!-- Hero Section -->
-      <div class="text-center mb-20">
-        <div class="inline-flex items-center bg-white/80 backdrop-blur-sm rounded-full px-6 py-3 mb-8 border border-purple-200/50">
-          <span class="text-purple-600 font-semibold">🚀 We're Hiring Exceptional Talent</span>
-        </div>
-        <h1 class="text-6xl md:text-7xl font-black text-gray-900 mb-8 leading-tight font-display">
-          Build the{' '}
-          <span class="bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent">
-            Future
-          </span><br>
-          of Work With Us
-        </h1>
-        <p class="text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-          Join our mission to revolutionize workforce analytics with AI. We're looking for passionate individuals who want to{' '}
-          <span class="font-semibold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-            change the world
-          </span>{' '}
-          and build something extraordinary.
-        </p>
-      </div>
-
-      <!-- Why Work Here Section -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
-        <div class="space-y-8">
-          <h2 class="text-4xl font-bold text-gray-900 mb-8 font-display">
-            <span class="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-              Why Selora is Exceptional
-            </span>
-          </h2>
-          
-          <div class="space-y-6">
-            <div class="flex items-start gap-4 group">
-              <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
-                </svg>
-              </div>
-              <div>
-                <h3 class="font-bold text-gray-900 text-xl mb-2">Cutting-Edge Technology</h3>
-                <p class="text-gray-600 leading-relaxed">
-                  Work with the latest AI and machine learning technologies. Build systems that process millions of data points 
-                  and make predictions with 99.994% accuracy. This is the bleeding edge of innovation.
-                </p>
-              </div>
-            </div>
-            
-            <div class="flex items-start gap-4 group">
-              <div class="w-12 h-12 bg-gradient-to-br from-pink-500 to-purple-500 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
-                </svg>
-              </div>
-              <div>
-                <h3 class="font-bold text-gray-900 text-xl mb-2">Massive Impact</h3>
-                <p class="text-gray-600 leading-relaxed">
-                  Your work directly impacts how organizations make decisions about their most valuable asset: their people. 
-                  You're not just coding - you're changing lives and transforming businesses.
-                </p>
-              </div>
-            </div>
-            
-            <div class="flex items-start gap-4 group">
-              <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                </svg>
-              </div>
-              <div>
-                <h3 class="font-bold text-gray-900 text-xl mb-2">Accelerated Growth</h3>
-                <p class="text-gray-600 leading-relaxed">
-                  Join a fast-growing startup where your career can accelerate rapidly. We promote from within, offer unlimited learning 
-                  opportunities, and give you the chance to become a leader in the AI revolution.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="relative">
-          <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-3xl p-8 border border-purple-200">
-            <h3 class="text-3xl font-bold text-purple-900 mb-8 font-display">Our Culture</h3>
-            <div class="space-y-6">
-              <div class="flex items-start gap-3">
-                <div class="w-8 h-8 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                  </svg>
-                </div>
-                <div>
-                  <h4 class="font-bold text-purple-800 mb-2">Innovation First</h4>
-                  <p class="text-purple-700 text-sm">
-                    We encourage bold experimentation and breakthrough thinking. Failure is just learning in disguise.
-                  </p>
-                </div>
-              </div>
-              
-              <div class="flex items-start gap-3">
-                <div class="w-8 h-8 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                  </svg>
-                </div>
-                <div>
-                  <h4 class="font-bold text-purple-800 mb-2">Collaborative Excellence</h4>
-                  <p class="text-purple-700 text-sm">
-                    Cross-functional teams working together to solve impossible problems. We win together.
-                  </p>
-                </div>
-              </div>
-              
-              <div class="flex items-start gap-3">
-                <div class="w-8 h-8 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
-                  </svg>
-                </div>
-                <div>
-                  <h4 class="font-bold text-purple-800 mb-2">Data-Driven Everything</h4>
-                  <p class="text-purple-700 text-sm">
-                    Every decision is backed by data and rigorous analysis. We don't guess - we know.
-                  </p>
-                </div>
-              </div>
-              
-              <div class="flex items-start gap-3">
-                <div class="w-8 h-8 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                  </svg>
-                </div>
-                <div>
-                  <h4 class="font-bold text-purple-800 mb-2">Remote-First</h4>
-                  <p class="text-purple-700 text-sm">
-                    Work from anywhere with flexible hours and strong async communication. Life-work balance.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Benefits Section -->
-      <div class="mb-20">
-        <h2 class="text-4xl font-bold text-gray-900 text-center mb-16 font-display">
-          <span class="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-            Exceptional Benefits & Perks
+  <main class="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <!-- Hero Section -->
+    <section class="relative pt-44 overflow-hidden">
+      <div class="absolute inset-0 bg-grid-gray-200/50 [mask-image:linear-gradient(0deg,transparent,white,transparent)]"></div>
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="text-center max-w-4xl mx-auto">
+          <span class="inline-flex items-center bg-white/80 backdrop-blur-sm rounded-full px-6 py-2 mb-6 border border-gray-200 text-sm font-medium text-indigo-600">
+            🚀 We're Hiring Exceptional Talent
           </span>
-        </h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div class="text-center group">
-            <div class="w-20 h-20 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-              <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+          <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-8 leading-tight">
+            Build the Future of <span class="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">Workforce Intelligence</span>
+          </h1>
+          <p class="text-xl text-gray-600 leading-relaxed mb-8">
+            Join our mission to revolutionize how organizations understand and optimize their most valuable asset: their people. 
+            We're building the future of work, and we want you to be part of it.
+          </p>
+          <a href="#open-positions" class="w-full sm:w-auto flex items-center justify-center px-8 py-4 border border-transparent text-base font-medium rounded-lg text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 transition-all duration-200 transform hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none">
+            View Open Positions
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Join Us Section -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:text-center mb-16">
+          <h2 class="text-base font-semibold tracking-wide uppercase text-indigo-600">Why Join Us</h2>
+          <p class="mt-2 text-3xl font-extrabold text-gray-900 sm:text-4xl">
+            Work that matters with people who care
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Impact -->
+          <div class="bg-gray-50 p-8 rounded-xl border border-gray-100 hover:shadow-md transition-shadow">
+            <div class="w-14 h-14 bg-indigo-50 rounded-lg flex items-center justify-center mb-6">
+              <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
               </svg>
             </div>
-            <h3 class="text-xl font-bold text-gray-900 mb-3">Competitive Salary + Equity</h3>
-            <p class="text-gray-600 text-sm">Top-tier compensation with significant equity upside</p>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Massive Impact</h3>
+            <p class="text-gray-600">Your work transforms how organizations understand and develop their most valuable asset—their people.</p>
           </div>
-          
-          <div class="text-center group">
-            <div class="w-20 h-20 bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-              <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+
+          <!-- Technology -->
+          <div class="bg-gray-50 p-8 rounded-xl border border-gray-100 hover:shadow-md transition-shadow">
+            <div class="w-14 h-14 bg-indigo-50 rounded-lg flex items-center justify-center mb-6">
+              <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
               </svg>
             </div>
-            <h3 class="text-xl font-bold text-gray-900 mb-3">Premium Health Coverage</h3>
-            <p class="text-gray-600 text-sm">100% covered health, dental, and vision insurance</p>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Cutting-Edge Tech</h3>
+            <p class="text-gray-600">Work with the latest AI and ML technologies that process millions of data points with incredible accuracy.</p>
           </div>
-          
-          <div class="text-center group">
-            <div class="w-20 h-20 bg-gradient-to-br from-purple-400 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-              <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+
+          <!-- Growth -->
+          <div class="bg-gray-50 p-8 rounded-xl border border-gray-100 hover:shadow-md transition-shadow">
+            <div class="w-14 h-14 bg-indigo-50 rounded-lg flex items-center justify-center mb-6">
+              <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
             </div>
-            <h3 class="text-xl font-bold text-gray-900 mb-3">$5,000 Learning Budget</h3>
-            <p class="text-gray-600 text-sm">Annual budget for courses, conferences, and certifications</p>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Accelerated Growth</h3>
+            <p class="text-gray-600">Rapid career advancement in a fast-growing startup with unlimited learning opportunities.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Culture Section -->
+    <section class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 class="text-3xl font-bold text-gray-900 mb-8">Our Culture</h2>
+            <p class="text-lg text-gray-600 mb-8">
+              At Selora, we've built a culture that fosters innovation, collaboration, and personal growth. We believe in working hard, supporting each other, and having fun along the way.
+            </p>
+            
+            <div class="space-y-6">
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 bg-indigo-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <svg class="w-5 h-5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-bold text-gray-900">Innovation First</h4>
+                  <p class="text-gray-600 text-sm">We encourage bold thinking and experimentation. Failure is just a step toward success.</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 bg-indigo-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <svg class="w-5 h-5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-bold text-gray-900">Collaborative Excellence</h4>
+                  <p class="text-gray-600 text-sm">We believe the best solutions come from diverse teams working together.</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 bg-indigo-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <svg class="w-5 h-5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-bold text-gray-900">Remote-First</h4>
+                  <p class="text-gray-600 text-sm">Work from anywhere with flexible hours and strong async communication.</p>
+                </div>
+              </div>
+            </div>
           </div>
           
-          <div class="text-center group">
-            <div class="w-20 h-20 bg-gradient-to-br from-pink-400 to-pink-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-              <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+            <div class="aspect-w-16 aspect-h-9 rounded-xl overflow-hidden">
+              <div class="w-full h-full bg-gradient-to-br from-indigo-50 to-purple-50 flex items-center justify-center">
+                <svg class="w-24 h-24 text-indigo-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:text-center mb-16">
+          <h2 class="text-base font-semibold tracking-wide uppercase text-indigo-600">Benefits & Perks</h2>
+          <p class="mt-2 text-3xl font-extrabold text-gray-900 sm:text-4xl">
+            We take care of our team
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          <!-- Competitive Compensation -->
+          <div class="bg-gray-50 p-8 rounded-xl border border-gray-100 hover:shadow-md transition-shadow">
+            <div class="w-14 h-14 bg-indigo-50 rounded-lg flex items-center justify-center mb-6">
+              <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Competitive Salary</h3>
+            <p class="text-gray-600">Top-tier compensation with significant equity upside in our fast-growing startup.</p>
+          </div>
+
+          <!-- Unlimited PTO -->
+          <div class="bg-gray-50 p-8 rounded-xl border border-gray-100 hover:shadow-md transition-shadow">
+            <div class="w-14 h-14 bg-indigo-50 rounded-lg flex items-center justify-center mb-6">
+              <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
             <h3 class="text-xl font-bold text-gray-900 mb-3">Unlimited PTO</h3>
-            <p class="text-gray-600 text-sm">Take time off whenever you need it</p>
+            <p class="text-gray-600">Take the time you need to rest, recharge, and come back at your best.</p>
           </div>
-          
-          <div class="text-center group">
-            <div class="w-20 h-20 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-              <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
-              </svg>
-            </div>
-            <h3 class="text-xl font-bold text-gray-900 mb-3">Home Office Setup</h3>
-            <p class="text-gray-600 text-sm">$3,000 budget for your dream home office</p>
-          </div>
-          
-          <div class="text-center group">
-            <div class="w-20 h-20 bg-gradient-to-br from-red-400 to-red-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-              <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+
+          <!-- Team Events -->
+          <div class="bg-gray-50 p-8 rounded-xl border border-gray-100 hover:shadow-md transition-shadow">
+            <div class="w-14 h-14 bg-indigo-50 rounded-lg flex items-center justify-center mb-6">
+              <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
             <h3 class="text-xl font-bold text-gray-900 mb-3">Team Events</h3>
-            <p class="text-gray-600 text-sm">Quarterly team retreats and celebrations</p>
+            <p class="text-gray-600">Quarterly retreats and celebrations to connect with your team.</p>
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- Open Positions -->
-      <div class="mb-20">
-        <h2 class="text-4xl font-bold text-gray-900 text-center mb-16 font-display">
-          <span class="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-            We're Looking for Exceptional Talent
-          </span>
-        </h2>
-        
-        <div class="bg-gradient-to-br from-purple-600 to-pink-600 rounded-3xl p-12 text-white text-center mb-12 relative overflow-hidden">
-          <div class="absolute inset-0 bg-black/10"></div>
-          <div class="relative z-10">
-            <h3 class="text-3xl font-bold mb-6 font-display">General Application</h3>
-            <p class="text-xl mb-8 opacity-90 max-w-3xl mx-auto">
-              We don't have specific positions open right now, but we're always looking for exceptional talent! 
-              If you're passionate about AI, workforce analytics, and changing the world, we want to hear from you.
-            </p>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-              <div class="bg-white/20 rounded-2xl p-6 backdrop-blur-sm">
-                <div class="text-2xl mb-3">
-                  <svg class="w-8 h-8 mx-auto text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
-                  </svg>
-                </div>
-                <h4 class="font-bold mb-2">AI/ML Engineers</h4>
-                <p class="text-sm opacity-90">Build the future of predictive analytics</p>
-              </div>
-              
-              <div class="bg-white/20 rounded-2xl p-6 backdrop-blur-sm">
-                <div class="text-2xl mb-3">
-                  <svg class="w-8 h-8 mx-auto text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
-                  </svg>
-                </div>
-                <h4 class="font-bold mb-2">Full-Stack Developers</h4>
-                <p class="text-sm opacity-90">Create amazing user experiences</p>
-              </div>
-              
-              <div class="bg-white/20 rounded-2xl p-6 backdrop-blur-sm">
-                <div class="text-2xl mb-3">
-                  <svg class="w-8 h-8 mx-auto text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17v4a2 2 0 002 2h4M15 5l2 2"></path>
-                  </svg>
-                </div>
-                <h4 class="font-bold mb-2">Product Designers</h4>
-                <p class="text-sm opacity-90">Design the future of work</p>
-              </div>
-              
-              <div class="bg-white/20 rounded-2xl p-6 backdrop-blur-sm">
-                <div class="text-2xl mb-3">
-                  <svg class="w-8 h-8 mx-auto text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
-                  </svg>
-                </div>
-                <h4 class="font-bold mb-2">Growth Specialists</h4>
-                <p class="text-sm opacity-90">Scale our impact globally</p>
-              </div>
-            </div>
-            
-            <a href="mailto:careers@selora.com" class="inline-flex items-center gap-3 bg-white text-purple-600 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-gray-100 transition-colors transform hover:scale-105">
-              Tell Us About Yourself
+    <!-- Open Positions Section -->
+    <section class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:text-center mb-16">
+          <h2 class="text-base font-semibold tracking-wide uppercase text-indigo-600">Open Positions</h2>
+          <p class="mt-2 text-3xl font-extrabold text-gray-900 sm:text-4xl">
+            Join Our Growing Team
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <!-- General Application -->
+          <div class="bg-white p-8 rounded-xl border border-gray-200 hover:shadow-md transition-shadow">
+            <h3 class="text-xl font-bold text-gray-900 mb-3">General Application</h3>
+            <p class="text-gray-600 mb-6">Don't see your perfect role? We're always looking for exceptional talent.</p>
+            <a href="mailto:careers@selora.com" class="inline-flex items-center text-indigo-600 font-medium hover:text-indigo-800 group">
+              Apply Now
+              <svg class="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
+          </div>
+
+          <!-- AI/ML Engineers -->
+          <div class="bg-white p-8 rounded-xl border border-gray-200 hover:shadow-md transition-shadow">
+            <h3 class="text-xl font-bold text-gray-900 mb-3">AI/ML Engineers</h3>
+            <p class="text-gray-600 mb-6">Build the next generation of predictive analytics and workforce intelligence.</p>
+            <a href="mailto:careers@selora.com?subject=Application for AI/ML Engineer Position" class="inline-flex items-center text-indigo-600 font-medium hover:text-indigo-800 group">
+              Apply Now
+              <svg class="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
+          </div>
+
+          <!-- Full-Stack Developers -->
+          <div class="bg-white p-8 rounded-xl border border-gray-200 hover:shadow-md transition-shadow">
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Full-Stack Developers</h3>
+            <p class="text-gray-600 mb-6">Create seamless, intuitive experiences that make complex data accessible.</p>
+            <a href="mailto:careers@selora.com?subject=Application for AI/ML Engineer Position" class="inline-flex items-center text-indigo-600 font-medium hover:text-indigo-800 group">
+              Apply Now
+              <svg class="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
+          </div>
+
+          <!-- Product Designers -->
+          <div class="bg-white p-8 rounded-xl border border-gray-200 hover:shadow-md transition-shadow">
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Product Designers</h3>
+            <p class="text-gray-600 mb-6">Shape the future of work through thoughtful, human-centered design.</p>
+            <a href="mailto:careers@selora.com?subject=Application for AI/ML Engineer Position" class="inline-flex items-center text-indigo-600 font-medium hover:text-indigo-800 group">
+              Apply Now
+              <svg class="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
             </a>
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- Final CTA -->
-      <div class="text-center">
-        <h2 class="text-4xl font-bold text-gray-900 mb-6 font-display">
-          <span class="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-            Ready to Join the Revolution?
-          </span>
-        </h2>
-        <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-          Don't see your perfect role? No problem! We're always looking for exceptional talent. 
-          Send us your story and let's build the future together.
-        </p>
-        <a href="mailto:careers@selora.com?subject=I want to join the Selora team!" class="inline-flex items-center gap-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-4 rounded-2xl font-bold text-xl hover:shadow-lg transition-all transform hover:scale-105">
-          careers@selora.com
-        </a>
+    <!-- CTA Section -->
+    <section class="py-20 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl p-12 shadow-sm">
+          <h2 class="text-3xl font-bold text-gray-900 mb-6">Ready to build the future of work?</h2>
+          <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+            We're always looking for passionate, talented individuals to join our team. Even if you don't see your perfect role, we'd love to hear from you.
+          </p>
+          <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a href="mailto:careers@selora.com" class="inline-flex items-center justify-center px-8 py-4 border border-transparent text-base font-medium rounded-lg text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 transition-all duration-200 transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+              Email Us at careers@selora.com
+            </a>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
+
   </main>
 
   <Footer client:load />

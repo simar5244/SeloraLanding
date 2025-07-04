@@ -45,15 +45,15 @@ const Header = () => {
           <div className="hidden md:flex items-center space-x-8">
             <a href="/#features" className="text-gray-600 hover:text-gray-900 transition-colors">Features</a>
             <a href="/how-it-works" className="text-gray-600 hover:text-gray-900 transition-colors">How it works</a>
-            <a href="/pricing" className="text-gray-600 hover:text-gray-900 transition-colors">Pricing</a>
+            <a href="/#pricing" className="text-gray-600 hover:text-gray-900 transition-colors">Pricing</a>
             <a href="/faq" className="text-gray-600 hover:text-gray-900 transition-colors">FAQ</a>
             <motion.a
-              href="/demo"
+              href="https://app.seloraa.com/company-signup"
               className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Request Demo
+              Signup
             </motion.a>
           </div>
           
@@ -77,10 +77,10 @@ const Header = () => {
             <div className="px-4 py-4 space-y-4">
               <a href="/#features" className="block text-gray-600 hover:text-gray-900">Features</a>
               <a href="/how-it-works" className="block text-gray-600 hover:text-gray-900">How it works</a>
-              <a href="/pricing" className="block text-gray-600 hover:text-gray-900">Pricing</a>
+              <a href="/#pricing" className="block text-gray-600 hover:text-gray-900">Pricing</a>
               <a href="/faq" className="block text-gray-600 hover:text-gray-900">FAQ</a>
-              <a href="/demo" className="block w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-2 rounded-lg text-sm font-medium text-center">
-                Request Demo
+              <a href="https://app.seloraa.com/company-signup" className="block w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-2 rounded-lg text-sm font-medium text-center">
+                Signup
               </a>
             </div>
           </motion.div>

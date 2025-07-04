@@ -30,7 +30,6 @@ interface Project {
 }
 
 const Galaxy3D = () => {
-  const [selectedEmployee, setSelectedEmployee] = useState<Employee | null>(null);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [viewMode, setViewMode] = useState('departments'); // 'departments' or 'projects'
 
@@ -173,7 +172,6 @@ const Galaxy3D = () => {
   };
 
   const closeModals = () => {
-    setSelectedEmployee(null);
     setSelectedProject(null);
   };
 
@@ -192,7 +190,10 @@ const Galaxy3D = () => {
             <span className="text-purple-600 font-semibold">Interactive 3D View</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            3D Organization Galaxy
+            <span>3D </span>
+            <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent">
+              Organization Galaxy
+            </span>
           </h2>
           <p className="text-xl text-gray-300 max-w-4xl mx-auto">
             WebGL-powered interactive visualization with force-directed graph algorithms for complex organizational relationship mapping
@@ -305,42 +306,27 @@ const Galaxy3D = () => {
                     {/* Employee Nodes */}
                     {departments.flatMap(dept => 
                       dept.employees.map((employee, empIndex) => (
-                        <div
+                        <motion.div
                           key={`${dept.name}-${employee.name}`}
-                          className="absolute"
+                          className="w-8 h-8 rounded-full flex items-center justify-center text-white text-xs font-bold shadow-lg border-2 border-white absolute"
                           style={{
                             left: employee.position.x,
                             top: employee.position.y,
                             transform: 'translate(-50%, -50%)',
-                            width: '32px',
-                            height: '32px'
+                            backgroundColor: getPerformanceColor(employee.performance),
+                            zIndex: 10
+                          }}
+                          animate={{
+                            y: [0, -5, 0]
+                          }}
+                          transition={{
+                            duration: 2,
+                            repeat: Infinity,
+                            delay: Math.random() * 2
                           }}
                         >
-                          <motion.button
-                            className="w-8 h-8 rounded-full flex items-center justify-center text-white text-xs font-bold shadow-lg border-2 border-white relative z-50 cursor-pointer focus:outline-none"
-                            style={{
-                              backgroundColor: getPerformanceColor(employee.performance),
-                              position: 'relative',
-                              zIndex: 50,
-                              WebkitTapHighlightColor: 'transparent'
-                            }}
-                            animate={{
-                              y: [0, -5, 0]
-                            }}
-                            transition={{
-                              duration: 2,
-                              repeat: Infinity,
-                              delay: Math.random() * 2
-                            }}
-                            onClick={() => {
-                              setSelectedProject(null);
-                              setSelectedEmployee(employee);
-                            }}
-                            whileTap={{ scale: 0.9 }}
-                          >
-                            <User className="w-3 h-3" />
-                          </motion.button>
-                        </div>
+                          <User className="w-3 h-3" />
+                        </motion.div>
                       ))
                     )}
                   </>
@@ -396,83 +382,6 @@ const Galaxy3D = () => {
             </div>
           </div>
         </div>
-
-        {/* Employee Details Modal */}
-        <AnimatePresence>
-          {selectedEmployee && (
-            <motion.div
-              className="fixed inset-0 bg-black/70 flex items-center justify-center z-[100] p-4"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={closeModals}
-              style={{
-                backdropFilter: 'blur(4px)',
-                WebkitBackdropFilter: 'blur(4px)'
-              }}
-            >
-              <motion.div
-                className="bg-white rounded-xl p-6 max-w-md w-full text-gray-900"
-                initial={{ scale: 0.8, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                exit={{ scale: 0.8, opacity: 0 }}
-                onClick={(e) => e.stopPropagation()}
-                style={{
-                  position: 'relative',
-                  zIndex: 1000,
-                  pointerEvents: 'auto'
-                }}
-              >
-                <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-xl font-semibold">{selectedEmployee.name}</h3>
-                  <button onClick={closeModals} className="text-gray-400 hover:text-gray-600">
-                    <X className="w-5 h-5" />
-                  </button>
-                </div>
-                
-                <div className="space-y-4">
-                  <div>
-                    <div className="text-sm text-gray-600">Role</div>
-                    <div className="font-medium">{selectedEmployee.role}</div>
-                  </div>
-                  
-                  <div>
-                    <div className="text-sm text-gray-600">Performance</div>
-                    <div className="flex items-center gap-2">
-                      <Star className="w-4 h-4 text-yellow-500" />
-                      <span className="font-medium">{selectedEmployee.performance}/5.0</span>
-                    </div>
-                  </div>
-                  
-                  <div>
-                    <div className="text-sm text-gray-600">Utilization</div>
-                    <div className="font-medium">{selectedEmployee.utilization}%</div>
-                  </div>
-                  
-                  <div>
-                    <div className="text-sm text-gray-600">Skills</div>
-                    <div className="flex flex-wrap gap-1 mt-1">
-                      {selectedEmployee.skills.map((skill, index) => (
-                        <span key={index} className="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                  
-                  <div>
-                    <div className="text-sm text-gray-600">Active Projects</div>
-                    <div className="space-y-1 mt-1">
-                      {selectedEmployee.projects.map((project, index) => (
-                        <div key={index} className="text-sm font-medium">{project}</div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            </motion.div>
-          )}
-        </AnimatePresence>
 
         {/* Project Details Modal */}
         <AnimatePresence>

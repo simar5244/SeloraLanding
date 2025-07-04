@@ -6,23 +6,23 @@ const SecuritySection = () => {
   const securityFeatures = [
     {
       icon: Shield,
-      title: "Enterprise Encryption",
-      description: "AES-256 encryption with TLS 1.3"
+      title: "Advanced Encryption",
+      description: "Military-grade AES-256 encryption for all data at rest and in transit"
     },
     {
       icon: Lock,
-      title: "Zero-Trust Security", 
-      description: "Multi-factor auth & role-based access"
+      title: "Zero-Trust Architecture", 
+      description: "Strict access controls with multi-factor authentication"
     },
     {
       icon: Eye,
-      title: "Privacy by Design",
-      description: "GDPR compliant data protection"
+      title: "Continuous Monitoring",
+      description: "24/7 threat detection and real-time security alerts"
     },
     {
       icon: Server,
-      title: "SOC 2 Certified",
-      description: "Continuous monitoring & audits"
+      title: "Data Protection",
+      description: "Regular automated backups and disaster recovery protocols"
     }
   ];
 
@@ -50,7 +50,7 @@ const SecuritySection = () => {
             </span>
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Bank-level security with comprehensive compliance
+            Robust security measures to protect your most sensitive data
           </p>
         </motion.div>
 

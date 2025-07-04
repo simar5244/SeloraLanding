@@ -8,46 +8,38 @@ const Pricing = () => {
   const plans = [
     {
       name: "Starter",
-      monthlyPrice: "$29",
-      annualPrice: "$290",
-      description: "Perfect for individuals and small teams",
+      monthlyPrice: "$100",
+      annualPrice: "$1,000",
+      description: "Perfect for individuals",
       features: [
-        "1 user",
-        "Basic analytics dashboard",
-        "Monthly reports",
-        "Email support",
-        "Core AI insights"
+        "1 User",
+        "Email and Call Support",
+        "DIY Onboarding"
       ],
       popular: false
     },
     {
       name: "Standard",
-      monthlyPrice: "$99",
-      annualPrice: "$990",
-      description: "Ideal for growing teams",
+      monthlyPrice: "$200",
+      annualPrice: "$2,000",
+      description: "Ideal for small teams",
       features: [
-        "Up to 5 users",
-        "Advanced analytics",
-        "Real-time insights",
-        "Custom reports",
-        "Priority support",
-        "API access"
+        "2 Users",
+        "24/7 Priority Support",
+        "DIY Onboarding",
       ],
       popular: true
     },
     {
       name: "Enterprise",
-      monthlyPrice: "Custom",
-      annualPrice: "Custom",
-      description: "For large organizations",
+      monthlyPrice: "$300",
+      annualPrice: "$3,000",
+      description: "For growing businesses",
       features: [
-        "Unlimited users",
-        "Dedicated account manager",
-        "Custom AI models",
-        "24/7 priority support",
-        "On-premise deployment",
-        "Advanced security",
-        "Custom integrations"
+        "3 Users",
+        "24/7 Priority Support",
+        "Dedicated Account Manager",
+        "White Glove Onboarding",
       ],
       popular: false
     }
@@ -64,10 +56,13 @@ const Pricing = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-            Simple, Transparent Pricing
+            <span>Simple, </span>
+            <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent">
+              Transparent Pricing
+            </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Choose the plan that fits your needs. All plans include our core AI analytics and features.
+            Simple, straightforward pricing with no hidden fees.
           </p>
           <div className="mt-6 inline-flex items-center bg-white/80 backdrop-blur-sm rounded-full p-1 border border-gray-200">
             <button 
@@ -80,7 +75,7 @@ const Pricing = () => {
               onClick={() => setBillingCycle('annual')}
               className={`px-6 py-2 rounded-full font-medium text-sm ${billingCycle === 'annual' ? 'bg-purple-600 text-white' : 'text-gray-600'}`}
             >
-              Annual (Save 20%)
+              Annual (Save 17%)
             </button>
           </div>
         </motion.div>
@@ -109,45 +104,51 @@ const Pricing = () => {
                 </div>
               )}
               
-              <div className="text-center mb-8">
-                <h3 className="text-2xl font-semibold text-gray-900 mb-2">{plan.name}</h3>
-                <p className="text-gray-600 mb-4">{plan.description}</p>
-                <div className="mb-6">
-                  <span className={`text-5xl font-bold ${plan.popular ? 'text-purple-600' : 'text-gray-900'}`}>
-                    {billingCycle === 'monthly' ? plan.monthlyPrice : plan.annualPrice}
-                  </span>
-                  <span className="text-gray-600">
-                    {plan.name === 'Enterprise' ? '' : billingCycle === 'monthly' ? '/month' : '/year'}
-                  </span>
-                  {plan.name !== 'Enterprise' && (
-                    <div className="text-sm text-gray-500 mt-1">
-                      {billingCycle === 'annual' && 'Billed annually'}
-                      {billingCycle === 'monthly' && 'Billed monthly'}
-                    </div>
-                  )}
+              <div className="flex flex-col h-full">
+                <div>
+                  <h3 className="text-2xl font-semibold text-gray-900 mb-2">{plan.name}</h3>
+                  <p className="text-gray-600 mb-4">{plan.description}</p>
+                  <div className="mb-6">
+                    <span className={`text-5xl font-bold ${plan.popular ? 'text-purple-600' : 'text-gray-900'}`}>
+                      {billingCycle === 'monthly' ? plan.monthlyPrice : plan.annualPrice}
+                    </span>
+                    <span className="text-gray-600">
+                      {billingCycle === 'monthly' ? '/month' : '/year'}
+                    </span>
+                    {billingCycle === 'annual' && (
+                      <div className="text-sm text-gray-500 mt-1"></div>
+                    )}
+                  </div>
+                </div>
+                
+                <div className="flex-grow">
+                  <ul className="space-y-4 mb-8">
+                    {plan.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-center gap-3">
+                        <Check className="w-5 h-5 text-green-500 flex-shrink-0" />
+                        <span className="text-gray-700">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                
+                <div className="mt-auto">
+                  <motion.a
+                    href="https://app.seloraa.com/company-signup"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`block w-full py-3 rounded-lg font-medium transition-colors text-center ${
+                      plan.popular
+                        ? 'bg-purple-600 hover:bg-purple-700 text-white'
+                        : 'border-2 border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white'
+                    }`}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    Get Started
+                  </motion.a>
                 </div>
               </div>
-              
-              <ul className="space-y-4 mb-8">
-                {plan.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className="flex items-center gap-3">
-                    <Check className="w-5 h-5 text-green-500 flex-shrink-0" />
-                    <span className="text-gray-700">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-              
-              <motion.button
-                className={`w-full py-3 rounded-lg font-medium transition-colors ${
-                  plan.popular
-                    ? 'bg-purple-600 hover:bg-purple-700 text-white'
-                    : 'border-2 border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white'
-                }`}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                {plan.name === 'Enterprise' ? 'Contact Sales' : 'Get Started'}
-              </motion.button>
             </motion.div>
           ))}
         </div>

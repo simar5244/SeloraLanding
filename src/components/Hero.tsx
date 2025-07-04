@@ -1,50 +1,39 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ArrowRight, Sparkles, Zap, BarChart2, Users, Lightbulb, ChevronRight } from 'lucide-react';
 import DashboardPreview from './DashboardPreview';
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-start justify-center bg-gradient-to-br from-gray-50 via-white to-purple-50/30 overflow-hidden pt-20">
-      {/* Enhanced background elements */}
+    <section className="relative min-h-screen flex items-start justify-center bg-gradient-to-br from-gray-50 via-white to-purple-50/30 overflow-hidden pt-40">
+      {/* Enhanced background elements with more dynamic animations */}
       <div className="absolute inset-0 overflow-hidden">
-        <motion.div 
-          className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-200/30 rounded-full mix-blend-multiply filter blur-3xl opacity-40"
-          animate={{
-            scale: [1, 1.2, 1],
-            rotate: [0, 180, 360],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-        />
-        <motion.div 
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-200/30 rounded-full mix-blend-multiply filter blur-3xl opacity-40"
-          animate={{
-            scale: [1.2, 1, 1.2],
-            rotate: [360, 180, 0],
-          }}
-          transition={{
-            duration: 25,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-        />
-        <motion.div 
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-pink-200/30 rounded-full mix-blend-multiply filter blur-3xl opacity-30"
-          animate={{
-            scale: [1, 1.5, 1],
-            x: [-50, 50, -50],
-            y: [-30, 30, -30],
-          }}
-          transition={{
-            duration: 15,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
+        {[...Array(8)].map((_, i) => (
+          <motion.div
+            key={i}
+            className={`absolute ${
+              i % 3 === 0 ? 'bg-purple-200/30' : i % 2 === 0 ? 'bg-blue-200/30' : 'bg-pink-200/30'
+            } rounded-full mix-blend-multiply filter blur-3xl opacity-30`}
+            style={{
+              width: `${Math.random() * 400 + 100}px`,
+              height: `${Math.random() * 400 + 100}px`,
+              top: `${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
+            }}
+            animate={{
+              x: [0, (Math.random() - 0.5) * 200],
+              y: [0, (Math.random() - 0.5) * 200],
+              rotate: [0, 360],
+              scale: [1, 1 + Math.random() * 0.5],
+            }}
+            transition={{
+              duration: 20 + Math.random() * 20,
+              repeat: Infinity,
+              repeatType: 'reverse',
+              ease: 'easeInOut',
+            }}
+          />
+        ))}
       </div>
       
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
@@ -52,62 +41,71 @@ const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
+          className="w-full"
         >
-          <motion.div
-            className="flex items-center justify-center mb-6"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+          <motion.h1 
+            className="text-5xl md:text-7xl font-bold mb-6 leading-tight font-display"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <div className="bg-white/80 backdrop-blur-sm text-purple-700 px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2 border border-purple-200/50">
-              <Sparkles className="w-4 h-4" />
-              AI-Powered Workforce Analytics
-            </div>
-          </motion.div>
-
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight font-display">
-            <span className="text-gray-900">You can't scale</span><br />
             <motion.span 
-              className="bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent"
-              animate={{
-                backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
+              className="inline-block text-gray-900"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+            >
+              You can't scale
+            </motion.span>
+            <br />
+            <motion.span 
+              className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent inline-block"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ 
+                opacity: 1, 
+                y: 0,
+                backgroundPosition: ['0% 50%', '100% 50%', '0% 50%']
               }}
-              transition={{
+              transition={{ 
                 duration: 5,
                 repeat: Infinity,
-                ease: "linear"
+                ease: "linear",
+                delay: 0.5
               }}
             >
               what you can't see
             </motion.span>
-          </h1>
+          </motion.h1>
           
           <motion.p 
-            className="text-xl md:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed"
+            className="text-xl md:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
           >
             Run what-if simulations, predict attrition, balance workloads, and retain top talent. Selora lets you design a healthier, smarter organization before making a single move
           </motion.p>
           
           <motion.div 
-            className="flex justify-center items-center mb-16"
+            className="flex justify-center items-center gap-6 mb-16"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
+            transition={{ duration: 0.8, delay: 0.7 }}
           >
             <motion.a
               href="/onboarding"
-              className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-xl text-lg font-semibold flex items-center gap-2 shadow-lg"
+              className="group relative bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-xl text-lg font-semibold flex items-center gap-2 shadow-lg overflow-hidden"
               whileHover={{ 
                 scale: 1.05,
                 boxShadow: "0 20px 40px rgba(147, 51, 234, 0.3)"
               }}
               whileTap={{ scale: 0.95 }}
             >
-              Get Started
-              <ArrowRight size={20} />
+              <span className="relative z-10 flex items-center gap-2">
+                Get Started
+                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+              </span>
+              <span className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity"></span>
             </motion.a>
           </motion.div>
         </motion.div>

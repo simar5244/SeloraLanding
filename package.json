@@ -5,9 +5,10 @@
   "private": true,
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "NODE_OPTIONS='--no-warnings' astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "build:force": "NODE_OPTIONS='--no-warnings' TSC_COMPILE_ON_ERROR=true NODE_ENV=production astro build"
   },
   "dependencies": {
     "@astrojs/react": "^3.6.2",

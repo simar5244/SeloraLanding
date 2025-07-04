@@ -7,68 +7,60 @@ import Footer from '../components/Footer';
 <Layout title="FAQ - Selora">
   <Header client:load />
   
-  <main class="pt-20 pb-16 bg-gradient-to-br from-purple-50/30 via-white to-blue-50/20 relative overflow-hidden">
-    <!-- Background Elements -->
-    <div class="absolute inset-0 overflow-hidden">
-      <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-200/20 rounded-full blur-3xl"></div>
-      <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-200/20 rounded-full blur-3xl"></div>
-      <div class="absolute top-1/6 right-1/6 w-48 h-48 bg-pink-200/15 rounded-full blur-3xl"></div>
-      <div class="absolute bottom-1/6 left-1/6 w-56 h-56 bg-purple-300/10 rounded-full blur-3xl"></div>
-    </div>
-
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <!-- Hero Section -->
-      <div class="text-center mb-20">
-        <div class="inline-flex items-center bg-white/80 backdrop-blur-sm rounded-full px-6 py-3 mb-8 border border-purple-200/50">
-          <span class="text-purple-600 font-semibold">❓ Got Questions? We've Got Answers!</span>
-        </div>
-        <h1 class="text-6xl md:text-7xl font-black text-gray-900 mb-8 leading-tight font-display">
-          Frequently Asked{' '}
-          <span class="bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent">
-            Questions
-          </span>
-        </h1>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          Everything you need to know about Selora's AI-powered workforce analytics platform. 
-          Can't find what you're looking for?{' '}
-          <a href="mailto:support@selora.com" class="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent font-semibold hover:underline">
-            Drop us a line!
-          </a>
-        </p>
-      </div>
-
-      <!-- FAQ Categories -->
-      <div class="mb-12">
-        <div class="flex flex-wrap justify-center gap-4">
-          <button class="faq-category-btn active" data-category="all">
-            <span class="text-lg">🌟</span> All Questions
-          </button>
-          <button class="faq-category-btn" data-category="product">
-            <span class="text-lg">🚀</span> Product
-          </button>
-          <button class="faq-category-btn" data-category="pricing">
-            <span class="text-lg">💰</span> Pricing
-          </button>
-          <button class="faq-category-btn" data-category="security">
-            <span class="text-lg">🔒</span> Security
-          </button>
-          <button class="faq-category-btn" data-category="technical">
-            <span class="text-lg">⚡</span> Technical
-          </button>
+  <main class="bg-white">
+    <!-- Hero Section -->
+    <section class="relative pt-44 overflow-hidden">
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="text-center max-w-4xl mx-auto">
+          <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-8 leading-tight">
+            Frequently Asked <span class="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">Questions</span>
+          </h1>
+          <p class="text-xl text-gray-600 leading-relaxed mb-8">
+            Everything you need to know about Selora's AI-powered workforce analytics platform. 
+            Can't find what you're looking for?{' '}
+            <a href="mailto:support@selora.com" class="text-indigo-600 font-semibold hover:underline">
+              Drop us a line!
+            </a>
+          </p>
         </div>
       </div>
+    </section>
 
-      <!-- FAQ Items -->
-      <div class="space-y-6">
+    <!-- FAQ Section -->
+    <section class="py-16 bg-gray-50">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- FAQ Categories -->
+        <div class="mb-12 text-center">
+          <div class="inline-flex flex-wrap justify-center gap-3 bg-white p-1.5 rounded-full border border-gray-200">
+            <button class="faq-category-btn active px-5 py-2 text-sm font-medium rounded-full transition-colors" data-category="all">
+              All Questions
+            </button>
+            <button class="faq-category-btn px-5 py-2 text-sm font-medium rounded-full transition-colors" data-category="product">
+              Product
+            </button>
+            <button class="faq-category-btn px-5 py-2 text-sm font-medium rounded-full transition-colors" data-category="pricing">
+              Pricing
+            </button>
+            <button class="faq-category-btn px-5 py-2 text-sm font-medium rounded-full transition-colors" data-category="security">
+              Security
+            </button>
+            <button class="faq-category-btn px-5 py-2 text-sm font-medium rounded-full transition-colors" data-category="technical">
+              Technical
+            </button>
+          </div>
+        </div>
+
+        <!-- FAQ Items -->
+        <div class="space-y-4">
         <!-- Product Questions -->
-        <div class="faq-item bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-gray-200 overflow-hidden" data-category="product">
-          <button class="faq-question w-full p-8 text-left hover:bg-purple-50/50 transition-colors">
+        <div class="faq-item bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-md transition-shadow" data-category="product">
+          <button class="faq-question w-full p-6 text-left hover:bg-gray-50 transition-colors rounded-xl">
             <div class="flex items-center justify-between">
-              <h3 class="text-xl font-semibold text-gray-900">🤖 How accurate is Selora's AI prediction?</h3>
-              <div class="faq-icon text-purple-600 text-2xl transform transition-transform">+</div>
+              <h3 class="text-lg font-semibold text-gray-900">How accurate is Selora's AI prediction?</h3>
+              <div class="faq-icon text-indigo-600 text-2xl transform transition-transform">+</div>
             </div>
           </button>
-          <div class="faq-answer hidden p-8 pt-0 text-gray-600 leading-relaxed">
+          <div class="faq-answer hidden px-6 pb-6 -mt-2 text-gray-600 leading-relaxed">
             <p class="mb-4">
               Our AI algorithms achieve an industry-leading <strong>99.994% accuracy</strong> in workforce predictions! 
               This incredible precision comes from our proprietary neural networks trained on millions of data points 
@@ -81,14 +73,14 @@ import Footer from '../components/Footer';
           </div>
         </div>
 
-        <div class="faq-item bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-gray-200 overflow-hidden" data-category="product">
-          <button class="faq-question w-full p-8 text-left hover:bg-purple-50/50 transition-colors">
+        <div class="faq-item bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-md transition-shadow" data-category="product">
+          <button class="faq-question w-full p-6 text-left hover:bg-gray-50 transition-colors rounded-xl">
             <div class="flex items-center justify-between">
-              <h3 class="text-xl font-semibold text-gray-900">🎯 What makes Selora different from other HR tools?</h3>
-              <div class="faq-icon text-purple-600 text-2xl transform transition-transform">+</div>
+              <h3 class="text-lg font-semibold text-gray-900">What makes Selora different from other HR tools?</h3>
+              <div class="faq-icon text-indigo-600 text-2xl transform transition-transform">+</div>
             </div>
           </button>
-          <div class="faq-answer hidden p-8 pt-0 text-gray-600 leading-relaxed">
+          <div class="faq-answer hidden px-6 pb-6 -mt-2 text-gray-600 leading-relaxed">
             <p class="mb-4">
               Traditional HR tools show you what happened yesterday. <strong>Selora shows you what will happen tomorrow!</strong>
             </p>
@@ -103,14 +95,14 @@ import Footer from '../components/Footer';
           </div>
         </div>
 
-        <div class="faq-item bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-gray-200 overflow-hidden" data-category="product">
-          <button class="faq-question w-full p-8 text-left hover:bg-purple-50/50 transition-colors">
+        <div class="faq-item bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-md transition-shadow" data-category="product">
+          <button class="faq-question w-full p-6 text-left hover:bg-gray-50 transition-colors rounded-xl">
             <div class="flex items-center justify-between">
-              <h3 class="text-xl font-semibold text-gray-900">⚡ How quickly can we see results?</h3>
-              <div class="faq-icon text-purple-600 text-2xl transform transition-transform">+</div>
+              <h3 class="text-lg font-semibold text-gray-900">How quickly can we see results?</h3>
+              <div class="faq-icon text-indigo-600 text-2xl transform transition-transform">+</div>
             </div>
           </button>
-          <div class="faq-answer hidden p-8 pt-0 text-gray-600 leading-relaxed">
+          <div class="faq-answer hidden px-6 pb-6 -mt-2 text-gray-600 leading-relaxed">
             <p class="mb-4">
               You'll start seeing insights <strong>within 24 hours</strong> of connecting your data! Our AI begins 
               analyzing patterns immediately and provides initial recommendations right away.
@@ -126,14 +118,14 @@ import Footer from '../components/Footer';
         </div>
 
         <!-- Pricing Questions -->
-        <div class="faq-item bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-gray-200 overflow-hidden" data-category="pricing">
-          <button class="faq-question w-full p-8 text-left hover:bg-purple-50/50 transition-colors">
+        <div class="faq-item bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-md transition-shadow" data-category="pricing">
+          <button class="faq-question w-full p-6 text-left hover:bg-gray-50 transition-colors rounded-xl">
             <div class="flex items-center justify-between">
-              <h3 class="text-xl font-semibold text-gray-900">💰 Do you offer a free trial?</h3>
-              <div class="faq-icon text-purple-600 text-2xl transform transition-transform">+</div>
+              <h3 class="text-lg font-semibold text-gray-900">Do you offer a free trial?</h3>
+              <div class="faq-icon text-indigo-600 text-2xl transform transition-transform">+</div>
             </div>
           </button>
-          <div class="faq-answer hidden p-8 pt-0 text-gray-600 leading-relaxed">
+          <div class="faq-answer hidden px-6 pb-6 -mt-2 text-gray-600 leading-relaxed">
             <p class="mb-4">
               <strong>Absolutely!</strong> We offer a <strong>30-day free trial</strong> of our Professional plan 
               with full access to all features. No credit card required, no hidden fees, no gotchas!
@@ -152,14 +144,14 @@ import Footer from '../components/Footer';
           </div>
         </div>
 
-        <div class="faq-item bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-gray-200 overflow-hidden" data-category="pricing">
-          <button class="faq-question w-full p-8 text-left hover:bg-purple-50/50 transition-colors">
+        <div class="faq-item bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-md transition-shadow" data-category="pricing">
+          <button class="faq-question w-full p-6 text-left hover:bg-gray-50 transition-colors rounded-xl">
             <div class="flex items-center justify-between">
-              <h3 class="text-xl font-semibold text-gray-900">📈 Can I upgrade or downgrade my plan?</h3>
-              <div class="faq-icon text-purple-600 text-2xl transform transition-transform">+</div>
+              <h3 class="text-lg font-semibold text-gray-900">Can I upgrade or downgrade my plan?</h3>
+              <div class="faq-icon text-indigo-600 text-2xl transform transition-transform">+</div>
             </div>
           </button>
-          <div class="faq-answer hidden p-8 pt-0 text-gray-600 leading-relaxed">
+          <div class="faq-answer hidden px-6 pb-6 -mt-2 text-gray-600 leading-relaxed">
             <p class="mb-4">
               <strong>Yes, absolutely!</strong> You can change your plan at any time with just a few clicks. 
               We make it super easy to scale up or down based on your needs.
@@ -174,30 +166,30 @@ import Footer from '../components/Footer';
         </div>
 
         <!-- Security Questions -->
-        <div class="faq-item bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-gray-200 overflow-hidden" data-category="security">
-          <button class="faq-question w-full p-8 text-left hover:bg-purple-50/50 transition-colors">
+        <div class="faq-item bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-md transition-shadow" data-category="security">
+          <button class="faq-question w-full p-6 text-left hover:bg-gray-50 transition-colors rounded-xl">
             <div class="flex items-center justify-between">
-              <h3 class="text-xl font-semibold text-gray-900">🔒 How secure is my data?</h3>
-              <div class="faq-icon text-purple-600 text-2xl transform transition-transform">+</div>
+              <h3 class="text-lg font-semibold text-gray-900">How secure is my data?</h3>
+              <div class="faq-icon text-indigo-600 text-2xl transform transition-transform">+</div>
             </div>
           </button>
-          <div class="faq-answer hidden p-8 pt-0 text-gray-600 leading-relaxed">
+          <div class="faq-answer hidden px-6 pb-6 -mt-2 text-gray-600 leading-relaxed">
             <p class="mb-4">
               <strong>Your data security is our top priority!</strong> We implement military-grade security measures 
               to protect your organizational data.
             </p>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-              <div class="bg-purple-50 rounded-lg p-4">
-                <h4 class="font-semibold text-purple-900 mb-2">🛡️ Encryption</h4>
-                <p class="text-sm text-purple-800">AES-256 encryption at rest and TLS 1.3 in transit</p>
+              <div class="bg-indigo-50 rounded-lg p-4">
+                <h4 class="font-semibold text-indigo-900 mb-2">Encryption</h4>
+                <p class="text-sm text-gray-700">AES-256 encryption at rest and TLS 1.3 in transit</p>
               </div>
-              <div class="bg-purple-50 rounded-lg p-4">
-                <h4 class="font-semibold text-purple-900 mb-2">🏆 Certifications</h4>
-                <p class="text-sm text-purple-800">SOC 2 Type II certified and GDPR compliant</p>
+              <div class="bg-indigo-50 rounded-lg p-4">
+                <h4 class="font-semibold text-indigo-900 mb-2">Certifications</h4>
+                <p class="text-sm text-gray-700">SOC 2 Type II certified and GDPR compliant</p>
               </div>
-              <div class="bg-purple-50 rounded-lg p-4">
-                <h4 class="font-semibold text-purple-900 mb-2">🔐 Access Control</h4>
-                <p class="text-sm text-purple-800">Multi-factor authentication and role-based permissions</p>
+              <div class="bg-indigo-50 rounded-lg p-4">
+                <h4 class="font-semibold text-indigo-900 mb-2">Access Control</h4>
+                <p class="text-sm text-gray-700">Multi-factor authentication and role-based permissions</p>
               </div>
               <div class="bg-purple-50 rounded-lg p-4">
                 <h4 class="font-semibold text-purple-900 mb-2">👁️ Monitoring</h4>
@@ -232,14 +224,14 @@ import Footer from '../components/Footer';
         </div>
 
         <!-- Technical Questions -->
-        <div class="faq-item bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-gray-200 overflow-hidden" data-category="technical">
-          <button class="faq-question w-full p-8 text-left hover:bg-purple-50/50 transition-colors">
+        <div class="faq-item bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-md transition-shadow" data-category="technical">
+          <button class="faq-question w-full p-6 text-left hover:bg-gray-50 transition-colors rounded-xl">
             <div class="flex items-center justify-between">
-              <h3 class="text-xl font-semibold text-gray-900">🔌 What integrations do you support?</h3>
-              <div class="faq-icon text-purple-600 text-2xl transform transition-transform">+</div>
+              <h3 class="text-lg font-semibold text-gray-900">What integrations do you support?</h3>
+              <div class="faq-icon text-indigo-600 text-2xl transform transition-transform">+</div>
             </div>
           </button>
-          <div class="faq-answer hidden p-8 pt-0 text-gray-600 leading-relaxed">
+          <div class="faq-answer hidden px-6 pb-6 -mt-2 text-gray-600 leading-relaxed">
             <p class="mb-4">
               We integrate with <strong>50+ popular HR and business tools</strong> to make setup seamless! 
               Our most popular integrations include:
@@ -304,14 +296,14 @@ import Footer from '../components/Footer';
         </div>
 
         <!-- General Questions -->
-        <div class="faq-item bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-gray-200 overflow-hidden" data-category="product">
-          <button class="faq-question w-full p-8 text-left hover:bg-purple-50/50 transition-colors">
+        <div class="faq-item bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-md transition-shadow" data-category="product">
+          <button class="faq-question w-full p-6 text-left hover:bg-gray-50 transition-colors rounded-xl">
             <div class="flex items-center justify-between">
-              <h3 class="text-xl font-semibold text-gray-900">🎓 Do you provide training and support?</h3>
-              <div class="faq-icon text-purple-600 text-2xl transform transition-transform">+</div>
+              <h3 class="text-lg font-semibold text-gray-900">Do you provide training and support?</h3>
+              <div class="faq-icon text-indigo-600 text-2xl transform transition-transform">+</div>
             </div>
           </button>
-          <div class="faq-answer hidden p-8 pt-0 text-gray-600 leading-relaxed">
+          <div class="faq-answer hidden px-6 pb-6 -mt-2 text-gray-600 leading-relaxed">
             <p class="mb-4">
               <strong>Absolutely!</strong> We're committed to your success and provide comprehensive training and support.
             </p>
@@ -341,32 +333,204 @@ import Footer from '../components/Footer';
                 </div>
               </li>
             </ul>
-            <p>We're here to make sure you get maximum value from Selora!</p>
-          </div>
-        </div>
-      </div>
+            </div>
 
-      <!-- Contact CTA -->
-      <div class="mt-20 text-center">
-        <div class="bg-gradient-to-r from-purple-600 to-pink-600 rounded-3xl p-12 text-white relative overflow-hidden">
-          <div class="absolute inset-0 bg-black/10"></div>
-          <div class="relative z-10">
-            <h2 class="text-3xl font-bold mb-6 font-display">🤔 Still Have Questions?</h2>
-            <p class="text-xl mb-8 opacity-90">
-              Our team is here to help! Get in touch and we'll answer any questions you have about Selora.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="mailto:support@selora.com" class="bg-white text-purple-600 px-8 py-4 rounded-2xl font-bold hover:bg-gray-100 transition-colors">
-                📧 Email Support
-              </a>
-              <a href="/demo" class="border-2 border-white text-white px-8 py-4 rounded-2xl font-bold hover:bg-white hover:text-purple-600 transition-colors">
-                🚀 Schedule Demo
-              </a>
+            <!-- Security Questions -->
+            <div class="faq-item bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-md transition-shadow" data-category="security">
+              <button class="faq-question w-full p-6 text-left hover:bg-gray-50 transition-colors rounded-xl">
+                <div class="flex items-center justify-between">
+                  <h3 class="text-lg font-semibold text-gray-900">How secure is my data?</h3>
+                  <div class="faq-icon text-indigo-600 text-2xl transform transition-transform">+</div>
+                </div>
+              </button>
+              <div class="faq-answer hidden px-6 pb-6 -mt-2 text-gray-600 leading-relaxed">
+                <p class="mb-4">
+                  <strong>Your data security is our top priority!</strong> We implement military-grade security measures 
+                  to protect your organizational data.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                  <div class="bg-indigo-50 rounded-lg p-4">
+                    <h4 class="font-semibold text-indigo-900 mb-2">Encryption</h4>
+                    <p class="text-sm text-gray-700">AES-256 encryption at rest and TLS 1.3 in transit</p>
+                  </div>
+                  <div class="bg-indigo-50 rounded-lg p-4">
+                    <h4 class="font-semibold text-indigo-900 mb-2">Certifications</h4>
+                    <p class="text-sm text-gray-700">SOC 2 Type II certified and GDPR compliant</p>
+                  </div>
+                  <div class="bg-indigo-50 rounded-lg p-4">
+                    <h4 class="font-semibold text-indigo-900 mb-2">Access Control</h4>
+                    <p class="text-sm text-gray-700">Multi-factor authentication and role-based permissions</p>
+                  </div>
+                  <div class="bg-purple-50 rounded-lg p-4">
+                    <h4 class="font-semibold text-purple-900 mb-2">👁️ Monitoring</h4>
+                    <p class="text-sm text-purple-800">24/7 security monitoring and threat detection</p>
+                  </div>
+                </div>
+                <p>We treat your data like our own - with the utmost care and protection!</p>
+              </div>
+            </div>
+
+            <div class="faq-item bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-gray-200 overflow-hidden" data-category="security">
+              <button class="faq-question w-full p-8 text-left hover:bg-purple-50/50 transition-colors">
+                <div class="flex items-center justify-between">
+                  <h3 class="text-xl font-semibold text-gray-900">🌍 Where is my data stored?</h3>
+                  <div class="faq-icon text-purple-600 text-2xl transform transition-transform">+</div>
+                </div>
+              </button>
+              <div class="faq-answer hidden p-8 pt-0 text-gray-600 leading-relaxed">
+                <p class="mb-4">
+                  Your data is stored in <strong>enterprise-grade data centers</strong> with multiple layers of security 
+                  and redundancy. We use AWS infrastructure with data centers located in:
+                </p>
+                <ul class="space-y-2 mb-4">
+                  <li>• <strong>Primary:</strong> US East (Virginia) and US West (Oregon)</li>
+                  <li>• <strong>EU:</strong> Frankfurt, Germany for European customers</li>
+                  <li>• <strong>Backup:</strong> Multiple geographic regions for disaster recovery</li>
+                </ul>
+                <p>
+                  All data is encrypted, backed up daily, and can be geo-located based on your compliance requirements.
+                </p>
+              </div>
+            </div>
+
+            <!-- Technical Questions -->
+            <div class="faq-item bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-md transition-shadow" data-category="technical">
+              <button class="faq-question w-full p-6 text-left hover:bg-gray-50 transition-colors rounded-xl">
+                <div class="flex items-center justify-between">
+                  <h3 class="text-lg font-semibold text-gray-900">What integrations do you support?</h3>
+                  <div class="faq-icon text-indigo-600 text-2xl transform transition-transform">+</div>
+                </div>
+              </button>
+              <div class="faq-answer hidden px-6 pb-6 -mt-2 text-gray-600 leading-relaxed">
+                <p class="mb-4">
+                  We integrate with <strong>50+ popular HR and business tools</strong> to make setup seamless! 
+                  Our most popular integrations include:
+                </p>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-3 mb-4">
+                  <div class="bg-gray-50 rounded-lg p-3 text-center">
+                    <div class="font-semibold text-gray-900">Workday</div>
+                  </div>
+                  <div class="bg-gray-50 rounded-lg p-3 text-center">
+                    <div class="font-semibold text-gray-900">BambooHR</div>
+                  </div>
+                  <div class="bg-gray-50 rounded-lg p-3 text-center">
+                    <div class="font-semibold text-gray-900">Slack</div>
+                  </div>
+                  <div class="bg-gray-50 rounded-lg p-3 text-center">
+                    <div class="font-semibold text-gray-900">Microsoft 365</div>
+                  </div>
+                  <div class="bg-gray-50 rounded-lg p-3 text-center">
+                    <div class="font-semibold text-gray-900">Google Workspace</div>
+                  </div>
+                  <div class="bg-gray-50 rounded-lg p-3 text-center">
+                    <div class="font-semibold text-gray-900">Jira</div>
+                  </div>
+                </div>
+                <p>
+                  Don't see your tool? No problem! We offer custom integrations and REST APIs for any system.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-gray-200 overflow-hidden" data-category="technical">
+              <button class="faq-question w-full p-8 text-left hover:bg-purple-50/50 transition-colors">
+                <div class="flex items-center justify-between">
+                  <h3 class="text-xl font-semibold text-gray-900">⚡ How fast is the platform?</h3>
+                  <div class="faq-icon text-purple-600 text-2xl transform transition-transform">+</div>
+                </div>
+              </button>
+              <div class="faq-answer hidden p-8 pt-0 text-gray-600 leading-relaxed">
+                <p class="mb-4">
+                  <strong>Lightning fast!</strong> Our platform is built for speed and can handle massive datasets 
+                  with sub-second response times.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div class="bg-green-50 rounded-lg p-4">
+                    <h4 class="font-semibold text-green-900 mb-2">⚡ Query Speed</h4>
+                    <p class="text-sm text-green-800">< 200ms average response time</p>
+                  </div>
+                  <div class="bg-green-50 rounded-lg p-4">
+                    <h4 class="font-semibold text-green-900 mb-2">📊 Data Processing</h4>
+                    <p class="text-sm text-green-800">10M+ records processed in real-time</p>
+                  </div>
+                  <div class="bg-green-50 rounded-lg p-4">
+                    <h4 class="font-semibold text-green-900 mb-2">🎯 Uptime</h4>
+                    <p class="text-sm text-green-800">99.99% SLA with 24/7 monitoring</p>
+                  </div>
+                  <div class="bg-green-50 rounded-lg p-4">
+                    <h4 class="font-semibold text-green-900 mb-2">🚀 Scalability</h4>
+                    <p class="text-sm text-green-800">Auto-scales to handle any workload</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- General Questions -->
+            <div class="faq-item bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-md transition-shadow" data-category="product">
+              <button class="faq-question w-full p-6 text-left hover:bg-gray-50 transition-colors rounded-xl">
+                <div class="flex items-center justify-between">
+                  <h3 class="text-lg font-semibold text-gray-900">Do you provide training and support?</h3>
+                  <div class="faq-icon text-indigo-600 text-2xl transform transition-transform">+</div>
+                </div>
+              </button>
+              <div class="faq-answer hidden px-6 pb-6 -mt-2 text-gray-600 leading-relaxed">
+                <p class="mb-4">
+                  <strong>Absolutely!</strong> We're committed to your success and provide comprehensive training and support.
+                </p>
+                <ul class="space-y-3 mb-4">
+                  <li class="flex items-start gap-3">
+                    <span class="text-lg">🎯</span>
+                    <div>
+                      <strong>Onboarding:</strong> Dedicated success manager for setup and training
+                    </div>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="text-lg">📚</span>
+                    <div>
+                      <strong>Resources:</strong> Video tutorials, documentation, and best practices
+                    </div>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="text-lg">💬</span>
+                    <div>
+                      <strong>Support:</strong> 24/7 chat support and priority email assistance
+                    </div>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="text-lg">🎪</span>
+                    <div>
+                      <strong>Webinars:</strong> Regular training sessions and feature updates
+                    </div>
+                  </li>
+                </ul>
+                <p>We're here to make sure you get maximum value from Selora!</p>
+              </div>
             </div>
           </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl p-12 shadow-sm">
+          <h2 class="text-3xl font-bold text-gray-900 mb-6">Still have questions?</h2>
+          <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+            Our team is here to help! Reach out to us anytime and we'll get back to you within 24 hours.
+          </p>
+          <a 
+            href="mailto:support@selora.com" 
+            class="inline-flex items-center justify-center px-8 py-4 border border-transparent text-base font-medium rounded-lg text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 transition-all duration-200 transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+          >
+            Contact Support
+            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
         </div>
       </div>
-    </div>
+    </section>
   </main>
 
   <Footer client:load />
@@ -374,74 +538,105 @@ import Footer from '../components/Footer';
 
 <style>
   .faq-category-btn {
-    @apply px-6 py-3 rounded-full border-2 border-gray-200 text-gray-600 font-medium transition-all hover:border-purple-300 hover:text-purple-600 bg-white/80 backdrop-blur-sm;
+    @apply px-5 py-2 text-sm font-medium text-gray-600 transition-colors hover:text-indigo-600;
   }
   
   .faq-category-btn.active {
-    @apply bg-gradient-to-r from-purple-600 to-pink-600 text-white border-purple-600;
+    @apply bg-white text-indigo-600 shadow-sm border border-gray-200;
   }
   
-  .faq-item.hidden {
-    @apply hidden;
+  .faq-item {
+    @apply transition-all duration-200 ease-in-out;
+  }
+  
+  .faq-answer {
+    @apply transition-all duration-300 ease-in-out overflow-hidden;
   }
   
   .faq-answer.show {
     @apply block;
   }
   
-  .faq-icon.rotate {
-    @apply rotate-45;
+  .faq-icon.rotate-45 {
+    transform: rotate(45deg);
+  }
+  
+  /* Smooth scroll for anchor links */
+  html {
+    scroll-behavior: smooth;
   }
 </style>
 
-<script>
+<script is:inline>
+  // FAQ Category Filtering
   document.addEventListener('DOMContentLoaded', function() {
     // Category filtering
-    const categoryBtns = document.querySelectorAll('.faq-category-btn');
+    const categoryButtons = document.querySelectorAll('.faq-category-btn');
     const faqItems = document.querySelectorAll('.faq-item');
     
-    categoryBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const category = btn.dataset.category;
+    categoryButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const category = button.getAttribute('data-category');
         
         // Update active button
-        categoryBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
+        categoryButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
         
         // Filter FAQ items
         faqItems.forEach(item => {
-          if (category === 'all' || item.dataset.category === category) {
-            item.classList.remove('hidden');
+          if (category === 'all' || item.getAttribute('data-category') === category) {
+            item.style.display = 'block';
           } else {
-            item.classList.add('hidden');
+            item.style.display = 'none';
           }
         });
       });
     });
-    
-    // FAQ accordion functionality
+
+    // FAQ Accordion Functionality
     const faqQuestions = document.querySelectorAll('.faq-question');
     
     faqQuestions.forEach(question => {
       question.addEventListener('click', () => {
-        const answer = question.nextElementSibling;
+        const faqItem = question.closest('.faq-item');
+        const answer = faqItem.querySelector('.faq-answer');
         const icon = question.querySelector('.faq-icon');
         
-        // Close other open FAQs
-        faqQuestions.forEach(q => {
-          if (q !== question) {
-            const otherAnswer = q.nextElementSibling;
-            const otherIcon = q.querySelector('.faq-icon');
-            otherAnswer.classList.add('hidden');
-            otherIcon.classList.remove('rotate');
+        // Toggle active class on the clicked item
+        faqItem.classList.toggle('active');
+        
+        // Toggle answer visibility
+        if (answer.classList.contains('hidden')) {
+          answer.classList.remove('hidden');
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+          icon.textContent = '−';
+          icon.classList.add('rotate-45');
+        } else {
+          answer.style.maxHeight = '0';
+          setTimeout(() => {
+            answer.classList.add('hidden');
+          }, 300);
+          icon.textContent = '+';
+          icon.classList.remove('rotate-45');
+        }
+        
+        // Close other open items
+        faqQuestions.forEach(otherQuestion => {
+          if (otherQuestion !== question) {
+            const otherFaqItem = otherQuestion.closest('.faq-item');
+            const otherAnswer = otherFaqItem.querySelector('.faq-answer');
+            const otherIcon = otherQuestion.querySelector('.faq-icon');
+            
+            otherFaqItem.classList.remove('active');
+            otherAnswer.style.maxHeight = '0';
+            setTimeout(() => {
+              otherAnswer.classList.add('hidden');
+            }, 300);
+            otherIcon.textContent = '+';
+            otherIcon.classList.remove('rotate-45');
           }
         });
-        
-        // Toggle current FAQ
-        answer.classList.toggle('hidden');
-        icon.classList.toggle('rotate');
       });
     });
   });
 </script>
-</Layout>

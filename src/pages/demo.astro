@@ -7,241 +7,297 @@ import Footer from '../components/Footer';
 <Layout title="Request Demo - Selora">
   <Header client:load />
   
-  <main class="pt-20 pb-16 bg-gradient-to-br from-gray-50 via-white to-purple-50/30 relative overflow-hidden">
-    <!-- Background Elements -->
-    <div class="absolute inset-0 overflow-hidden">
-      <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-200/20 rounded-full blur-3xl"></div>
-      <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-200/20 rounded-full blur-3xl"></div>
-    </div>
-
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <!-- Hero Section -->
-      <div class="text-center mb-20">
-        <div class="inline-flex items-center bg-white/80 backdrop-blur-sm rounded-full px-6 py-3 mb-8 border border-purple-200/50">
-          <span class="text-purple-600 font-semibold">🚀 See Selora in Action</span>
-        </div>
-        <h1 class="text-6xl md:text-7xl font-black text-gray-900 mb-8 leading-tight font-display">
-          Request a{' '}
-          <span class="bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent">
-            Live Demo
-          </span>
-        </h1>
-        <p class="text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-          See how Selora can transform your workforce management with{' '}
-          <span class="font-semibold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-            AI-powered insights
-          </span>. Schedule a personalized demo with our team.
-        </p>
+  <style is:global>
+    /* Form Styles */
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+    .form-label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #374151;
+      margin-bottom: 0.5rem;
+      transition: color 0.2s ease-in-out;
+    }
+    .form-input, .form-select {
+      display: block;
+      width: 100%;
+      padding: 0.75rem 2.5rem 0.75rem 2.5rem;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.75rem;
+      background-color: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(4px);
+      transition: all 0.2s ease-in-out;
+    }
+    .form-input:focus, .form-select:focus {
+      outline: none;
+      border-color: transparent;
+      box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.5);
+    }
+    .form-icon {
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding-left: 0.75rem;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      pointer-events: none;
+      color: #9ca3af;
+    }
+    .form-select-arrow {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding-right: 0.75rem;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      pointer-events: none;
+      color: #9ca3af;
+    }
+    .form-group:hover .form-label {
+      color: #4f46e5;
+    }
+    .form-group:hover .form-icon {
+      color: #6366f1;
+    }
+    .submit-btn {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem 1.5rem;
+      border: 1px solid transparent;
+      border-radius: 0.75rem;
+      font-weight: 500;
+      color: white;
+      background: linear-gradient(to right, #4f46e5, #7c3aed);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    .submit-btn:hover {
+      background: linear-gradient(to right, #4338ca, #6d28d9);
+      transform: translateY(-1px);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+    }
+    .submit-btn:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.5);
+    }
+  </style>
+  <main class="bg-white">
+    <!-- Hero Section with Animated Gradient -->
+    <section class="relative pt-48 pb-32 md:pt-56 md:pb-40 overflow-hidden bg-gradient-to-br from-indigo-50 via-white to-purple-50">
+      <div class="absolute inset-0 opacity-10">
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgcGF0dGVyblRyYW5zZm9ybT0icm90YXRlKDQ1KSI+PHJlY3Qgd2lkdGg9IjUwIiBoZWlnaHQ9IjUwIiBmaWxsPSJub25lIiBzdHJva2U9IiNlMmUyZmYiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==')]"></div>
       </div>
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-4xl mx-auto">
 
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
-        <!-- Demo Form -->
-        <div class="bg-white/80 backdrop-blur-sm rounded-3xl shadow-2xl border border-gray-200 p-8">
-          <h2 class="text-3xl font-bold text-gray-900 mb-8 font-display">
-            <span class="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-              Get Your Personalized Demo
+          <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
+            See <span class="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">Selora</span> in Action
+          </h1>
+          <p class="text-xl md:text-2xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
+            Experience the power of AI-driven workforce analytics with a personalized demo. 
+            See how we can transform your organization's talent strategy in just 30 minutes.
+          </p>
+        </div>
+      </div>
+      <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent"></div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="relative py-16 md:py-24 bg-white">
+      <!-- Floating Elements -->
+      <div class="absolute top-1/4 -left-20 w-48 h-48 bg-purple-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
+      <div class="absolute top-1/3 right-0 w-72 h-72 bg-indigo-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+      <div class="absolute bottom-1/4 left-1/4 w-64 h-64 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
+
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 xl:gap-12">
+          <!-- Left Column - What to Expect -->
+          <div class="lg:col-span-5">
+            <div class="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl p-6 sm:p-8 border border-indigo-100 shadow-sm h-full">
+              <div class="flex items-center mb-6">
+                <div class="p-2 bg-indigo-100 rounded-lg mr-4">
+                  <svg class="h-6 w-6 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
+                  </svg>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900">What to Expect</h3>
+              </div>
+              
+              <div class="space-y-6">
+                <div class="flex group">
+                  <div class="flex-shrink-0 h-10 w-10 rounded-full bg-white border-2 border-indigo-200 flex items-center justify-center text-indigo-600 font-medium mr-4 group-hover:bg-indigo-600 group-hover:text-white group-hover:border-indigo-600 transition-colors duration-300">
+                    1
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-gray-900 group-hover:text-indigo-600 transition-colors">Personalized Walkthrough</h4>
+                    <p class="mt-1 text-gray-600">A 30-minute customized demo focused on your specific needs and challenges.</p>
+                  </div>
+                </div>
+                
+                <div class="flex group">
+                  <div class="flex-shrink-0 h-10 w-10 rounded-full bg-white border-2 border-indigo-200 flex items-center justify-center text-indigo-600 font-medium mr-4 group-hover:bg-indigo-600 group-hover:text-white group-hover:border-indigo-600 transition-colors duration-300">
+                    2
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-gray-900 group-hover:text-indigo-600 transition-colors">Live Q&A</h4>
+                    <p class="mt-1 text-gray-600">Get your questions answered in real-time by our product experts.</p>
+                  </div>
+                </div>
+                
+                <div class="flex group">
+                  <div class="flex-shrink-0 h-10 w-10 rounded-full bg-white border-2 border-indigo-200 flex items-center justify-center text-indigo-600 font-medium mr-4 group-hover:bg-indigo-600 group-hover:text-white group-hover:border-indigo-600 transition-colors duration-300">
+                    3
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-gray-900 group-hover:text-indigo-600 transition-colors">Next Steps</h4>
+                    <p class="mt-1 text-gray-600">Receive a tailored proposal and implementation plan for your organization.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column - Form -->
+          <div class="lg:col-span-7">
+            <div class="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden h-full">
+              <div class="p-8">
+                <div class="mb-8">
+                  <h2 class="text-3xl font-bold text-gray-900 mb-2">Schedule Your Demo</h2>
+                  <p class="text-gray-500">We'll get back to you within 24 hours</p>
+                </div>
+                
+                <form class="space-y-6">
+                  <div class="space-y-5">
+                    <div class="form-group">
+                      <label for="fullName" class="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
+                      <input type="text" id="fullName" name="fullName" required 
+                        class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
+                        placeholder="Your name">
+                    </div>
+                    
+                    <div class="form-group">
+                      <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Work Email *</label>
+                      <input type="email" id="email" name="email" required 
+                        class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
+                        placeholder="you@company.com">
+                    </div>
+                    
+                    <div class="form-group">
+                      <label for="company" class="block text-sm font-medium text-gray-700 mb-1">Company Name *</label>
+                      <input type="text" id="company" name="company" required 
+                        class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
+                        placeholder="Company">
+                    </div>
+                    
+                    <div class="form-group">
+                      <label for="companySize" class="block text-sm font-medium text-gray-700 mb-1">Company Size *</label>
+                      <select id="companySize" name="companySize" required 
+                        class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition bg-white appearance-none">
+                        <option value="" disabled selected>Select company size</option>
+                        <option value="1-10">1-10 employees</option>
+                        <option value="11-50">11-50 employees</option>
+                        <option value="51-200">51-200 employees</option>
+                        <option value="201-500">201-500 employees</option>
+                        <option value="501-1000">501-1,000 employees</option>
+                        <option value="1001-5000">1,001-5,000 employees</option>
+                        <option value="5001-10000">5,001-10,000 employees</option>
+                        <option value="10001+">10,000+ employees</option>
+                      </select>
+                    </div>
+                    
+                    <div class="form-group">
+                      <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Additional Information</label>
+                      <textarea id="message" name="message" rows="3" 
+                        class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
+                        placeholder="Tell us what you're interested in..."></textarea>
+                    </div>
+                  </div>
+                  
+                  <button type="submit" 
+                    class="w-full py-3.5 px-6 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-medium rounded-lg transition duration-200 shadow-md hover:shadow-lg">
+                    Request Demo
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <span class="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+              Why Choose Selora
             </span>
           </h2>
-          
-          <form class="space-y-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label for="firstName" class="block text-sm font-medium text-gray-700 mb-2">First Name *</label>
-                <input type="text" id="firstName" name="firstName" required class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors bg-white/80">
-              </div>
-              <div>
-                <label for="lastName" class="block text-sm font-medium text-gray-700 mb-2">Last Name *</label>
-                <input type="text" id="lastName" name="lastName" required class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors bg-white/80">
-              </div>
-            </div>
-            
-            <div>
-              <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Work Email *</label>
-              <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors bg-white/80">
-            </div>
-            
-            <div>
-              <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
-              <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors bg-white/80">
-            </div>
-            
-            <div>
-              <label for="company" class="block text-sm font-medium text-gray-700 mb-2">Company *</label>
-              <input type="text" id="company" name="company" required class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors bg-white/80">
-            </div>
-            
-            <div>
-              <label for="jobTitle" class="block text-sm font-medium text-gray-700 mb-2">Job Title *</label>
-              <input type="text" id="jobTitle" name="jobTitle" required class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors bg-white/80">
-            </div>
-            
-            <div>
-              <label for="employees" class="block text-sm font-medium text-gray-700 mb-2">Company Size *</label>
-              <select id="employees" name="employees" required class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors bg-white/80">
-                <option value="">Select company size</option>
-                <option value="1-10">1-10 employees</option>
-                <option value="11-50">11-50 employees</option>
-                <option value="51-200">51-200 employees</option>
-                <option value="201-1000">201-1000 employees</option>
-                <option value="1000+">1000+ employees</option>
-              </select>
-            </div>
-            
-            <div>
-              <label for="useCase" class="block text-sm font-medium text-gray-700 mb-2">Primary Use Case</label>
-              <select id="useCase" name="useCase" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors bg-white/80">
-                <option value="">Select primary use case</option>
-                <option value="performance">Performance Management</option>
-                <option value="succession">Succession Planning</option>
-                <option value="attrition">Attrition Prevention</option>
-                <option value="optimization">Team Optimization</option>
-                <option value="analytics">Workforce Analytics</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-            
-            <div>
-              <label for="timeline" class="block text-sm font-medium text-gray-700 mb-2">Implementation Timeline</label>
-              <select id="timeline" name="timeline" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors bg-white/80">
-                <option value="">Select timeline</option>
-                <option value="immediate">Immediate (within 1 month)</option>
-                <option value="quarter">This quarter (1-3 months)</option>
-                <option value="half-year">Next 6 months</option>
-                <option value="year">Within a year</option>
-                <option value="exploring">Just exploring</option>
-              </select>
-            </div>
-            
-            <div>
-              <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Tell us about your challenges</label>
-              <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors bg-white/80" placeholder="What workforce challenges are you looking to solve?"></textarea>
-            </div>
-            
-            <div class="flex items-start gap-3">
-              <input type="checkbox" id="consent" name="consent" required class="mt-1 w-4 h-4 text-purple-600 border-gray-300 rounded focus:ring-purple-500">
-              <label for="consent" class="text-sm text-gray-600">
-                I agree to receive communications from Selora about their products and services. I understand I can unsubscribe at any time. *
-              </label>
-            </div>
-            
-            <button type="submit" class="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-4 rounded-xl font-bold text-lg transition-all hover:scale-105 shadow-lg">
-              Schedule My Demo
-            </button>
-          </form>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">Powerful workforce analytics and planning tools designed for modern HR teams</p>
         </div>
 
-        <!-- Demo Information -->
-        <div class="space-y-8">
-          <div class="bg-white/80 backdrop-blur-sm rounded-3xl shadow-lg border border-gray-200 p-8">
-            <h3 class="text-2xl font-bold text-gray-900 mb-6 font-display">
-              <span class="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-                What to Expect
-              </span>
-            </h3>
-            <div class="space-y-6">
-              <div class="flex items-start gap-4">
-                <div class="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <span class="text-white text-sm font-bold">1</span>
-                </div>
-                <div>
-                  <h4 class="font-semibold text-gray-900 mb-2">Personalized Walkthrough</h4>
-                  <p class="text-gray-600 text-sm">See Selora in action with your specific use cases and data scenarios.</p>
-                </div>
-              </div>
-              <div class="flex items-start gap-4">
-                <div class="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <span class="text-white text-sm font-bold">2</span>
-                </div>
-                <div>
-                  <h4 class="font-semibold text-gray-900 mb-2">Live AI Analysis</h4>
-                  <p class="text-gray-600 text-sm">Watch our AI algorithms analyze workforce data in real-time.</p>
-                </div>
-              </div>
-              <div class="flex items-start gap-4">
-                <div class="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <span class="text-white text-sm font-bold">3</span>
-                </div>
-                <div>
-                  <h4 class="font-semibold text-gray-900 mb-2">Q&A Session</h4>
-                  <p class="text-gray-600 text-sm">Get answers to all your questions from our product experts.</p>
-                </div>
-              </div>
-              <div class="flex items-start gap-4">
-                <div class="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <span class="text-white text-sm font-bold">4</span>
-                </div>
-                <div>
-                  <h4 class="font-semibold text-gray-900 mb-2">Custom Proposal</h4>
-                  <p class="text-gray-600 text-sm">Receive a tailored implementation plan and pricing proposal.</p>
-                </div>
-              </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+            <div class="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center mb-6">
+              <svg class="w-6 h-6 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+              </svg>
             </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">AI-Powered Predictions</h3>
+            <p class="text-gray-600">Leverage advanced machine learning to forecast workforce trends and make data-driven decisions.</p>
           </div>
 
-          <div class="bg-gradient-to-r from-purple-50 to-pink-50 rounded-3xl p-8 border border-purple-200">
-            <h3 class="text-2xl font-bold text-purple-900 mb-6 font-display">Demo Highlights</h3>
-            <ul class="space-y-3 text-purple-800">
-              <li class="flex items-center gap-3">
-                <svg class="w-5 h-5 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                </svg>
-                3D Organization Galaxy visualization
-              </li>
-              <li class="flex items-center gap-3">
-                <svg class="w-5 h-5 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                </svg>
-                Real-time workforce simulations
-              </li>
-              <li class="flex items-center gap-3">
-                <svg class="w-5 h-5 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                </svg>
-                OrgAI conversational intelligence
-              </li>
-              <li class="flex items-center gap-3">
-                <svg class="w-5 h-5 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                </svg>
-                Predictive attrition analysis
-              </li>
-              <li class="flex items-center gap-3">
-                <svg class="w-5 h-5 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                </svg>
-                Succession planning algorithms
-              </li>
-            </ul>
+          <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+            <div class="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center mb-6">
+              <svg class="w-6 h-6 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Custom Reporting</h3>
+            <p class="text-gray-600">Create and share custom reports with drag-and-drop simplicity and real-time data.</p>
           </div>
 
-          <div class="bg-white/80 backdrop-blur-sm rounded-3xl shadow-lg border border-gray-200 p-8">
-            <h3 class="text-2xl font-bold text-gray-900 mb-6 font-display">
-              <span class="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-                Why Choose Selora?
-              </span>
-            </h3>
-            <div class="space-y-4 text-gray-700">
-              <div class="flex items-start gap-3">
-                <div class="w-2 h-2 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full mt-2 flex-shrink-0"></div>
-                <span><strong class="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">99.994% accuracy</strong> in workforce predictions</span>
-              </div>
-              <div class="flex items-start gap-3">
-                <div class="w-2 h-2 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full mt-2 flex-shrink-0"></div>
-                <span><strong class="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Real-time insights</strong> with sub-second response times</span>
-              </div>
-              <div class="flex items-start gap-3">
-                <div class="w-2 h-2 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full mt-2 flex-shrink-0"></div>
-                <span><strong class="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Enterprise security</strong> with SOC 2 Type II certification</span>
-              </div>
-              <div class="flex items-start gap-3">
-                <div class="w-2 h-2 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full mt-2 flex-shrink-0"></div>
-                <span><strong class="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Easy integration</strong> with existing HR systems</span>
-              </div>
+          <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+            <div class="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center mb-6">
+              <svg class="w-6 h-6 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+              </svg>
             </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Enterprise Security</h3>
+            <p class="text-gray-600">Bank-grade security and compliance to keep your sensitive workforce data protected.</p>
           </div>
         </div>
       </div>
-    </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-gradient-to-r from-indigo-700 to-purple-700 text-white py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to transform your workforce strategy?</h2>
+        <p class="text-xl text-indigo-100 mb-8 max-w-3xl mx-auto">Join leading companies that trust Selora for their people analytics and planning needs.</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a href="/onboarding" class="inline-flex items-center justify-center px-8 py-4 border border-transparent text-base font-medium rounded-xl text-indigo-700 bg-white hover:bg-gray-100 transition-colors duration-300">
+            Get Started
+            <svg class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+            </svg>
+          </a>
+
+        </div>
+      </div>
+    </section>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+
   </main>
 
   <Footer client:load />

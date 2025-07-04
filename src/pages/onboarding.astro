@@ -1,352 +1,577 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header';
 ---
 
-<Layout title="Get Started - Selora">
-  <Header client:load />
-  
-  <main class="pt-20 pb-16 bg-gradient-to-br from-gray-50 via-white to-purple-50/30 relative overflow-hidden min-h-screen">
-    <!-- Background Elements -->
-    <div class="absolute inset-0 overflow-hidden">
-      <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-200/20 rounded-full blur-3xl"></div>
-      <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-200/20 rounded-full blur-3xl"></div>
-      <div class="absolute top-1/6 right-1/6 w-48 h-48 bg-pink-200/15 rounded-full blur-3xl"></div>
-      <div class="absolute bottom-1/6 left-1/6 w-56 h-56 bg-purple-300/10 rounded-full blur-3xl"></div>
-      <div class="absolute top-2/3 right-1/3 w-40 h-40 bg-blue-300/15 rounded-full blur-3xl"></div>
-    </div>
+<Layout title="Get Started - Selora" showHeader={false}>
+  <main class="min-h-screen bg-white">
+    <!-- Main container -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-screen flex flex-col">
+      <!-- Spacer to maintain vertical position -->
+      <div class="h-24"></div>
 
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <!-- Onboarding Container -->
-      <div id="onboarding-container" class="min-h-[600px] flex items-center justify-center">
-        
-        <!-- Step 1: Company Name -->
-        <div id="step-1" class="onboarding-step text-center max-w-2xl mx-auto">
-          <div class="bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl border border-gray-200/50 p-12">
-            <div class="mb-8">
-              <div class="w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-500 rounded-3xl flex items-center justify-center mx-auto mb-6">
-                <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-4m-5 0H9m0 0H5m0 0h2M7 7h10M7 11h10M7 15h10"></path>
-                </svg>
-              </div>
-              <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 font-display">
-                Welcome to{' '}
-                <span class="bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent">
-                  Selora
-                </span>
-              </h1>
-              <p class="text-xl text-gray-600 mb-8">
-                Let's get your organization set up with AI-powered workforce analytics
-              </p>
-            </div>
-            
-            <div class="mb-8">
-              <label class="block text-lg font-semibold text-gray-900 mb-4">
-                What's your company name?
-              </label>
-              <input 
-                type="text" 
-                id="company-name"
-                class="w-full px-6 py-4 text-lg border-2 border-gray-300 rounded-2xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all bg-white/80 text-center font-medium"
-                placeholder="Enter your company name"
-                autocomplete="off"
-              />
-            </div>
-            
-            <button 
-              id="step-1-next"
-              class="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-4 px-8 rounded-2xl font-bold text-lg transition-all hover:scale-105 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
-              disabled
-            >
-              Next Step
-              <svg class="w-5 h-5 inline ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-              </svg>
-            </button>
-          </div>
-        </div>
-
-        <!-- Step 2: Team Size -->
-        <div id="step-2" class="onboarding-step hidden text-center max-w-2xl mx-auto">
-          <div class="bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl border border-gray-200/50 p-12">
-            <div class="mb-8">
-              <div class="w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-500 rounded-3xl flex items-center justify-center mx-auto mb-6">
-                <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                </svg>
-              </div>
-              <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 font-display">
-                Perfect, <span id="company-display" class="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent"></span>!
-              </h2>
-              <p class="text-xl text-gray-600 mb-8">
-                How many employees are you planning to onboard?
-              </p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-              <button class="team-size-option p-6 border-2 border-gray-300 rounded-2xl hover:border-purple-500 hover:bg-purple-50 transition-all text-left group" data-size="small" data-range="1-50">
-                <div class="flex items-center justify-between mb-2">
-                  <span class="text-lg font-semibold text-gray-900">Small Team</span>
-                  <div class="w-4 h-4 border-2 border-gray-400 rounded-full group-hover:border-purple-500 transition-colors"></div>
-                </div>
-                <p class="text-gray-600">1-50 employees</p>
-                <p class="text-sm text-purple-600 mt-2">Perfect for startups and small businesses</p>
-              </button>
-              
-              <button class="team-size-option p-6 border-2 border-gray-300 rounded-2xl hover:border-purple-500 hover:bg-purple-50 transition-all text-left group" data-size="medium" data-range="51-200">
-                <div class="flex items-center justify-between mb-2">
-                  <span class="text-lg font-semibold text-gray-900">Growing Company</span>
-                  <div class="w-4 h-4 border-2 border-gray-400 rounded-full group-hover:border-purple-500 transition-colors"></div>
-                </div>
-                <p class="text-gray-600">51-200 employees</p>
-                <p class="text-sm text-purple-600 mt-2">Ideal for scaling organizations</p>
-              </button>
-              
-              <button class="team-size-option p-6 border-2 border-gray-300 rounded-2xl hover:border-purple-500 hover:bg-purple-50 transition-all text-left group" data-size="large" data-range="201-1000">
-                <div class="flex items-center justify-between mb-2">
-                  <span class="text-lg font-semibold text-gray-900">Large Organization</span>
-                  <div class="w-4 h-4 border-2 border-gray-400 rounded-full group-hover:border-purple-500 transition-colors"></div>
-                </div>
-                <p class="text-gray-600">201-1000 employees</p>
-                <p class="text-sm text-purple-600 mt-2">For established enterprises</p>
-              </button>
-              
-              <button class="team-size-option p-6 border-2 border-gray-300 rounded-2xl hover:border-purple-500 hover:bg-purple-50 transition-all text-left group" data-size="enterprise" data-range="1000+">
-                <div class="flex items-center justify-between mb-2">
-                  <span class="text-lg font-semibold text-gray-900">Enterprise</span>
-                  <div class="w-4 h-4 border-2 border-gray-400 rounded-full group-hover:border-purple-500 transition-colors"></div>
-                </div>
-                <p class="text-gray-600">1000+ employees</p>
-                <p class="text-sm text-purple-600 mt-2">Custom enterprise solutions</p>
-              </button>
-            </div>
-            
-            <button 
-              id="step-2-next"
-              class="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-4 px-8 rounded-2xl font-bold text-lg transition-all hover:scale-105 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
-              disabled
-            >
-              Show My Pricing
-              <svg class="w-5 h-5 inline ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-              </svg>
-            </button>
-          </div>
-        </div>
-
-        <!-- Step 3: Pricing Plans -->
-        <div id="step-3" class="onboarding-step hidden w-full max-w-7xl mx-auto">
-          <div class="text-center mb-16">
-            <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 font-display">
-              Perfect Plan for{' '}
-              <span id="company-display-2" class="bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent"></span>
-            </h2>
-            <p class="text-xl text-gray-600">
-              Based on your team size, here's our recommendation
+      <!-- Step 1: Company Name -->
+      <div id="step-1" class="flex flex-col md:flex-row min-h-screen">
+        <!-- Left side: Form -->
+        <div class="w-full md:w-1/2 flex items-center justify-center p-8 md:p-12 lg:p-16">
+          <div class="w-full max-w-md">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-6">
+              Welcome to <span class="text-indigo-600">Selora</span>
+            </h1>
+            <p class="text-lg text-gray-600 mb-8">
+              Let's get your company set up with AI-powered workforce analytics
             </p>
-          </div>
-
-          <!-- Pricing Cards Container with Better Spacing -->
-          <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 relative px-4">
             
-            <!-- Starter Plan -->
-            <div id="starter-plan" class="pricing-card bg-white/80 backdrop-blur-sm rounded-3xl border-2 border-gray-200 p-8 relative transition-all duration-500 hover:shadow-xl">
-              <div class="text-center mb-8">
-                <h3 class="text-2xl font-bold text-gray-900 mb-2 font-display">Starter</h3>
-                <p class="text-gray-600 mb-6">Perfect for small teams</p>
-                <div class="mb-6">
-                  <span class="text-5xl font-black bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">$99</span>
-                  <span class="text-gray-600 text-lg">/month</span>
+            <div class="space-y-6">
+              <div>
+                <label for="company-name" class="block text-sm font-medium text-gray-700 mb-1.5">
+                  What's your company name?
+                </label>
+                <div class="relative">
+                  <input 
+                    type="text" 
+                    id="company-name"
+                    class="w-full px-4 py-3 text-base border border-gray-200 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all bg-white placeholder-gray-400 text-gray-900"
+                    placeholder="Enter company name"
+                  />
                 </div>
               </div>
               
-              <ul class="space-y-4 mb-8">
-                <li class="flex items-center gap-3">
-                  <div class="w-5 h-5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
-                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                    </svg>
-                  </div>
-                  <span class="text-gray-700">Up to 50 employees</span>
-                </li>
-                <li class="flex items-center gap-3">
-                  <div class="w-5 h-5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
-                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                    </svg>
-                  </div>
-                  <span class="text-gray-700">Basic analytics dashboard</span>
-                </li>
-                <li class="flex items-center gap-3">
-                  <div class="w-5 h-5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
-                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                    </svg>
-                  </div>
-                  <span class="text-gray-700">Monthly reports</span>
-                </li>
-                <li class="flex items-center gap-3">
-                  <div class="w-5 h-5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
-                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                    </svg>
-                  </div>
-                  <span class="text-gray-700">Email support</span>
-                </li>
-              </ul>
+              <div class="pt-2">
+                <button
+                  id="step-1-next"
+                  disabled
+                  class="w-full flex items-center justify-center px-8 py-4 border border-transparent text-base font-medium rounded-lg text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 transition-all duration-200 transform hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                >
+                  Get Started
+                  <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Right side: Image -->
+        <div class="hidden md:block md:w-1/2 bg-gray-50">
+          <img 
+            src="/images/onboarding-team.jpg" 
+            alt="Team collaboration" 
+            class="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+
+      <!-- Step 2: Team Size -->
+      <div id="step-2" class="hidden min-h-screen w-full">
+        <div class="flex flex-col md:flex-row h-full">
+          <!-- Left side: Form -->
+          <div class="w-full md:w-1/2 flex items-center justify-center p-8 md:p-12 lg:p-16">
+            <div class="w-full max-w-md">
+              <h2 class="text-3xl font-bold text-gray-900 mb-2 text-center md:text-left">
+                Team Size
+              </h2>
+              <p class="text-gray-600 mb-8 text-center md:text-left">
+                How many people are in your company?
+              </p>
+            
+            <div class="space-y-4">
+              <label class="flex items-center p-5 border border-gray-200 rounded-lg hover:border-indigo-300 cursor-pointer transition-colors hover:bg-gray-50">
+                <input type="radio" name="team-size" value="1-20" class="h-5 w-5 text-indigo-600 focus:ring-indigo-500 border-gray-300">
+                <span class="ml-4 text-gray-700">1-20 employees</span>
+              </label>
               
-              <button class="plan-select-btn w-full border-2 border-purple-600 text-purple-600 py-4 rounded-2xl font-bold text-lg transition-all duration-300 hover:bg-purple-600 hover:text-white hover:scale-105" data-plan="starter">
-                Choose Starter
-              </button>
+              <label class="flex items-center p-5 border border-gray-200 rounded-lg hover:border-indigo-300 cursor-pointer transition-colors hover:bg-gray-50">
+                <input type="radio" name="team-size" value="20-100" class="h-5 w-5 text-indigo-600 focus:ring-indigo-500 border-gray-300">
+                <span class="ml-4 text-gray-700">20-100 employees</span>
+              </label>
+              
+              <label class="flex items-center p-5 border border-gray-200 rounded-lg hover:border-indigo-300 cursor-pointer transition-colors hover:bg-gray-50">
+                <input type="radio" name="team-size" value="100+" class="h-5 w-5 text-indigo-600 focus:ring-indigo-500 border-gray-300">
+                <span class="ml-4 text-gray-700">100+ employees</span>
+              </label>
             </div>
             
-            <!-- Professional Plan -->
-            <div id="professional-plan" class="pricing-card bg-white/90 backdrop-blur-sm rounded-3xl border-2 border-purple-600 p-8 relative shadow-2xl transform">
-              <div class="absolute -top-6 left-1/2 transform -translate-x-1/2">
-                <div class="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-3 rounded-full text-sm font-bold flex items-center gap-1 shadow-lg">
-                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                  </svg>
-                  Recommended
-                </div>
-              </div>
-              
-              <div class="text-center mb-8 mt-4">
-                <h3 class="text-2xl font-bold text-gray-900 mb-2 font-display">Professional</h3>
-                <p class="text-gray-600 mb-6">Ideal for growing companies</p>
-                <div class="mb-6">
-                  <span class="text-5xl font-black bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">$299</span>
-                  <span class="text-gray-600 text-lg">/month</span>
-                </div>
-              </div>
-              
-              <ul class="space-y-4 mb-8">
-                <li class="flex items-center gap-3">
-                  <div class="w-5 h-5 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center">
-                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                    </svg>
-                  </div>
-                  <span class="text-gray-700">Up to 200 employees</span>
-                </li>
-                <li class="flex items-center gap-3">
-                  <div class="w-5 h-5 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center">
-                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                    </svg>
-                  </div>
-                  <span class="text-gray-700">Advanced AI analytics</span>
-                </li>
-                <li class="flex items-center gap-3">
-                  <div class="w-5 h-5 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center">
-                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                    </svg>
-                  </div>
-                  <span class="text-gray-700">Real-time insights</span>
-                </li>
-                <li class="flex items-center gap-3">
-                  <div class="w-5 h-5 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center">
-                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                    </svg>
-                  </div>
-                  <span class="text-gray-700">3D visualization</span>
-                </li>
-                <li class="flex items-center gap-3">
-                  <div class="w-5 h-5 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center">
-                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                    </svg>
-                  </div>
-                  <span class="text-gray-700">Simulation canvas</span>
-                </li>
-                <li class="flex items-center gap-3">
-                  <div class="w-5 h-5 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center">
-                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                    </svg>
-                  </div>
-                  <span class="text-gray-700">Priority support</span>
-                </li>
-              </ul>
-              
-              <button class="plan-select-btn w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-4 rounded-2xl font-bold text-lg transition-all hover:scale-105 shadow-lg" data-plan="professional">
-                Start Free Trial
+            <div class="flex justify-between pt-8">
+              <button 
+                id="back-to-step1"
+                class="px-6 py-3 text-gray-600 hover:text-gray-900 font-medium transition-colors flex items-center hover:bg-gray-100 rounded-lg"
+              >
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back
               </button>
+              
+              <button 
+                id="step-2-next"
+                disabled
+                class="px-6 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-medium rounded-lg transition-colors flex items-center disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                Continue to Email Collection
+                <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </button>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Right side: Image -->
+          <div class="hidden md:flex md:w-1/2 bg-gray-50 overflow-hidden">
+            <img 
+              src="/images/workforce-analytics.jpg" 
+              alt="Workforce analytics" 
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 3: Email Collection -->
+      <div id="step-3" class="hidden min-h-screen w-full">
+        <div class="flex flex-col md:flex-row h-full">
+          <!-- Left side: Form -->
+          <div class="w-full md:w-1/2 flex items-center justify-center p-8 md:p-12 lg:p-16">
+            <div class="w-full max-w-md">
+              <h2 class="text-3xl font-bold text-gray-900 mb-2 text-center md:text-left">
+                Contact Information
+              </h2>
+              <p class="text-gray-600 mb-8 text-center md:text-left">
+                We'll use this to send you important updates about your account.
+              </p>
+            
+              <div class="space-y-6">
+                <div>
+                  <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                  <input 
+                    type="email" 
+                    id="email" 
+                    name="email"
+                    required
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                    placeholder="you@company.com"
+                  >
+                  <p class="mt-1 text-sm text-gray-500">We'll never share your email with anyone else.</p>
+                </div>
+              
+                <div class="flex justify-between pt-4">
+                  <button 
+                    id="back-to-step-2"
+                    type="button"
+                    class="px-6 py-3 text-gray-600 hover:text-gray-900 font-medium transition-colors flex items-center hover:bg-gray-100 rounded-lg"
+                  >
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                    Back
+                  </button>
+                  
+                  <button 
+                    id="step-3-next"
+                    type="button"
+                    class="px-6 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-medium rounded-lg transition-colors flex items-center disabled:opacity-50 disabled:cursor-not-allowed"
+                    disabled
+                  >
+                    Continue to Plans
+                    <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Right side: Image -->
+          <div class="hidden md:flex md:w-1/2 bg-gray-50 overflow-hidden">
+            <img 
+              src="/images/email-illustration.jpg" 
+              alt="Contact Information" 
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 4: Pricing Plans (Full Page) -->
+      <div id="step-4" class="hidden fixed inset-0 bg-white z-20 overflow-y-auto">
+        <div class="min-h-screen w-full pt-16 pb-12 px-4 sm:px-6 lg:px-8">
+          <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Choose Your Plan
+            </h2>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
+              Select the perfect plan for your needs. You can always change it later.
+            </p>
+            
+            <!-- Billing Toggle -->
+            <div class="flex items-center justify-center space-x-4 mb-12">
+              <span class="text-sm font-medium text-gray-700">Billed Monthly</span>
+              <button id="billing-toggle" type="button" class="relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-indigo-200 transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" role="switch" aria-checked="false">
+                <span class="sr-only">Toggle billing</span>
+                <span id="toggle-dot" class="pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out translate-x-0"></span>
+              </button>
+              <div class="flex flex-col">
+                <span class="text-sm font-medium text-gray-700">Billed Annually</span>
+                <span class="text-xs text-indigo-600">Save 17%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto h-full">
+            <!-- Starter Plan -->
+            <div class="plan-card flex flex-col h-full bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200 hover:border-indigo-300 transition-all duration-300 transform hover:-translate-y-1" data-plan="starter">
+              <div class="p-8 h-full flex flex-col justify-between">
+                <div>
+                  <h3 class="text-2xl font-bold text-gray-900">Starter</h3>
+                  <p class="text-gray-600 mt-2">Perfect for individuals</p>
+                </div>
+                
+                <div class="mt-6">
+                  <div class="flex items-baseline">
+                    <span class="text-4xl font-extrabold text-gray-900 monthly-price">$100</span>
+                    <span class="text-4xl font-extrabold text-gray-900 hidden yearly-price">$83</span>
+                    <span class="ml-1 text-lg font-medium text-gray-500">/month</span>
+                  </div>
+                  <p class="mt-1 text-sm text-gray-500">
+                    <span class="monthly-price">Billed monthly at $100</span>
+                    <span class="yearly-price hidden">Billed annually at $1,000</span>
+                  </p>
+                </div>
+                
+                <ul class="mt-8 space-y-4">
+                  <li class="flex items-center">
+                    <svg class="h-5 w-5 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span class="ml-3 text-gray-700">20 Users</span>
+                  </li>
+                  <li class="flex items-center">
+                    <svg class="h-5 w-5 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span class="ml-3 text-gray-700">Email and Call Support</span>
+                  </li>
+                  <li class="flex items-center">
+                    <svg class="h-5 w-5 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span class="ml-3 text-gray-700">DIY Onboarding</span>
+                  </li>
+                </ul>
+                
+                <button class="mt-8 w-full flex justify-center py-3 px-6 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                  Get Started
+                </button>
+              </div>
+            </div>
+            
+            <!-- Standard Plan -->
+            <div class="plan-card flex flex-col h-full bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200 hover:border-indigo-300 transition-all duration-300 transform hover:-translate-y-1" data-plan="standard">
+              <div class="p-8 h-full flex flex-col justify-between">
+                <div>
+                  <h3 class="text-2xl font-bold text-gray-900">Standard</h3>
+                  <p class="text-gray-600 mt-2">Ideal for small teams</p>
+                </div>
+                
+                <div class="mt-6">
+                  <div class="flex items-baseline">
+                    <span class="text-4xl font-extrabold text-gray-900 monthly-price">$200</span>
+                    <span class="text-4xl font-extrabold text-gray-900 hidden yearly-price">$167</span>
+                    <span class="ml-1 text-lg font-medium text-gray-500">/month</span>
+                  </div>
+                  <p class="mt-1 text-sm text-gray-500">
+                    <span class="monthly-price">Billed monthly at $200</span>
+                    <span class="yearly-price hidden">Billed annually at $2,000</span>
+                  </p>
+                </div>
+                
+                <ul class="mt-8 space-y-4">
+                  <li class="flex items-center">
+                    <svg class="h-5 w-5 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span class="ml-3 text-gray-700">Up to 100 Users</span>
+                  </li>
+                  <li class="flex items-center">
+                    <svg class="h-5 w-5 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span class="ml-3 text-gray-700">24/7 Priority Support</span>
+                  </li>
+                  <li class="flex items-center">
+                    <svg class="h-5 w-5 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span class="ml-3 text-gray-700">DIY Onboarding</span>
+                  </li>
+                </ul>
+                
+                <button class="mt-8 w-full flex justify-center py-3 px-6 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                  Get Started
+                </button>
+              </div>
             </div>
             
             <!-- Enterprise Plan -->
-            <div id="enterprise-plan" class="pricing-card bg-white/80 backdrop-blur-sm rounded-3xl border-2 border-gray-200 p-8 relative transition-all duration-500 hover:shadow-xl">
-              <div class="text-center mb-8">
-                <h3 class="text-2xl font-bold text-gray-900 mb-2 font-display">Enterprise</h3>
-                <p class="text-gray-600 mb-6">For large organizations</p>
-                <div class="mb-6">
-                  <span class="text-5xl font-black bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Custom</span>
+            <div class="plan-card flex flex-col h-full bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200 hover:border-indigo-300 transition-all duration-300 transform hover:-translate-y-1" data-plan="enterprise">
+              <div class="p-8 h-full flex flex-col justify-between">
+                <div>
+                  <h3 class="text-2xl font-bold text-gray-900">Enterprise</h3>
+                  <p class="text-gray-600 mt-2">For growing businesses</p>
                 </div>
+                
+                <div class="mt-6">
+                  <div class="flex items-baseline">
+                    <span class="text-4xl font-extrabold text-gray-900 monthly-price">$300</span>
+                    <span class="text-4xl font-extrabold text-gray-900 hidden yearly-price">$250</span>
+                    <span class="ml-1 text-lg font-medium text-gray-500">/month</span>
+                  </div>
+                  <p class="mt-1 text-sm text-gray-500">
+                    <span class="monthly-price">Billed monthly at $300</span>
+                    <span class="yearly-price hidden">Billed annually at $3,000</span>
+                  </p>
+                </div>
+                
+                <ul class="mt-8 space-y-4">
+                  <li class="flex items-center">
+                    <svg class="h-5 w-5 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span class="ml-3 text-gray-700">100+ Users</span>
+                  </li>
+                  <li class="flex items-center">
+                    <svg class="h-5 w-5 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span class="ml-3 text-gray-700">24/7 Priority Support</span>
+                  </li>
+                  <li class="flex items-center">
+                    <svg class="h-5 w-5 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span class="ml-3 text-gray-700">Dedicated Account Manager</span>
+                  </li>
+                  <li class="flex items-center">
+                    <svg class="h-5 w-5 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span class="ml-3 text-gray-700">White Glove Onboarding</span>
+                  </li>
+                </ul>
+                
+                <button class="mt-8 w-full flex justify-center py-3 px-6 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                  Get Started
+                </button>
               </div>
-              
-              <ul class="space-y-4 mb-8">
-                <li class="flex items-center gap-3">
-                  <div class="w-5 h-5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
-                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                    </svg>
-                  </div>
-                  <span class="text-gray-700">Unlimited employees</span>
-                </li>
-                <li class="flex items-center gap-3">
-                  <div class="w-5 h-5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
-                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                    </svg>
-                  </div>
-                  <span class="text-gray-700">White-label solution</span>
-                </li>
-                <li class="flex items-center gap-3">
-                  <div class="w-5 h-5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
-                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                    </svg>
-                  </div>
-                  <span class="text-gray-700">Custom AI models</span>
-                </li>
-                <li class="flex items-center gap-3">
-                  <div class="w-5 h-5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
-                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                    </svg>
-                  </div>
-                  <span class="text-gray-700">Dedicated support</span>
-                </li>
-                <li class="flex items-center gap-3">
-                  <div class="w-5 h-5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
-                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                    </svg>
-                  </div>
-                  <span class="text-gray-700">On-premise deployment</span>
-                </li>
-              </ul>
-              
-              <button class="plan-select-btn w-full border-2 border-purple-600 text-purple-600 py-4 rounded-2xl font-bold text-lg transition-all duration-300 hover:bg-purple-600 hover:text-white hover:scale-105" data-plan="enterprise">
-                Contact Sales
-              </button>
             </div>
           </div>
-
-          <!-- Back Button -->
-          <div class="text-center mt-16">
-            <button id="back-to-step-2" class="text-purple-600 hover:text-purple-800 font-medium flex items-center gap-2 mx-auto transition-colors">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-              </svg>
-              Back to team size
-            </button>
+          
+          <div class="mt-12 text-center">
+            <p class="text-gray-500">Need a custom plan? <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium">Contact our sales team</a></p>
           </div>
         </div>
-
       </div>
+
+      <script>
+        // Store onboarding data
+        const onboardingData = {
+          companyName: '',
+          teamSize: null,
+          selectedPlan: null,
+          email: ''
+        };
+
+        // Step 1: Company Name
+        const step1Next = document.getElementById('step-1-next');
+        
+        if (step1Next) {
+          step1Next.addEventListener('click', () => {
+            const companyName = document.getElementById('company-name').value.trim();
+            if (companyName) {
+              onboardingData.companyName = companyName;
+              document.getElementById('step-1').classList.add('hidden');
+              document.getElementById('step-2').classList.remove('hidden');
+              document.getElementById('company-display').textContent = companyName;
+              document.getElementById('company-display-2').textContent = companyName;
+            }
+          });
+        }
+        
+        // Step 2: Team Size
+        const teamSizeRadios = document.querySelectorAll('input[name="team-size"]');
+        const step2Next = document.getElementById('step-2-next');
+        
+        teamSizeRadios.forEach(radio => {
+          radio.addEventListener('change', () => {
+            onboardingData.teamSize = radio.value;
+            if (step2Next) step2Next.disabled = false;
+          });
+        });
+        
+        if (step2Next) {
+          step2Next.addEventListener('click', () => {
+            document.getElementById('step-2').classList.add('hidden');
+            document.getElementById('step-3').classList.remove('hidden');
+          });
+        }
+        
+        // Back to Step 2
+        const backToStep2 = document.getElementById('back-to-step-2');
+        if (backToStep2) {
+          backToStep2.addEventListener('click', () => {
+            document.getElementById('step-3').classList.add('hidden');
+            document.getElementById('step-2').classList.remove('hidden');
+          });
+        }
+        
+        // Plan Selection
+        const planButtons = document.querySelectorAll('[data-plan]');
+        
+        planButtons.forEach(button => {
+          button.addEventListener('click', () => {
+            // Remove selection from all buttons
+            planButtons.forEach(btn => {
+              btn.classList.remove('ring-2', 'ring-indigo-500');
+            });
+            
+            // Add selection to clicked button
+            button.classList.add('ring-2', 'ring-indigo-500');
+            
+            // Store selected plan
+            onboardingData.selectedPlan = button.dataset.plan;
+            
+            // Enable complete signup button if on step 3
+            const completeSignupBtn = document.getElementById('complete-signup');
+            if (completeSignupBtn) {
+              completeSignupBtn.disabled = false;
+            }
+          });
+        });
+        
+        // Complete Signup
+        function completeSignup() {
+          if (!onboardingData.selectedPlan) return;
+          
+          // Here you would typically send the data to your backend
+          console.log('Onboarding completed with data:', onboardingData);
+          
+          // Redirect to appropriate URL based on selected plan
+          const planUrls = {
+            'starter': 'https://app.selora.ai/signup/starter',
+            'standard': 'https://app.selora.ai/signup/standard',
+            'enterprise': 'https://app.selora.ai/contact-sales'
+          };
+          
+          window.location.href = planUrls[onboardingData.selectedPlan] || 'https://app.selora.ai';
+        }
+        
+        // Billing Toggle
+        document.getElementById('billing-toggle')?.addEventListener('click', function() {
+          const isYearly = this.getAttribute('aria-checked') === 'true';
+          this.setAttribute('aria-checked', !isYearly);
+          document.getElementById('toggle-dot').classList.toggle('translate-x-5', !isYearly);
+          
+          // Toggle price display
+          document.querySelectorAll('.monthly-price, .yearly-price').forEach(el => {
+            el.classList.toggle('hidden');
+          });
+        });
+        
+        // Highlight recommended plan based on team size
+        function highlightRecommendedPlan(teamSize) {
+          let recommendedPlan = 'starter';
+          
+          if (teamSize === '1-20') {
+            recommendedPlan = 'starter';
+          } else if (teamSize === '20-100') {
+            recommendedPlan = 'standard';
+          } else if (teamSize === '100+') {
+            recommendedPlan = 'enterprise';
+          }
+          
+          // Remove highlight from all plans
+          document.querySelectorAll('[data-plan]').forEach(plan => {
+            plan.classList.remove('ring-2', 'ring-indigo-500');
+          });
+          
+          // Highlight recommended plan
+          const planToHighlight = document.querySelector(`[data-plan="${recommendedPlan}"]`);
+          if (planToHighlight) {
+            planToHighlight.classList.add('ring-2', 'ring-indigo-500');
+            planToHighlight.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        }
+        
+        // Update team size selection to highlight recommended plan
+        teamSizeRadios.forEach(radio => {
+          radio.addEventListener('change', () => {
+            highlightRecommendedPlan(radio.value);
+          });
+        });
+        
+        // Initialize with monthly pricing by default
+        document.addEventListener('DOMContentLoaded', () => {
+          // If we have a team size selected, highlight the recommended plan
+          if (onboardingData.teamSize) {
+            highlightRecommendedPlan(onboardingData.teamSize);
+          }
+        });
+      </script>
+      
+      <style>
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+          width: 6px;
+          height: 6px;
+        }
+        
+        ::-webkit-scrollbar-track {
+          background: #f1f1f1;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+          background: #9333ea;
+          border-radius: 3px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+          background: #7e22ce;
+        }
+        
+        /* Smooth transitions */
+        .transition-all {
+          transition-property: all;
+          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          transition-duration: 200ms;
+        }
+        
+        /* Custom focus styles */
+        .focus-visible {
+          outline: 2px solid #9333ea;
+          outline-offset: 2px;
+          box-shadow: 0 0 0 3px rgba(147, 51, 234, 0.2);
+        }
+      </style>
+
+      <style>
+        /* Add subtle animation for step transitions */
+        [id^="step-"] {
+          animation: fadeIn 0.3s ease-out forwards;
+        }
+        
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(10px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Custom background grid */
+        .bg-grid-slate-100/50 {
+          background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(226 232 240 / 0.5)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
+        }
+      </style>
     </div>
   </main>
 </Layout>
@@ -417,84 +642,363 @@ import Header from '../components/Header';
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
+    // DOM Elements
+    const step1Next = document.getElementById('step-1-next');
+    const step2Next = document.getElementById('step-2-next');
+    const companyNameInput = document.getElementById('company-name');
+    const companyDisplay = document.getElementById('company-display');
+    const companyDisplay2 = document.getElementById('company-display-2');
+    const progressBar = document.getElementById('progress-bar');
+    const currentStepDisplay = document.getElementById('current-step');
+    const stepTitle = document.getElementById('step-title');
+    
+    // State
     let currentStep = 1;
     let companyName = '';
     let teamSize = '';
     let selectedPlan = '';
     
-    // Step 1: Company Name
-    const companyNameInput = document.getElementById('company-name');
-    const step1NextBtn = document.getElementById('step-1-next');
-    
-    companyNameInput.addEventListener('input', function() {
-      companyName = this.value.trim();
-      step1NextBtn.disabled = companyName.length < 2;
-    });
-    
-    companyNameInput.addEventListener('keypress', function(e) {
-      if (e.key === 'Enter' && !step1NextBtn.disabled) {
-        step1NextBtn.click();
-      }
-    });
-    
-    step1NextBtn.addEventListener('click', function() {
-      if (companyName.length >= 2) {
-        goToStep(2);
-      }
-    });
-    
-    // Step 2: Team Size
-    const teamSizeOptions = document.querySelectorAll('.team-size-option');
-    const step2NextBtn = document.getElementById('step-2-next');
-    
-    teamSizeOptions.forEach(option => {
-      option.addEventListener('click', function() {
-        // Remove selected class from all options
-        teamSizeOptions.forEach(opt => opt.classList.remove('selected'));
-        
-        // Add selected class to clicked option
-        this.classList.add('selected');
-        
-        teamSize = this.dataset.size;
-        step2NextBtn.disabled = false;
+    // Initialize UI
+    function initUI() {
+      // Get DOM elements
+      const teamSizeOptions = document.querySelectorAll('.team-size-option');
+      const planSelectBtns = document.querySelectorAll('.plan-select-btn');
+      // Set initial state
+      step1Next.disabled = true;
+      step2Next.disabled = true;
+      
+      // Company name input
+      companyNameInput.addEventListener('input', (e) => {
+        companyName = e.target.value.trim();
+        step1Next.disabled = companyName.length < 2;
+        if (companyDisplay) companyDisplay.textContent = companyName || 'your company';
+        if (companyDisplay2) companyDisplay2.textContent = companyName || 'your company';
       });
-    });
-    
-    step2NextBtn.addEventListener('click', function() {
-      if (teamSize) {
-        goToStep(3);
-      }
-    });
-    
-    // Step 3: Pricing
-    const planSelectBtns = document.querySelectorAll('.plan-select-btn');
-    const backToStep2Btn = document.getElementById('back-to-step-2');
-    
-    planSelectBtns.forEach(btn => {
-      btn.addEventListener('click', async function() {
-        selectedPlan = this.dataset.plan;
-        
-        // Send data to Google Sheets
-        await sendToGoogleSheets(companyName, teamSize, selectedPlan);
-        
-        // Redirect based on plan
-        if (selectedPlan === 'enterprise') {
-          window.location.href = '/contact';
-        } else {
-          // Redirect to app signup with data
-          const params = new URLSearchParams({
-            company: companyName,
-            plan: selectedPlan,
-            teamSize: teamSize
-          });
-          window.location.href = `https://app.selora.com/company-signup?${params.toString()}`;
+      
+      // Handle Enter key in company name input
+      companyNameInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter' && companyName.length >= 2) {
+          goToStep(2);
         }
       });
-    });
+      
+      // Team size selection
+      teamSizeOptions.forEach(option => {
+        option.addEventListener('click', function() {
+          // Remove selected class from all options
+          teamSizeOptions.forEach(opt => opt.classList.remove('selected'));
+          
+          // Add selected class to clicked option
+          this.classList.add('selected');
+          
+          teamSize = this.dataset.size;
+          step2Next.disabled = false;
+        });
+      });
+      
+      // Step 1 to Step 2
+      step1Next.addEventListener('click', () => goToStep(2));
+      
+      // Step 2 to Step 3 (Email Collection)
+      step2Next.addEventListener('click', () => goToStep(3));
+      
+      // Back to Step 2 (from email)
+      const backToStep2 = document.getElementById('back-to-step-2');
+      if (backToStep2) {
+        backToStep2.addEventListener('click', () => goToStep(2));
+      }
+      
+      // Step 3 to Step 4 (Plans)
+      const step3Next = document.getElementById('step-3-next');
+      if (step3Next) {
+        step3Next.addEventListener('click', () => {
+          const email = document.getElementById('email')?.value.trim();
+          if (email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            goToStep(4);
+          } else {
+            alert('Please enter a valid email address');
+          }
+        });
+      }
+      
+      // Back to Step 3 (from plans)
+      const backToStep3 = document.getElementById('back-to-step-3');
+      if (backToStep3) {
+        backToStep3.addEventListener('click', () => goToStep(3));
+      }
+      
+      // Plan selection
+      planSelectBtns.forEach(btn => {
+        btn.addEventListener('click', async function() {
+          selectedPlan = this.dataset.plan;
+          await handlePlanSelection(companyName, teamSize, selectedPlan);
+        });
+      });
+    }
     
-    backToStep2Btn.addEventListener('click', function() {
-      goToStep(2);
-    });
+    // Navigation function
+    function goToStep(stepNumber) {
+      // Hide all steps first
+      for (let i = 1; i <= 4; i++) {
+        const stepEl = document.getElementById(`step-${i}`);
+        if (stepEl) {
+          stepEl.classList.add('hidden');
+        }
+      }
+      
+      // Show the target step
+      const newStepEl = document.getElementById(`step-${stepNumber}`);
+      if (newStepEl) {
+        newStepEl.classList.remove('hidden');
+        
+        // Scroll to top of the page
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+      
+      // Update progress and UI state
+      switch(stepNumber) {
+        case 1:
+          updateProgress(33, 'Company Name');
+          document.body.style.overflow = 'auto';
+          document.getElementById('step-1').classList.add('flex', 'flex-col', 'lg:flex-row', 'lg:justify-between', 'lg:items-center');
+          document.getElementById('step-1').classList.remove('lg:flex-col', 'lg:justify-center', 'lg:items-start');
+          document.getElementById('step-1-image').classList.remove('hidden');
+          break;
+        case 2:
+          updateProgress(66.66, 'Team Size');
+          document.body.style.overflow = 'auto';
+          break;
+        case 3:
+          updateProgress(75, 'Contact Information');
+          document.body.style.overflow = 'hidden';
+          // Reset email input when coming back to this step
+          const emailInput = document.getElementById('email');
+          const step3NextBtn = document.getElementById('step-3-next');
+          if (emailInput) emailInput.value = '';
+          if (step3NextBtn) step3NextBtn.disabled = true;
+          break;
+        case 4:
+          updateProgress(100, 'Select Plan');
+          document.body.style.overflow = 'auto';
+          updatePricingRecommendation();
+          break;
+      }
+      
+      currentStep = stepNumber;
+    }
+    
+    // Update progress bar and step indicator
+    function updateProgress(percent, stepName) {
+      if (progressBar) progressBar.style.width = `${percent}%`;
+      if (currentStepDisplay) currentStepDisplay.textContent = Math.ceil(percent / 33);
+      if (stepTitle) stepTitle.textContent = stepName;
+    }
+    
+    // Initialize the UI
+    initUI();
+    
+    // Initialize email validation
+    const emailInput = document.getElementById('email');
+    const step3NextBtn = document.getElementById('step-3-next');
+    
+    if (emailInput && step3NextBtn) {
+      step3NextBtn.disabled = true; // Disable by default
+      emailInput.addEventListener('input', () => {
+        const email = emailInput.value.trim();
+        const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        step3NextBtn.disabled = !isValid;
+      });
+    }
+    
+    // Handle plan selection
+    async function handlePlanSelection(company, teamSize, plan) {
+      try {
+        // Here you would typically send the data to your backend
+        console.log('Selected plan:', { company, teamSize, plan });
+        
+        // Send data to Google Sheets (optional)
+        await sendToGoogleSheets(company, teamSize, plan);
+        
+        // Redirect based on plan
+        const planUrls = {
+          'starter': 'https://app.selora.ai/signup/starter',
+          'standard': 'https://app.selora.ai/signup/standard',
+          'enterprise': 'https://app.selora.ai/contact-sales'
+        };
+        
+        window.location.href = planUrls[plan] || 'https://app.selora.ai';
+      } catch (error) {
+        console.error('Error handling plan selection:', error);
+        alert('There was an error processing your selection. Please try again.');
+      }
+    }
+    
+    // Set recommended plan based on team size
+    function setRecommendedPlan(teamSize) {
+      // Remove highlight from all plans
+      document.querySelectorAll('.plan-card').forEach(card => {
+        card.classList.remove('border-indigo-500', 'ring-2', 'ring-indigo-500', 'ring-offset-2');
+      });
+      
+      // Determine which plan to highlight based on team size
+      let planToHighlight;
+      if (teamSize === '1-20') {
+        planToHighlight = document.querySelector('[data-plan="starter"]');
+      } else if (teamSize === '20-100') {
+        planToHighlight = document.querySelector('[data-plan="standard"]');
+      } else if (teamSize === '100+') {
+        planToHighlight = document.querySelector('[data-plan="enterprise"]');
+      }
+      
+      // Add highlight to the recommended plan
+      if (planToHighlight) {
+        planToHighlight.classList.add('border-indigo-500', 'ring-2', 'ring-indigo-500', 'ring-offset-2');
+        // Scroll to the recommended plan
+        setTimeout(() => {
+          planToHighlight.scrollIntoView({
+            behavior: 'smooth',
+            block: 'center'
+          });
+        }, 100);
+      }
+      // Show the recommended badge for the appropriate plan
+      if (teamSize === '1-20') {
+        document.getElementById('starter-recommended').classList.remove('hidden');
+        selectPlan('starter');
+      } else if (teamSize === '20-100') {
+        document.getElementById('professional-recommended').classList.remove('hidden');
+        selectPlan('professional');
+      } else if (teamSize === '100+') {
+        document.getElementById('enterprise-recommended').classList.remove('hidden');
+        selectPlan('enterprise');
+      }
+    }
+    
+    // Handle plan selection
+    window.selectPlan = function(plan) {
+      // Remove selected state from all plans
+      document.querySelectorAll('.pricing-card').forEach(card => {
+        card.classList.remove('border-purple-600', 'ring-2', 'ring-purple-200');
+        card.classList.add('border-gray-200');
+      });
+      
+      // Add selected state to chosen plan
+      const selectedCard = document.getElementById(`${plan}-plan`);
+      if (selectedCard) {
+        selectedCard.classList.add('border-purple-600', 'ring-2', 'ring-purple-200');
+        selectedCard.classList.remove('border-gray-200');
+      }
+      
+      // Update selected plan
+      selectedPlan = plan;
+      
+      // Update the complete signup button
+      const completeBtn = document.getElementById('complete-signup');
+      if (completeBtn) {
+        completeBtn.disabled = false;
+        completeBtn.textContent = plan === 'enterprise' ? 'Contact Sales' : 'Get Started';
+      }
+    };
+    
+    // Handle final submission
+    window.completeSignup = async function() {
+      if (!selectedPlan) return;
+      
+      const button = document.getElementById('complete-signup');
+      const originalText = button.innerHTML;
+      
+      try {
+        // Show loading state
+        button.disabled = true;
+        button.innerHTML = `
+          <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+          </svg>
+          Processing...
+        `;
+        
+        // Show email collection step
+        document.getElementById('step-3').classList.add('hidden');
+        document.getElementById('step-4').classList.remove('hidden');
+        updateProgress(100, 'Contact Information');
+        
+        // Set up email submission
+        const emailInput = document.getElementById('email');
+        const submitForm = document.getElementById('submit-form');
+        
+        // Enable/disable submit button based on email validation
+        const validateEmail = () => {
+          const email = emailInput.value.trim();
+          const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+          submitForm.disabled = !isValid;
+        };
+        
+        emailInput.addEventListener('input', validateEmail);
+        
+        // Handle form submission
+        const handleSubmit = async () => {
+          try {
+            submitForm.disabled = true;
+            submitForm.innerHTML = 'Saving...';
+            
+            // Send data to your API
+            const response = await fetch('https://api.seloraa.com/submit-onboarding', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${import.meta.env.PUBLIC_API_KEY}`
+              },
+              body: JSON.stringify({
+                company: companyName,
+                teamSize,
+                plan: selectedPlan,
+                email: emailInput.value.trim(),
+                timestamp: new Date().toISOString()
+              })
+            });
+
+            if (!response.ok) throw new Error('Failed to submit form');
+            
+            // Redirect to company signup with pre-filled data
+            const email = emailInput.value.trim();
+            window.location.href = `https://app.seloraa.com/company-signup?company=${encodeURIComponent(companyName)}&email=${encodeURIComponent(email)}`;
+          } catch (error) {
+            console.error('Error submitting form:', error);
+            alert('There was an error submitting your information. Please try again.');
+            submitForm.disabled = false;
+            submitForm.innerHTML = 'Complete Signup <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>';
+          }
+        };
+        
+        // Add event listeners
+        submitForm.addEventListener('click', handleSubmit);
+        emailInput.addEventListener('keypress', (e) => {
+          if (e.key === 'Enter' && !submitForm.disabled) {
+            handleSubmit();
+          }
+        });
+        
+        // Back to step 3 (pricing)
+        document.getElementById('back-to-step-3').addEventListener('click', () => {
+          document.getElementById('step-4').classList.add('hidden');
+          document.getElementById('step-3').classList.remove('hidden');
+          updateProgress(66.66, 'Select Your Plan');
+        });
+        
+      } catch (error) {
+        console.error('Error:', error);
+        button.innerHTML = 'Error! Try Again';
+        button.disabled = false;
+        setTimeout(() => {
+          button.innerHTML = originalText;
+        }, 2000);
+      }
+    };
+    
+    // Initialize the UI
+    initUI();
+    updateProgress(33, 'Company Name');
     
     function goToStep(stepNumber) {
       // Hide current step
@@ -558,27 +1062,51 @@ import Header from '../components/Header';
     
     async function sendToGoogleSheets(company, teamSize, plan) {
       try {
-        // You'll need to replace this with your actual Google Sheets API endpoint
-        // This is a placeholder for the Google Sheets integration
-        const response = await fetch('https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec', {
+        // For demo purposes, we'll simulate a successful submission
+        return new Promise(resolve => {
+          setTimeout(() => resolve(true), 1000);
+        });
+      } catch (error) {
+        console.error('Error sending data to Google Sheets:', error);
+        // Continue with the flow even if logging fails
+      }
+    }
+    
+    async function submitOnboardingData(company, teamSize, plan) {
+      try {
+        // Here you would typically send the data to your backend
+        console.log('Submitting onboarding data:', { company, teamSize, plan });
+        
+        // Example: Send to your API endpoint (uncomment and configure as needed)
+        /*
+        const response = await fetch('YOUR_API_ENDPOINT', {
           method: 'POST',
-          mode: 'no-cors',
           headers: {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            timestamp: new Date().toISOString(),
-            companyName: company,
-            teamSize: teamSize,
-            selectedPlan: plan,
-            source: 'onboarding'
+            company,
+            teamSize,
+            plan,
+            timestamp: new Date().toISOString()
           })
         });
+
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+
+        const result = await response.json();
+        console.log('Success:', result);
+        */
         
-        console.log('Data sent to Google Sheets successfully');
+        // For demo purposes, we'll simulate a successful submission
+        return new Promise(resolve => {
+          setTimeout(() => resolve(true), 1000);
+        });
       } catch (error) {
-        console.error('Error sending data to Google Sheets:', error);
-        // Continue with the flow even if logging fails
+        console.error('Error submitting onboarding data:', error);
+        throw error;
       }
     }
   });
