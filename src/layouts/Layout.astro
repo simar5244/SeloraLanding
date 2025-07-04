@@ -61,6 +61,18 @@ const {
 </html>
 
 <style is:global>
+  /* Disable animations on mobile and for users who prefer reduced motion */
+  @media (max-width: 768px), (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
   /* Base styles */
   * {
     margin: 0;

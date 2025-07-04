@@ -8,7 +8,7 @@ const SuccessionPlanning = () => {
   const candidates = [
     {
       name: "Peter Darby",
-      email: "peter@testing.com",
+      email: "helloselora@gmail.com",
       score: 53,
       viability: "Non-Viable",
       strengths: ["Strong skill overlap", "Development needed: Retention risk and retention risk"],
@@ -30,7 +30,7 @@ const SuccessionPlanning = () => {
     },
     {
       name: "Thomas Mill",
-      email: "thomas@testing.com",
+      email: "helloselora@gmail.com",
       score: 24,
       viability: "Non-Viable",
       strengths: ["Limited skill overlap", "Development needed: Limited skill overlap and limited skill overlap"],

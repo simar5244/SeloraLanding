@@ -8,19 +8,7 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://seloraa.com/features</loc>
-    <lastmod>2025-07-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://seloraa.com/how-it-works</loc>
-    <lastmod>2025-07-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://seloraa.com/pricing</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -31,13 +19,27 @@
     <loc>https://seloraa.com/faq</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
+  
+  <!-- Other Pages -->
   <url>
-    <loc>https://seloraa.com/contact</loc>
+    <loc>https://seloraa.com/about</loc>
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seloraa.com/careers</loc>
+    <lastmod>2025-07-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seloraa.com/demo</loc>
+    <lastmod>2025-07-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   
   <!-- App Pages -->
@@ -52,13 +54,5 @@
     <lastmod>2025-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
-  </url>
-  
-  <!-- Additional Pages -->
-  <url>
-    <loc>https://seloraa.com/onboarding</loc>
-    <lastmod>2025-07-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.4</priority>
   </url>
 </urlset>

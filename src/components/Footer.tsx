@@ -19,9 +19,18 @@ const Footer = () => {
                 Selora
               </span>
             </motion.div>
-            <p className="text-gray-300 mb-6 max-w-md leading-relaxed">
+            <p className="text-gray-300 mb-4 max-w-md leading-relaxed">
               You can't scale what you can't see. Traditional HR tools show you what happened yesterday. Selora shows you what will happen tomorrow!
             </p>
+            <a 
+              href="mailto:helloselora@gmail.com" 
+              className="text-purple-300 hover:text-white transition-colors flex items-center mb-6"
+            >
+              <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              helloselora@gmail.com
+            </a>
             <div className="flex space-x-4">
               <motion.a
                 href="https://x.com/simar5244"
