@@ -82,8 +82,8 @@ const AttritionRiskAnalysis = () => {
           viewport={{ once: true }}
         >
           <div className="inline-flex items-center bg-white/80 backdrop-blur-sm rounded-full px-6 py-3 mb-8 border border-purple-200/50">
-            <AlertTriangle className="w-5 h-5 text-purple-600 mr-2" />
-            <span className="text-purple-600 font-semibold">Risk Mitigation</span>
+            <AlertTriangle className="w-5 h-5 text-indigo-600 mr-2" />
+            <span className="text-indigo-600 font-semibold">Risk Mitigation</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 font-display">
             <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">

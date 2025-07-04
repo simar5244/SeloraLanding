@@ -28,7 +28,7 @@ const HowItWorks = () => {
         "Assign roles and permissions",
         "Team members complete their profiles"
       ],
-      color: "from-blue-500 to-cyan-500"
+      color: "from-indigo-500 to-purple-500"
     },
     {
       icon: Users,
@@ -40,7 +40,7 @@ const HowItWorks = () => {
         "Track project progress and contributions",
         "Centralized project documentation and resources"
       ],
-      color: "from-purple-500 to-pink-500"
+      color: "from-indigo-500 to-purple-500"
     },
     {
       icon: MessageSquare,
@@ -52,24 +52,21 @@ const HowItWorks = () => {
         "Track personal and team growth over time",
         "Data-driven insights for performance improvement"
       ],
-      color: "from-green-500 to-emerald-500"
+      color: "from-indigo-500 to-purple-500"
     }
   ];
 
   return (
-    <section id="how-it-works" className="py-24 bg-gradient-to-b from-gray-50 to-white">
+    <section id="how-it-works" className="relative z-0 py-56 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          className="text-center mb-20"
+          className="text-center mb-56"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <span className="inline-block px-4 py-2 bg-indigo-50 text-indigo-600 text-sm font-semibold rounded-full mb-4">
-            SIMPLE WORKFLOW
-          </span>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
+          <h2 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900">
             Get Started in <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">4 Easy Steps</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -200,35 +197,8 @@ const HowItWorks = () => {
                     ))}
                   </div>
 
-                  {/* Visual Demo */}
-                  <div className="mt-10 p-6 bg-gradient-to-br from-gray-50 to-white border border-gray-100 rounded-xl">
-                    <div className="flex items-center justify-between mb-4">
-                      <h4 className="font-medium text-gray-900">Quick Demo</h4>
-                      <div className="flex space-x-1">
-                        {steps.map((_, idx) => (
-                          <div
-                            key={idx}
-                            className={`w-2 h-2 rounded-full transition-colors ${
-                              idx === activeStep ? 'bg-indigo-600' : 'bg-gray-200'
-                            }`}
-                          />
-                        ))}
-                      </div>
-                    </div>
-                    
-                    <div className="h-48 rounded-lg bg-gradient-to-r from-indigo-50 to-purple-50 flex items-center justify-center">
-                      <div className="text-center p-6 max-w-sm mx-auto">
-                        <div className="w-16 h-16 mx-auto bg-white rounded-xl shadow-sm flex items-center justify-center mb-4">
-                          {(() => {
-                            const Icon = steps[activeStep].icon;
-                            return <Icon className="w-8 h-8 text-indigo-600" />;
-                          })()}
-                        </div>
-                        <h4 className="font-medium text-gray-900 mb-2">{steps[activeStep].title}</h4>
-                        <p className="text-sm text-gray-500">Interactive demo of this step</p>
-                      </div>
-                    </div>
-                  </div>
+                  
+                  
 
                   {/* Navigation */}
                   <div className="mt-8 pt-6 border-t border-gray-100 flex items-center justify-between">
@@ -285,21 +255,12 @@ const HowItWorks = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
-                href="/signup" 
+                href="/onboarding" 
                 className="px-8 py-4 bg-white text-indigo-700 font-medium rounded-lg hover:bg-gray-100 transition-colors flex items-center justify-center gap-2"
               >
                 Get Started for Free
               </a>
-              <a 
-                href="/demo" 
-                className="px-8 py-4 bg-white/10 text-white font-medium rounded-lg hover:bg-white/20 transition-colors border border-white/20 flex items-center justify-center gap-2"
-              >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                Watch Demo
-              </a>
+              
             </div>
             <div className="mt-6 flex items-center justify-center gap-4 text-sm text-indigo-200">
               <div className="flex items-center gap-2">
@@ -317,29 +278,7 @@ const HowItWorks = () => {
           </div>
         </motion.div>
 
-        {/* Testimonial Section */}
-        <motion.div 
-          className="mt-24"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }}
-        >
-          <div className="text-center mb-12">
-            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Trusted by innovative teams</h3>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Join companies of all sizes that use our platform to streamline their team management
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center opacity-70">
-            {['Company 1', 'Company 2', 'Company 3', 'Company 4'].map((company, index) => (
-              <div key={index} className="h-12 w-32 bg-gray-100 rounded-lg flex items-center justify-center text-gray-400 font-medium">
-                {company}
-              </div>
-            ))}
-          </div>
-        </motion.div>
+
       </div>
     </section>
   );

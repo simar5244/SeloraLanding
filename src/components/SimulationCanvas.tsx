@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import type { JSX } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Play, Users, DollarSign, TrendingUp, AlertTriangle, Zap, Plus, Minus, Target, ChevronDown } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
@@ -194,8 +195,8 @@ const SimulationCanvas: React.FC = () => {
           viewport={{ once: true }}
         >
           <div className="inline-flex items-center bg-white/80 backdrop-blur-sm rounded-full px-6 py-3 mb-8 border border-purple-200/50 mx-auto">
-            <Zap className="w-5 h-5 text-purple-600 mr-2" />
-            <span className="text-purple-600 font-semibold">Scenario Planning</span>
+            <Zap className="w-5 h-5 text-indigo-600 mr-2" />
+            <span className="text-indigo-600 font-semibold">Scenario Planning</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 font-display">
             <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
@@ -204,7 +205,7 @@ const SimulationCanvas: React.FC = () => {
             Canvas
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto">
-            Run Monte Carlo simulations with Bayesian inference to predict workforce changes and optimize organizational decisions
+            Run Monte Carlo simulations with Bayesian inference to predict workforce changes and <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent font-medium">optimize organizational decisions</span>
           </p>
         </motion.div>
 
@@ -433,7 +434,7 @@ const SimulationCanvas: React.FC = () => {
                     <ul className="text-sm text-gray-600 space-y-1">
                       <li>Monte Carlo analysis with 100K iterations</li>
                       <li>Bayesian inference for risk assessment</li>
-                      <li>Real-time impact on 247 variables</li>
+                      <li>Real-time impact on multiple variables</li>
                       <li>95% confidence interval predictions</li>
                     </ul>
                   </div>

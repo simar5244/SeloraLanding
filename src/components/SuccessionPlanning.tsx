@@ -31,7 +31,7 @@ const SuccessionPlanning = () => {
     {
       name: "Thomas Mill",
       email: "thomas@testing.com",
-      score: 1,
+      score: 24,
       viability: "Non-Viable",
       strengths: ["Limited skill overlap", "Development needed: Limited skill overlap and limited skill overlap"],
       matchFactors: [
@@ -82,8 +82,8 @@ const SuccessionPlanning = () => {
           viewport={{ once: true }}
         >
           <div className="inline-flex items-center bg-white/80 backdrop-blur-sm rounded-full px-6 py-3 mb-8 border border-purple-200/50">
-            <Users className="w-5 h-5 text-purple-600 mr-2" />
-            <span className="text-purple-600 font-semibold">Talent Pipeline</span>
+            <Users className="w-5 h-5 text-indigo-600 mr-2" />
+            <span className="text-indigo-600 font-semibold">Talent Pipeline</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
             <span className="text-gray-900">AI-Powered </span>
@@ -91,8 +91,9 @@ const SuccessionPlanning = () => {
               Succession Planning
             </span>
           </h2>
+          
           <p className="text-xl text-gray-600 max-w-4xl mx-auto">
-            Multi-criteria decision analysis with weighted scoring models for optimal succession candidate identification
+            <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent font-medium">Multi-criteria decision analysis</span> with weighted scoring models for optimal succession candidate identification
           </p>
         </motion.div>
 

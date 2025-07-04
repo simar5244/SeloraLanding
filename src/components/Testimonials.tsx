@@ -3,13 +3,7 @@ import { motion } from 'framer-motion';
 
 const Testimonials = () => {
   const testimonials = [
-    {
-      name: "Sarah Chen",
-      role: "Chief People Officer",
-      company: "TechFlow Inc.",
-      image: "SC",
-      quote: "Selora transformed how we understand our workforce. The AI predictions are incredibly accurate and have helped us reduce attrition by 40% in just 6 months."
-    },
+ 
     {
       name: "Michael Rodriguez",
       role: "VP of Human Resources",
@@ -69,13 +63,13 @@ const Testimonials = () => {
           transition={{ duration: 0.5 }}
           className="bg-white rounded-2xl p-10 shadow-xl max-w-3xl mx-auto"
         >
-          <div className="text-sm font-medium text-blue-600 mb-2">OVERHEARD:</div>
+          
           <blockquote className="text-2xl leading-relaxed text-gray-800 mb-8 font-medium">
             "{testimonial.quote}"
           </blockquote>
           
           <div className="flex flex-col items-center">
-            <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white text-2xl font-bold mb-4">
+            <div className="w-20 h-20 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-full flex items-center justify-center text-white text-2xl font-bold mb-4">
               {testimonial.image}
             </div>
             <div className="text-center">

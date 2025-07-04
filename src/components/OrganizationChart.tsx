@@ -268,8 +268,8 @@ const OrganizationChart = () => {
           viewport={{ once: true }}
         >
           <div className="inline-flex items-center bg-white/80 backdrop-blur-sm rounded-full px-6 py-3 mb-8 border border-purple-200/50">
-            <Users className="w-5 h-5 text-purple-600 mr-2" />
-            <span className="text-purple-600 font-semibold">Org Structure</span>
+            <Users className="w-5 h-5 text-indigo-600 mr-2" />
+            <span className="text-indigo-600 font-semibold">Organizational Structure</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
             <span className="text-gray-900">Interactive </span>
@@ -278,7 +278,7 @@ const OrganizationChart = () => {
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto">
-            Click employees to select, use action buttons to simulate hiring/firing, and see real-time impact on organizational metrics
+            Click employees to select, use action buttons to simulate hiring/firing, and see real-time impact on <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent font-medium">organizational metrics</span>
           </p>
         </motion.div>
 

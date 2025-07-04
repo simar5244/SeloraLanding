@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Twitter, Linkedin, Github } from 'lucide-react';
+import { Twitter, Linkedin } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -20,20 +20,29 @@ const Footer = () => {
               </span>
             </motion.div>
             <p className="text-gray-300 mb-6 max-w-md leading-relaxed">
-              You can't scale what you can't see. Transform your workforce management with AI-powered insights that help you make smarter HR decisions.
+              You can't scale what you can't see. Traditional HR tools show you what happened yesterday. Selora shows you what will happen tomorrow!
             </p>
             <div className="flex space-x-4">
-              {[Twitter, Linkedin, Github].map((Icon, index) => (
-                <motion.a
-                  key={index}
-                  href="#"
-                  className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-purple-600 transition-colors"
-                  whileHover={{ scale: 1.1, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <Icon className="w-5 h-5" />
-                </motion.a>
-              ))}
+              <motion.a
+                href="https://x.com/simar5244"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-purple-600 transition-colors"
+                whileHover={{ scale: 1.1, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Twitter className="w-5 h-5" />
+              </motion.a>
+              <motion.a
+                href="https://linkedin.com/company/seloraa"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-purple-600 transition-colors"
+                whileHover={{ scale: 1.1, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Linkedin className="w-5 h-5" />
+              </motion.a>
             </div>
           </div>
           {/* Company Links */}
@@ -63,9 +72,8 @@ const Footer = () => {
             © 2025 Selora. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="/privacy" className="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
-            <a href="/terms" className="text-gray-400 hover:text-white text-sm transition-colors">Terms of Service</a>
-            <a href="/cookies" className="text-gray-400 hover:text-white text-sm transition-colors">Cookie Policy</a>
+            <a href="https://app.seloraa.com/privacy" className="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
+            <a href="https://app.seloraa.com/terms" className="text-gray-400 hover:text-white text-sm transition-colors">Terms of Service</a>
           </div>
         </div>
       </div>

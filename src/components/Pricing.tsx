@@ -12,7 +12,7 @@ const Pricing = () => {
       annualPrice: "$1,000",
       description: "Perfect for individuals",
       features: [
-        "1 User",
+        "Upto 20 Users",
         "Email and Call Support",
         "DIY Onboarding"
       ],
@@ -24,7 +24,7 @@ const Pricing = () => {
       annualPrice: "$2,000",
       description: "Ideal for small teams",
       features: [
-        "2 Users",
+        "Upto 100 Users",
         "24/7 Priority Support",
         "DIY Onboarding",
       ],
@@ -36,7 +36,7 @@ const Pricing = () => {
       annualPrice: "$3,000",
       description: "For growing businesses",
       features: [
-        "3 Users",
+        "100+ Users",
         "24/7 Priority Support",
         "Dedicated Account Manager",
         "White Glove Onboarding",
@@ -62,7 +62,7 @@ const Pricing = () => {
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Simple, straightforward pricing with no hidden fees.
+            Simple, straightforward pricing with <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent font-medium">no hidden fees</span>.
           </p>
           <div className="mt-6 inline-flex items-center bg-white/80 backdrop-blur-sm rounded-full p-1 border border-gray-200">
             <button 

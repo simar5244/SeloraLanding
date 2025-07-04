@@ -38,8 +38,8 @@ const OrgAI = () => {
           viewport={{ once: true }}
         >
           <div className="inline-flex items-center bg-white/80 backdrop-blur-sm rounded-full px-6 py-3 mb-8 border border-purple-200/50">
-            <Bot className="w-5 h-5 text-purple-600 mr-2" />
-            <span className="text-purple-600 font-semibold">Advanced AI Assistant</span>
+            <Bot className="w-5 h-5 text-indigo-600 mr-2" />
+            <span className="text-indigo-600 font-semibold">Advanced AI Assistant</span>
           </div>
           
           <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight font-display">
@@ -52,7 +52,7 @@ const OrgAI = () => {
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Your intelligent workforce companion powered by{' '}
             <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent font-semibold">
-              GPT-4 architecture
+              NLP and RAG
             </span>
           </p>
         </motion.div>
@@ -70,7 +70,7 @@ const OrgAI = () => {
             >
               <div className="absolute -right-4 -top-4 w-24 h-24 bg-purple-100/30 rounded-full group-hover:bg-purple-100/50 transition-colors duration-300"></div>
               <div className="relative z-10">
-                <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-pink-500 rounded-xl flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110">
+                <div className="w-12 h-12 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-xl flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110">
                   <feature.icon className="w-5 h-5 text-white" />
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">
@@ -111,7 +111,7 @@ const OrgAI = () => {
             <div className="p-6 space-y-6">
               {/* AI Message */}
               <div className="flex items-start space-x-3 group">
-                <div className="w-9 h-9 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center flex-shrink-0 shadow-sm">
+                <div className="w-9 h-9 rounded-full bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center flex-shrink-0 shadow-sm">
                   <Bot className="w-4 h-4 text-white" />
                 </div>
                 <div className="bg-gray-50 px-5 py-3.5 rounded-2xl rounded-tl-sm max-w-[80%] lg:max-w-[70%]">
@@ -135,7 +135,7 @@ const OrgAI = () => {
               
               {/* AI Response with Chart */}
               <div className="flex items-start space-x-3 group">
-                <div className="w-9 h-9 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center flex-shrink-0 shadow-sm">
+                <div className="w-9 h-9 rounded-full bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center flex-shrink-0 shadow-sm">
                   <Bot className="w-4 h-4 text-white" />
                 </div>
                 <div className="space-y-4 max-w-[80%] lg:max-w-[70%]">

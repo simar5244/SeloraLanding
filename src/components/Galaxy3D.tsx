@@ -186,8 +186,8 @@ const Galaxy3D = () => {
           viewport={{ once: true }}
         >
           <div className="inline-flex items-center bg-white/80 backdrop-blur-sm rounded-full px-6 py-3 mb-8 border border-purple-200/50 mx-auto">
-            <Eye className="w-5 h-5 text-purple-600 mr-2" />
-            <span className="text-purple-600 font-semibold">Interactive 3D View</span>
+            <Eye className="w-5 h-5 text-indigo-600 mr-2" />
+            <span className="text-indigo-600 font-semibold">Interactive 3D View</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             <span>3D </span>
@@ -196,7 +196,7 @@ const Galaxy3D = () => {
             </span>
           </h2>
           <p className="text-xl text-gray-300 max-w-4xl mx-auto">
-            WebGL-powered interactive visualization with force-directed graph algorithms for complex organizational relationship mapping
+            WebGL-powered interactive visualization with <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent font-medium">force-directed graph algorithms</span> for complex organizational relationship mapping
           </p>
         </motion.div>
 

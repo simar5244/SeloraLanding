@@ -116,8 +116,8 @@ const ProjectManagement = () => {
           viewport={{ once: true }}
         >
           <div className="inline-flex items-center bg-white/80 backdrop-blur-sm rounded-full px-6 py-3 mb-8 border border-purple-200/50">
-            <FolderOpen className="w-5 h-5 text-purple-600 mr-2" />
-            <span className="text-purple-600 font-semibold">Project Intelligence</span>
+            <FolderOpen className="w-5 h-5 text-indigo-600 mr-2" />
+            <span className="text-indigo-600 font-semibold">Project Intelligence</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
             <span className="text-gray-900">AI-Powered </span>
@@ -126,7 +126,7 @@ const ProjectManagement = () => {
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto">
-            Intelligent team allocation with skill matching algorithms for optimal project staffing and resource optimization
+            Intelligent team allocation with <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent font-medium">skill matching algorithms</span> for optimal project staffing and resource optimization
           </p>
         </motion.div>
 

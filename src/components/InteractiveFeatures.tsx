@@ -29,7 +29,7 @@ const InteractiveFeatures = () => {
     {
       icon: Brain,
       title: "OrgAI: Conversational Workforce Intelligence",
-      description: "Ask anything about your org. Powered by GPT-4 and RAG, OrgAI delivers live, contextual answers from your internal data—performance, planning, feedback, and more.",
+      description: "Ask anything about your organization. Powered by Natural Language Models and RAG, OrgAI delivers live, contextual answers from your internal data—performance, planning, feedback, and more.",
       color: "purple",
       details: "Retriever-augmented transformers trained on your data, giving real-time insights for smarter decisions."
     },
@@ -54,8 +54,7 @@ const InteractiveFeatures = () => {
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 font-display">
             <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-              Advanced AI Architecture
-            </span>
+              Advanced AI </span><span className="text-gray-900">Architecture</span>
           </h2>
         </motion.div>
 
@@ -71,7 +70,7 @@ const InteractiveFeatures = () => {
               whileHover={{ y: -5 }}
             >
               {/* Decorative elements */}
-              <div className="absolute -right-6 -top-6 w-32 h-32 rounded-full bg-gradient-to-r from-purple-100 to-pink-100 opacity-50 group-hover:opacity-70 transition-opacity"></div>
+              <div className="absolute -right-6 -top-6 w-32 h-32 rounded-full bg-gradient-to-r from-purple-100 to-purple-100 opacity-50 group-hover:opacity-70 transition-opacity"></div>
               
               <div className="relative z-10">
                 <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-indigo-600 to-purple-600 flex items-center justify-center mb-4">

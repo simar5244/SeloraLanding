@@ -50,7 +50,7 @@ const SecuritySection = () => {
             </span>
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Robust security measures to protect your most sensitive data
+            <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent font-medium">Robust security measures</span> to protect your most sensitive data
           </p>
         </motion.div>
 
@@ -66,7 +66,7 @@ const SecuritySection = () => {
               whileHover={{ scale: 1.02, y: -5 }}
             >
               <motion.div
-                className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mb-4 mx-auto"
+                className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-xl flex items-center justify-center mb-4 mx-auto"
                 whileHover={{ rotate: 5, scale: 1.1 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
