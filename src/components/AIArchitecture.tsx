@@ -61,7 +61,7 @@ const AIArchitecture = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight font-display">
-            Advanced <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent">AI Architecture</span>
+            Advanced <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">AI Architecture</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Enterprise-grade machine learning infrastructure with proprietary algorithms for workforce optimization

@@ -198,7 +198,7 @@ const SimulationCanvas: React.FC = () => {
             <span className="text-purple-600 font-semibold">Scenario Planning</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 font-display">
-            <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
               Workforce Simulation
             </span>{' '}
             Canvas
@@ -224,7 +224,7 @@ const SimulationCanvas: React.FC = () => {
               <motion.button
                 className={`p-4 rounded-xl font-medium text-sm transition-all border-2 ${
                   simulationType === 'hire' 
-                    ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white border-purple-600 shadow-lg' 
+                    ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white border-purple-600 shadow-lg' 
                     : 'bg-gray-50 text-gray-700 border-gray-200 hover:border-gray-300'
                 }`}
                 onClick={() => setSimulationType('hire')}
@@ -238,7 +238,7 @@ const SimulationCanvas: React.FC = () => {
               <motion.button
                 className={`p-4 rounded-xl font-medium text-sm transition-all border-2 ${
                   simulationType === 'optimize' 
-                    ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white border-purple-600 shadow-lg' 
+                    ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white border-purple-600 shadow-lg' 
                     : 'bg-gray-50 text-gray-700 border-gray-200 hover:border-gray-300'
                 }`}
                 onClick={() => setSimulationType('optimize')}
@@ -252,7 +252,7 @@ const SimulationCanvas: React.FC = () => {
               <motion.button
                 className={`p-4 rounded-xl font-medium text-sm transition-all border-2 ${
                   simulationType === 'fire' 
-                    ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white border-purple-600 shadow-lg' 
+                    ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white border-purple-600 shadow-lg' 
                     : 'bg-gray-50 text-gray-700 border-gray-200 hover:border-gray-300'
                 }`}
                 onClick={() => setSimulationType('fire')}
@@ -293,7 +293,7 @@ const SimulationCanvas: React.FC = () => {
 
             <div className="flex gap-4 mt-6">
               <motion.button
-                className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-4 rounded-xl font-semibold text-lg flex items-center justify-center gap-2 transition-colors disabled:opacity-50"
+                className="flex-1 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-purple-700 hover:to-pink-700 text-white py-4 rounded-xl font-semibold text-lg flex items-center justify-center gap-2 transition-colors disabled:opacity-50"
                 onClick={runSimulation}
                 disabled={isSimulating}
                 whileHover={{ scale: isSimulating ? 1 : 1.02 }}
@@ -375,7 +375,7 @@ const SimulationCanvas: React.FC = () => {
                       >
                         <div className="flex items-center justify-between mb-3">
                           <div className="flex items-center gap-3">
-                            <div className="w-8 h-8 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg flex items-center justify-center">
+                            <div className="w-8 h-8 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-lg flex items-center justify-center">
                               <metric.icon className="w-4 h-4 text-white" />
                             </div>
                             <span className="font-medium text-gray-900">{metric.label}</span>

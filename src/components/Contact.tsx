@@ -14,7 +14,7 @@ const Contact: React.FC = () => {
           className="space-y-6"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-            Ready to see it in <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">ACTION</span>?
+            Ready to see it in <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">ACTION</span>?
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Join the future of workforce planning. Get started in minutes.

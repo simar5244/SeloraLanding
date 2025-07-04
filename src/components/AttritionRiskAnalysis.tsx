@@ -69,7 +69,7 @@ const AttritionRiskAnalysis = () => {
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/3 left-1/4 w-72 h-72 bg-purple-200/20 rounded-full blur-3xl"></div>
         <div className="absolute bottom-1/3 right-1/4 w-72 h-72 bg-blue-200/20 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/6 right-1/6 w-48 h-48 bg-pink-200/15 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/6 right-1/6 w-48 h-48 bg-purple-200/15 rounded-full blur-3xl"></div>
         <div className="absolute bottom-1/6 left-1/6 w-56 h-56 bg-purple-300/10 rounded-full blur-3xl"></div>
       </div>
 
@@ -86,14 +86,14 @@ const AttritionRiskAnalysis = () => {
             <span className="text-purple-600 font-semibold">Risk Mitigation</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 font-display">
-            <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
               Attrition Risk
             </span>{' '}
             Assessment
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto">
             Advanced behavioral analytics with{' '}
-            <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent font-semibold">
+            <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent font-semibold">
               multi-factor risk modeling
             </span>{' '}
             to predict and prevent employee turnover

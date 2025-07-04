@@ -49,13 +49,13 @@ const Testimonials = () => {
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 font-display">
             Trusted by{' '}
-            <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
               Industry Leaders
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             See how forward-thinking organizations are transforming their workforce management with{' '}
-            <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent font-semibold">
+            <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent font-semibold">
               Selora
             </span>
           </p>

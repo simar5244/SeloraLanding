@@ -57,7 +57,7 @@ const Pricing = () => {
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
             <span>Simple, </span>
-            <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
               Transparent Pricing
             </span>
           </h2>

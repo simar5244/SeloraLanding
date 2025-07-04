@@ -94,7 +94,7 @@ const Hero = () => {
           >
             <motion.a
               href="/onboarding"
-              className="group relative bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-xl text-lg font-semibold flex items-center gap-2 shadow-lg overflow-hidden"
+              className="group relative bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-xl text-lg font-semibold flex items-center gap-2 shadow-lg overflow-hidden"
               whileHover={{ 
                 scale: 1.05,
                 boxShadow: "0 20px 40px rgba(147, 51, 234, 0.3)"

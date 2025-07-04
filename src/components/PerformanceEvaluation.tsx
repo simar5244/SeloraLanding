@@ -90,7 +90,7 @@ const PerformanceEvaluation = () => {
             <span className="text-purple-600 font-semibold">Performance Insights</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-            <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent">360°</span> Performance Evaluation
+            <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">360°</span> Performance Evaluation
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto">
             Comprehensive feedback collection system with multi-source evaluation and continuous performance tracking

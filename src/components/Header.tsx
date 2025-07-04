@@ -35,7 +35,7 @@ const Header = () => {
           >
             <a href="/" className="flex items-center">
               <img src="/logo1.png" alt="Selora" className="w-8 h-8 mr-1" />
-              <span className="text-xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+              <span className="text-xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
                 Selora
               </span>
             </a>
@@ -49,7 +49,7 @@ const Header = () => {
             <a href="/faq" className="text-gray-600 hover:text-gray-900 transition-colors">FAQ</a>
             <motion.a
               href="https://app.seloraa.com/company-signup"
-              className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all"
+              className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-purple-700 hover:to-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -79,7 +79,7 @@ const Header = () => {
               <a href="/how-it-works" className="block text-gray-600 hover:text-gray-900">How it works</a>
               <a href="/#pricing" className="block text-gray-600 hover:text-gray-900">Pricing</a>
               <a href="/faq" className="block text-gray-600 hover:text-gray-900">FAQ</a>
-              <a href="https://app.seloraa.com/company-signup" className="block w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-2 rounded-lg text-sm font-medium text-center">
+              <a href="https://app.seloraa.com/company-signup" className="block w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-4 py-2 rounded-lg text-sm font-medium text-center">
                 Signup
               </a>
             </div>
