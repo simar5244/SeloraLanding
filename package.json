@@ -5,11 +5,10 @@
   "private": true,
   "scripts": {
     "dev": "astro dev",
-    "start": "astro preview",
+    "start": "NODE_ENV=production node ./node_modules/.bin/astro preview --host",
     "build": "NODE_OPTIONS='--no-warnings' TSC_COMPILE_ON_ERROR=true NODE_ENV=production astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "build:force": "NODE_OPTIONS='--no-warnings' TSC_COMPILE_ON_ERROR=true NODE_ENV=production astro build",
     "build:production": "NODE_OPTIONS='--no-warnings' TSC_COMPILE_ON_ERROR=true NODE_ENV=production astro build"
   },
   "dependencies": {
