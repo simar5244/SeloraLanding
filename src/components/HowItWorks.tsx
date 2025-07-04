@@ -255,7 +255,7 @@ const HowItWorks = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
-                href="/onboarding" 
+                href="https://app.seloraa.com/company-signup" 
                 className="px-8 py-4 bg-white text-indigo-700 font-medium rounded-lg hover:bg-gray-100 transition-colors flex items-center justify-center gap-2"
               >
                 Get Started for Free

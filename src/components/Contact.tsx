@@ -21,7 +21,7 @@ const Contact: React.FC = () => {
           </p>
           <div className="pt-6">
             <a
-              href="/onboarding"
+              href="https://app.seloraa.com/company-signup"
               className="inline-flex items-center justify-center px-8 py-4 bg-purple-600 hover:bg-purple-700 text-white font-medium rounded-xl transition-colors duration-200 group"
             >
               Get Started
