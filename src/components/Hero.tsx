@@ -63,13 +63,13 @@ const Hero = () => {
             }}
           >
             <a 
-              href="https://app.seloraa.com/company-signup"
+              href="mailto:helloselora@gmail.com"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center px-6 py-2.5 rounded-full text-sm font-medium bg-gradient-to-r from-indigo-500 to-purple-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5"
             >
               <Sparkles className="w-4 h-4 mr-2" />
-              Free Public Beta Out Now
+              Email us for a free public beta!
               <ChevronRight className="w-4 h-4 ml-1" />
             </a>
           </motion.div>
